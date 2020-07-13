@@ -1,31 +1,14 @@
 import React, { useState } from "react"
 import "./layout.css"
-import AppbarAndDrawer from "./appbarAndDrawer"
-import Footer from "./footer"
-import { ThemeProvider } from "@material-ui/core/styles"
-import theme from "./theme"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import { makeStyles } from "@material-ui/core/styles"
-import Container from "@material-ui/core/Container"
-import useScrollTrigger from "@material-ui/core/useScrollTrigger"
-import Fab from "@material-ui/core/Fab"
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
-import Zoom from "@material-ui/core/Zoom"
-import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
-import IconButton from "@material-ui/core/IconButton"
-import img1 from "../images/1.jpg"
-import { FormHelperText } from "@material-ui/core"
 import {
   MuiPickersUtilsProvider,
   TimePicker,
   DatePicker,
 } from "@material-ui/pickers"
-import { ClockView } from "@material-ui/pickers"
 import DateFnsUtils from "@date-io/date-fns"
-import { Link } from "gatsby"
 import Modal from "@material-ui/core/Modal"
-
 import Timeline from "@material-ui/lab/Timeline"
 import TimelineItem from "@material-ui/lab/TimelineItem"
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator"
@@ -33,22 +16,18 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector"
 import TimelineContent from "@material-ui/lab/TimelineContent"
 import TimelineDot from "@material-ui/lab/TimelineDot"
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent"
-import FastfoodIcon from "@material-ui/icons/Fastfood"
 import PeopleIcon from "@material-ui/icons/People"
 import EventIcon from "@material-ui/icons/Event"
 import PhoneIcon from "@material-ui/icons/Phone"
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail"
-
 import PersonIcon from "@material-ui/icons/Person"
 import ScheduleIcon from "@material-ui/icons/Schedule"
-import DoneIcon from "@material-ui/icons/Done"
 import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
-import Checkbox from "@material-ui/core/Checkbox"
-import { withStyles } from "@material-ui/core/styles"
+// import Checkbox from "@material-ui/core/Checkbox"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -92,16 +71,12 @@ const ModalWindow = props => {
   })
 
   const [selectedDate, handleDateChange] = React.useState(new Date())
-  const [peopleCount, setpeopleCount] = React.useState("")
-  const [checked, setChecked] = React.useState(true)
 
   const changeHandler = event => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  const handleChange = event => {
-    setpeopleCount(event.target.value)
-  }
+  // const [checked, setChecked] = React.useState(true)
   // const handleCheckbox = event => {
   //   setChecked(event.target.checked)
   // }
@@ -140,8 +115,8 @@ const ModalWindow = props => {
                       name="peopleCount"
                       id="peopleCount"
                       labelId="demo-simple-select-label"
-                      value={peopleCount}
-                      onChange={handleChange}
+                      value={form.peopleCount}
+                      onChange={changeHandler}
                     >
                       <MenuItem value={1}>1</MenuItem>
                       <MenuItem value={2}>2</MenuItem>
