@@ -28,6 +28,8 @@ import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
 // import Checkbox from "@material-ui/core/Checkbox"
+// import { useHttp } from "../hooks/http.hook"
+import { Redirect } from "react-router-dom"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -60,6 +62,7 @@ const useStyles = makeStyles(theme => ({
 
 const ModalWindow = props => {
   const classes = useStyles()
+  // const { request } = useHttp()
 
   const [form, setForm] = useState({
     peopleCount: "",
@@ -69,6 +72,22 @@ const ModalWindow = props => {
     phone: "",
     email: "",
   })
+
+  //   const url = 'http://localhost:3000/reservation';
+
+  // try {
+  //   const response = await fetch(url, {
+  //     method: 'POST', // или 'PUT'
+  //     body: JSON.stringify(form), // данные могут быть 'строкой' или {объектом}!
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   });
+  //   const json = await response.json();
+  //   console.log('Success:', JSON.stringify(json));
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
 
   const [selectedDate, handleDateChange] = React.useState(new Date())
 
@@ -81,6 +100,21 @@ const ModalWindow = props => {
   //   setChecked(event.target.checked)
   // }
 
+  // const handleSubmit = event => {
+  //   // event.preventDefault()
+  //   // alert(`Your reservation was successful! Thank you! :-) `)
+  //   return <Redirect to="/" />
+  // }
+
+  // const handleSubmit = async () => {
+  //   try {
+  //     const data = await request("http://localhost:3000/reservation", "POST", {
+  //       ...form,
+  //     })
+  //     // message(data.message);
+  //   } catch (e) {}
+  // }
+
   return (
     <Modal
       className={classes.modalWrapper}
@@ -90,7 +124,11 @@ const ModalWindow = props => {
       aria-describedby="simple-modal-description"
     >
       <div className={classes.paper}>
-        <form method="post" action="http://localhost:3000/reservation">
+        <form
+          method="post"
+          action="https://suliko-mailer.herokuapp.com/reservation"
+          // onSubmit={handleSubmit}
+        >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
               <TimelineItem
@@ -257,6 +295,7 @@ const ModalWindow = props => {
           </MuiPickersUtilsProvider>
 
           <Button
+            // onClick={handleSubmit}
             type="submit"
             variant="contained"
             color="primary"
