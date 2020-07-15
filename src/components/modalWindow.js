@@ -30,6 +30,7 @@ import TextField from "@material-ui/core/TextField"
 // import Checkbox from "@material-ui/core/Checkbox"
 // import { useHttp } from "../hooks/http.hook"
 import { Redirect } from "react-router-dom"
+import Snackbar from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -63,8 +64,8 @@ const useStyles = makeStyles(theme => ({
 const ModalWindow = props => {
   const classes = useStyles()
   // const { request } = useHttp()
-
-  const [form, setForm] = useState({
+  // const [open, setOpen] = useState(false);
+  const [state, setState] = useState({
     peopleCount: "",
     date: "",
     time: "",
@@ -72,27 +73,10 @@ const ModalWindow = props => {
     phone: "",
     email: "",
   })
-
-  //   const url = 'http://localhost:3000/reservation';
-
-  // try {
-  //   const response = await fetch(url, {
-  //     method: 'POST', // или 'PUT'
-  //     body: JSON.stringify(form), // данные могут быть 'строкой' или {объектом}!
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   });
-  //   const json = await response.json();
-  //   console.log('Success:', JSON.stringify(json));
-  // } catch (error) {
-  //   console.error('Error:', error);
-  // }
-
   const [selectedDate, handleDateChange] = React.useState(new Date())
 
   const changeHandler = event => {
-    setForm({ ...form, [event.target.name]: event.target.value })
+    setState({ ...state, [event.target.name]: event.target.value })
   }
 
   // const [checked, setChecked] = React.useState(true)
@@ -100,20 +84,52 @@ const ModalWindow = props => {
   //   setChecked(event.target.checked)
   // }
 
-  // const handleSubmit = event => {
-  //   // event.preventDefault()
-  //   // alert(`Your reservation was successful! Thank you! :-) `)
-  //   return <Redirect to="/" />
-  // }
+  //  const handleSubmit = event => {
+  //   //   // event.preventDefault()
+  //   //   // alert(`Your reservation was successful! Thank you! :-) `)
+  //   //   return <Redirect to="/" />
 
   // const handleSubmit = async () => {
   //   try {
-  //     const data = await request("http://localhost:3000/reservation", "POST", {
+  //     await fetch("http://localhost:3000/reservation", "POST", {
   //       ...form,
+  //     }).then(function (response) {
+  //       if (response.ok) {
+  //         console.log("OK!")
+  //       } else {
+  //         console.log("try again")
+  //       }
   //     })
-  //     // message(data.message);
   //   } catch (e) {}
   // }
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault()
+  //   await fetch("http://localhost:3000/reservation", "POST")
+  //   .then(() => console.log('Book Created'))
+  //   .catch(err => {
+  //     console.error(err);
+  //   });
+
+  // const submitHandler = async () => {
+  //   try {
+  //     const data = await request("http://localhost:3000/reservation", "POST", { ...state });
+  //     console.log("Data", data);
+  //     console.log("Message", data.message);
+  //     message(data.message);
+
+  //     // history.push("/profile");
+  //   } catch (error) {
+  //     setOpen(true);
+  //   }
+  // };
+
+  // const handleClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+  //   setOpen(false);
+  // };
 
   return (
     <Modal
@@ -126,8 +142,8 @@ const ModalWindow = props => {
       <div className={classes.paper}>
         <form
           method="post"
-          action="https://suliko-mailer.herokuapp.com/reservation"
-          // onSubmit={handleSubmit}
+          action="http://localhost:3000/reservation"
+          // onSubmit={submitHandler}
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
@@ -153,8 +169,9 @@ const ModalWindow = props => {
                       name="peopleCount"
                       id="peopleCount"
                       labelId="demo-simple-select-label"
-                      value={form.peopleCount}
+                      value={state.peopleCount}
                       onChange={changeHandler}
+                      required
                     >
                       <MenuItem value={1}>1</MenuItem>
                       <MenuItem value={2}>2</MenuItem>
@@ -237,11 +254,21 @@ const ModalWindow = props => {
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
                     <TextField
-                      value={form.name}
+                      type="text"
+                      value={state.name}
                       name="name"
                       id="name"
                       label="Name"
+                      placeholder="Enter your name"
                       onChange={changeHandler}
+                      required
+                      // helperText={
+                      //   error ? "Name length must be >= 2" : "Perfect!"
+                      // }
+                      // error={error}
+                      // required
+                      // minlength={2}
+                      // maxlength={20}
                     />
                   </FormControl>
                 </TimelineContent>
@@ -260,11 +287,13 @@ const ModalWindow = props => {
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
                     <TextField
-                      value={form.phone}
+                      type="text"
+                      value={state.phone}
                       name="phone"
                       id="phone"
                       label="Phone"
                       onChange={changeHandler}
+                      required
                     />
                   </FormControl>
                 </TimelineContent>
@@ -282,10 +311,12 @@ const ModalWindow = props => {
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
                     <TextField
-                      value={form.email}
+                      type="email"
+                      value={state.email}
                       name="email"
                       id="email"
                       label="Email"
+                      required
                       onChange={changeHandler}
                     />
                   </FormControl>
@@ -295,7 +326,7 @@ const ModalWindow = props => {
           </MuiPickersUtilsProvider>
 
           <Button
-            // onClick={handleSubmit}
+            // onClick={submitHandler}
             type="submit"
             variant="contained"
             color="primary"
@@ -309,19 +340,29 @@ const ModalWindow = props => {
           </Button>
 
           {/* <Checkbox checked={checked} onChange={handleCheckbox} color="primary" />
-<Typography
-variant="caption"
-// align="center"
-style={{
-  color: "rgba(133, 26, 29)",
-  display: "inline",
-  lineHight: 0,
-}}
->
-Argee to receive news and offers from Suliko
-</Typography> */}
+              <Typography
+              variant="caption"
+              // align="center"
+              style={{
+                color: "rgba(133, 26, 29)",
+                display: "inline",
+                lineHight: 0,
+              }}
+              >
+              Argee to receive news and offers from Suliko
+              </Typography> */}
         </form>
       </div>
+      {/* <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={open}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        message={message || error}
+      ></Snackbar> */}
     </Modal>
   )
 }

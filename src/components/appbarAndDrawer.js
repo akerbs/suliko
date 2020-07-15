@@ -27,6 +27,7 @@ import HomeIcon from "@material-ui/icons/Home"
 import InfoIcon from "@material-ui/icons/Info"
 import AnnouncementIcon from "@material-ui/icons/Announcement"
 import PhoneIcon from "@material-ui/icons/Phone"
+import { ThemeProvider } from "@material-ui/core/styles"
 
 const drawerWidth = "auto"
 
@@ -74,6 +75,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    height: "100vh",
     // background: "transparent",
     // background: "rgba(0, 0, 0, 0.5)",
     background: "rgba(255, 255, 255, 1)",
@@ -84,11 +86,20 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: "flex-start",
+    justifyContent: "flex-end",
+    margin: 0,
+    padding: 0,
   },
+  drawerItems: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+
   drawerItem: {
     textDecoration: "none",
     color: "rgba(133,26,29)",
+
     // fontWeight: 900,
     // fontSize: "1px",
     // letterSpacing: 1,
@@ -132,104 +143,108 @@ const AppbarAndDrawer = props => {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        elevation={0}
-        color="transparent"
-        position="static"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar className={classes.toolbar}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
-          >
-            <Hidden mdUp>
-              <MenuIcon className={classes.menuIcon} />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppBar
+          elevation={0}
+          color="transparent"
+          position="static"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
+          <Toolbar className={classes.toolbar}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerOpen}
+              className={clsx(open && classes.hide)}
+            >
+              <Hidden mdUp>
+                <MenuIcon className={classes.menuIcon} />
+              </Hidden>
+            </IconButton>
+
+            <Link to="/deu">
+              <img src={logo} alt="logo" />
+            </Link>
+
+            <Hidden smDown>
+              <Navbar />
             </Hidden>
-          </IconButton>
+            <LangSwitcher />
+          </Toolbar>
+        </AppBar>
 
-          <Link to="/deu">
-            <img src={logo} alt="logo" />
-          </Link>
-
-          <Hidden smDown>
-            <Navbar />
-          </Hidden>
-          <LangSwitcher />
-        </Toolbar>
-      </AppBar>
-
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="right"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-        <Divider />
-
-        <Link to="/deu" className={classes.drawerItem}>
-          <ListItem button key={"HOME"}>
-            <ListItemIcon>
+        <Drawer
+          className={classes.drawer}
+          variant="persistent"
+          anchor="top"
+          open={open}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={handleDrawerClose} edge="end">
+              <MenuIcon
+                color="primary"
+                style={{
+                  fontSize: 40,
+                }}
+              />
+            </IconButton>
+          </div>
+          <Divider />
+          <div className={classes.drawerItems}>
+            <Link to="/deu" className={classes.drawerItem}>
+              <ListItem button key={"HOME"}>
+                {/* <ListItemIcon>
               <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary={"HOME"} />
-          </ListItem>
-        </Link>
+            </ListItemIcon> */}
+                <ListItemText primary={"HOME"} />
+              </ListItem>
+            </Link>
 
-        <Link to="/deu/about-us" className={classes.drawerItem}>
-          <ListItem button key={"ÜBER UNS"}>
-            <ListItemIcon>
+            <Link to="/deu/about-us" className={classes.drawerItem}>
+              <ListItem button key={"ÜBER UNS"}>
+                {/* <ListItemIcon>
               <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary={"ÜBER UNS"} />
-          </ListItem>
-        </Link>
+            </ListItemIcon> */}
+                <ListItemText primary={"ÜBER UNS"} />
+              </ListItem>
+            </Link>
 
-        <Link to="/deu/menu" className={classes.drawerItem}>
-          <ListItem button key={"MENÜ"}>
-            <ListItemIcon>
+            <Link to="/deu/menu" className={classes.drawerItem}>
+              <ListItem button key={"MENÜ"}>
+                {/* <ListItemIcon>
               <RestaurantMenuIcon />
-            </ListItemIcon>
-            <ListItemText primary={"MENÜ"} />
-          </ListItem>
-        </Link>
+            </ListItemIcon> */}
+                <ListItemText primary={"MENÜ"} />
+              </ListItem>
+            </Link>
 
-        <Link to="/deu/imprint" className={classes.drawerItem}>
-          <ListItem button key={"IMPRESSUM"}>
-            <ListItemIcon>
+            <Link to="/deu/imprint" className={classes.drawerItem}>
+              <ListItem button key={"IMPRESSUM"}>
+                {/* <ListItemIcon>
               <AnnouncementIcon />
-            </ListItemIcon>
-            <ListItemText primary={"IMPRESSUM"} />
-          </ListItem>
-        </Link>
+            </ListItemIcon> */}
+                <ListItemText primary={"IMPRESSUM"} />
+              </ListItem>
+            </Link>
 
-        <Link to="/deu/contact" className={classes.drawerItem}>
-          <ListItem button key={"KONTAKT"}>
-            <ListItemIcon>
+            <Link to="/deu/contact" className={classes.drawerItem}>
+              <ListItem button key={"KONTAKT"}>
+                {/* <ListItemIcon>
               <PhoneIcon />
-            </ListItemIcon>
-            <ListItemText primary={"KONTAKT"} />
-          </ListItem>
-        </Link>
-      </Drawer>
+            </ListItemIcon> */}
+                <ListItemText primary={"KONTAKT"} />
+              </ListItem>
+            </Link>
+          </div>
+        </Drawer>
+      </ThemeProvider>
     </div>
   )
 }
