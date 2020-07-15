@@ -28,6 +28,7 @@ import InfoIcon from "@material-ui/icons/Info"
 import AnnouncementIcon from "@material-ui/icons/Announcement"
 import PhoneIcon from "@material-ui/icons/Phone"
 import { ThemeProvider } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
 
 const drawerWidth = "auto"
 
@@ -91,14 +92,15 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
   },
   drawerItems: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    // display: "flex",
+    // flexDirection: "column",
+    // alignItems: "center",
   },
 
   drawerItem: {
     textDecoration: "none",
     color: "rgba(133,26,29)",
+    width: "100vw",
 
     // fontWeight: 900,
     // fontSize: "1px",
@@ -196,14 +198,20 @@ const AppbarAndDrawer = props => {
               />
             </IconButton>
           </div>
-          <Divider />
+          {/* <Divider /> */}
           <div className={classes.drawerItems}>
             <Link to="/deu" className={classes.drawerItem}>
               <ListItem button key={"HOME"}>
                 {/* <ListItemIcon>
               <HomeIcon />
             </ListItemIcon> */}
-                <ListItemText primary={"HOME"} />
+                <ListItemText
+                  primary={
+                    <Typography align="center" variant="h6">
+                      HOME
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
 
@@ -212,7 +220,13 @@ const AppbarAndDrawer = props => {
                 {/* <ListItemIcon>
               <InfoIcon />
             </ListItemIcon> */}
-                <ListItemText primary={"ÜBER UNS"} />
+                <ListItemText
+                  primary={
+                    <Typography align="center" variant="h6">
+                      ÜBER UNS
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
 
@@ -221,7 +235,13 @@ const AppbarAndDrawer = props => {
                 {/* <ListItemIcon>
               <RestaurantMenuIcon />
             </ListItemIcon> */}
-                <ListItemText primary={"MENÜ"} />
+                <ListItemText
+                  primary={
+                    <Typography align="center" variant="h6">
+                      MENÜ
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
 
@@ -230,7 +250,13 @@ const AppbarAndDrawer = props => {
                 {/* <ListItemIcon>
               <AnnouncementIcon />
             </ListItemIcon> */}
-                <ListItemText primary={"IMPRESSUM"} />
+                <ListItemText
+                  primary={
+                    <Typography align="center" variant="h6">
+                      IMPRESSUM
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
 
@@ -239,7 +265,13 @@ const AppbarAndDrawer = props => {
                 {/* <ListItemIcon>
               <PhoneIcon />
             </ListItemIcon> */}
-                <ListItemText primary={"KONTAKT"} />
+                <ListItemText
+                  primary={
+                    <Typography align="center" variant="h6">
+                      KONTAKT
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
           </div>

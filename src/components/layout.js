@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     height: "auto",
     color: "white",
     position: "fixed",
-    padding: "0px 0px 0px 100px",
+    padding: 0,
     backgroundRepeate: `no-repeat `,
     zIndex: -1,
 
@@ -34,16 +34,9 @@ const useStyles = makeStyles(theme => ({
     //   zIndex: -10,
     // },
 
-    [theme.breakpoints.down("md")]: {
-      padding: "80px 80px 0px 80px",
-    },
-    [theme.breakpoints.down("sm")]: {
-      padding: "15px 50px 0px 50px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      // padding: "15px 5px 0px 5px",
-      padding: 0,
-    },
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("xs")]: {},
     // animation: "$sliderBg 50s linear infinite alternate ",
   },
 
@@ -70,6 +63,7 @@ const useStyles = makeStyles(theme => ({
 
   content: {
     position: "relative",
+    overflow: "hidden",
     overflowX: "hidden",
     // height: "580px",
     maxHeight: " 100vh", //100% view height
