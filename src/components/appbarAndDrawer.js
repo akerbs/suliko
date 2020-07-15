@@ -20,6 +20,7 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import logo from "../images/logo.gif"
 import logo1 from "../images/logo1.gif"
+import logo2 from "../images/logo2.gif"
 import x3 from "../images/x3.png"
 import x4 from "../images/x4.png"
 
@@ -175,7 +176,7 @@ const AppbarAndDrawer = props => {
             </IconButton>
 
             <Link to="/deu">
-              <img src={logo1} alt="logo" className={classes.logoImg} />
+              <img src={logo2} alt="logo" className={classes.logoImg} />
             </Link>
 
             <Hidden smDown>
