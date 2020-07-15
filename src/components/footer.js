@@ -54,7 +54,7 @@ const Footer = () => {
         <Container maxWidth="sm">
           <Typography variant="body2">
             <Copyright />
-            Created by
+            Created by{" "}
             <Link
               target="_blank"
               rel="noopener noreferrer"
