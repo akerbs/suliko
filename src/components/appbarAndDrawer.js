@@ -96,7 +96,7 @@ const useStyles = makeStyles(theme => ({
     height: "100vh",
     // background: "transparent",
     // background: "rgba(0, 0, 0, 0.5)",
-    background: "rgba(255, 255, 255, 1)",
+    // background: "rgba(255, 255, 255, 1)",
   },
   drawerHeader: {
     display: "flex",
