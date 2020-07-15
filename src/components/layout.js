@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "100%",
     height: "auto",
     color: "white",
-    position: "fixed",
+    position: "absolute",
     padding: 0,
     backgroundRepeate: `no-repeat `,
     zIndex: -1,
@@ -65,21 +65,24 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     overflowX: "hidden",
     // height: "580px",
-    maxHeight: " 100vh", //100% view height
+
     maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
     paddingRight: 100,
 
     [theme.breakpoints.down("md")]: {
-      padding: 0,
+      padding: 20,
+      paddingTop: 30,
+    },
+    [theme.breakpoints.down("sm")]: {
       paddingTop: 20,
     },
-    [theme.breakpoints.down("sm")]: {},
 
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
+      maxHeight: " 100vh", //100% view height
       // margin: 0,
     },
   },

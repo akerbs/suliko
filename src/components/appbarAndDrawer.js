@@ -36,11 +36,18 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
   },
+  menuIcon: {
+    position: "fixed",
+    // color: "rgba(133,26,29)",
+    fontSize: 40,
+  },
+
   logoImg: {
-    maxWidth: 290,
-    // [theme.breakpoints.up("sm")]: {
-    //   maxWidth: 330,
-    // },
+    maxWidth: 300,
+
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 250,
+    },
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
@@ -69,11 +76,6 @@ const useStyles = makeStyles(theme => ({
   },
   hide: {
     display: "none",
-  },
-  menuIcon: {
-    position: "fixed",
-    // color: "rgba(133,26,29)",
-    fontSize: 40,
   },
 
   drawer: {
