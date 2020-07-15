@@ -9,13 +9,14 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
+import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${img1}) `,
+    // backgroundImage: `url(${img1}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
@@ -37,29 +38,37 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
-    // animation: "$sliderBg 50s linear infinite alternate ",
+    animation: "$sliderBg 8s linear infinite alternate ",
   },
 
-  // "@keyframes sliderBg": {
-  //   "0%, 18%": {
-  //     backgroundImage: `url(${img1})`,
-  //   },
-  //   "20%, 38%": {
-  //     backgroundImage: `url(${img2})`,
-  //   },
-  //   "40%, 58%": {
-  //     backgroundImage: `url(${img3})`,
-  //   },
-  //   "60%, 78%": {
-  //     backgroundImage: `url(${img4})`,
-  //   },
-  //   "80%, 100%": {
-  //     backgroundImage: `url(${img5})`,
-  //   },
-  //   // "72%, 81%": {
-  //   //   backgroundImage: `url(${img6})`,
-  //   // },
-  // },
+  "@keyframes sliderBg": {
+    "60%, 100%": {
+      backgroundImage: `url(${img1})`,
+    },
+    "0%, 50%": {
+      backgroundImage: `url(${img2})`,
+    },
+
+    // "@keyframes sliderBg": {
+    //   "0%, 18%": {
+    //     backgroundImage: `url(${img1})`,
+    //   },
+    //   "20%, 38%": {
+    //     backgroundImage: `url(${img2})`,
+    //   },
+    //   "40%, 58%": {
+    //     backgroundImage: `url(${img3})`,
+    //   },
+    //   "60%, 78%": {
+    //     backgroundImage: `url(${img4})`,
+    //   },
+    //   "80%, 100%": {
+    //     backgroundImage: `url(${img5})`,
+    //   },
+    //   // "72%, 81%": {
+    //   //   backgroundImage: `url(${img6})`,
+    //   // },
+  },
 
   content: {
     position: "relative",
