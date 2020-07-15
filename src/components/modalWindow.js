@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(1, 0, 1, 0),
+    padding: theme.spacing(2, 0, 1, 0),
     zIndex: 9999999,
     position: "fixed",
     outline: 0,
