@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
 
   content: {
     position: "relative",
-    overflow: "hidden",
+
     overflowX: "hidden",
     // height: "580px",
     maxHeight: " 100vh", //100% view height
