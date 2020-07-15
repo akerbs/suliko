@@ -5,31 +5,21 @@ import Drawer from "@material-ui/core/Drawer"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import Divider from "@material-ui/core/Divider"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight"
-import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-import logo from "../images/logo.gif"
+
 import Navbar from "./navbar"
 import PropTypes from "prop-types"
 import Hidden from "@material-ui/core/Hidden"
 import withWidth from "@material-ui/core/withWidth"
 import LangSwitcher from "./langSwitcher"
 import { Link } from "gatsby"
-import Container from "@material-ui/core/Container"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu"
-import HomeIcon from "@material-ui/icons/Home"
-import InfoIcon from "@material-ui/icons/Info"
-import AnnouncementIcon from "@material-ui/icons/Announcement"
-import PhoneIcon from "@material-ui/icons/Phone"
 import { ThemeProvider } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
-
+import logo from "../images/logo.gif"
+import logo1 from "../images/logo1.gif"
 import x3 from "../images/x3.png"
 import x4 from "../images/x4.png"
 
@@ -150,7 +140,6 @@ const AppbarAndDrawer = props => {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
-  const { width } = props
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -186,7 +175,7 @@ const AppbarAndDrawer = props => {
             </IconButton>
 
             <Link to="/deu">
-              <img src={logo} alt="logo" className={classes.logoImg} />
+              <img src={logo1} alt="logo" className={classes.logoImg} />
             </Link>
 
             <Hidden smDown>
@@ -215,13 +204,9 @@ const AppbarAndDrawer = props => {
               />
             </IconButton>
           </div>
-          {/* <Divider /> */}
           <div className={classes.drawerItems}>
             <Link to="/deu" className={classes.drawerItem}>
               <ListItem button key={"HOME"}>
-                {/* <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon> */}
                 <ListItemText
                   primary={
                     <Typography align="center" variant="h6">
@@ -234,9 +219,6 @@ const AppbarAndDrawer = props => {
 
             <Link to="/deu/about-us" className={classes.drawerItem}>
               <ListItem button key={"ÜBER UNS"}>
-                {/* <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon> */}
                 <ListItemText
                   primary={
                     <Typography align="center" variant="h6">
@@ -249,9 +231,6 @@ const AppbarAndDrawer = props => {
 
             <Link to="/deu/menu" className={classes.drawerItem}>
               <ListItem button key={"MENÜ"}>
-                {/* <ListItemIcon>
-              <RestaurantMenuIcon />
-            </ListItemIcon> */}
                 <ListItemText
                   primary={
                     <Typography align="center" variant="h6">
@@ -264,9 +243,6 @@ const AppbarAndDrawer = props => {
 
             <Link to="/deu/imprint" className={classes.drawerItem}>
               <ListItem button key={"IMPRESSUM"}>
-                {/* <ListItemIcon>
-              <AnnouncementIcon />
-            </ListItemIcon> */}
                 <ListItemText
                   primary={
                     <Typography align="center" variant="h6">
@@ -279,9 +255,6 @@ const AppbarAndDrawer = props => {
 
             <Link to="/deu/contact" className={classes.drawerItem}>
               <ListItem button key={"KONTAKT"}>
-                {/* <ListItemIcon>
-              <PhoneIcon />
-            </ListItemIcon> */}
                 <ListItemText
                   primary={
                     <Typography align="center" variant="h6">

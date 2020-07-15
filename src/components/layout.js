@@ -16,7 +16,7 @@ import Typography from "@material-ui/core/Typography"
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    // backgroundImage: `url(${img1}) `,
+    backgroundImage: `url(${img1}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
