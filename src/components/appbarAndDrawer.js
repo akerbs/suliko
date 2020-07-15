@@ -46,10 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   logoImg: {
-    maxWidth: 300,
+    maxWidth: 370,
 
     [theme.breakpoints.down("md")]: {
-      maxWidth: 250,
+      maxWidth: 330,
+    },
+    [theme.breakpoints.down("xs")]: {
+      maxWidth: 260,
     },
   },
   appBar: {
