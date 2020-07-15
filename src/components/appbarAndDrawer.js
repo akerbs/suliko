@@ -29,6 +29,12 @@ import AnnouncementIcon from "@material-ui/icons/Announcement"
 import PhoneIcon from "@material-ui/icons/Phone"
 import { ThemeProvider } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import x from "../images/x.png"
+import x1 from "../images/x1.png"
+import x2 from "../images/x2.png"
+import x3 from "../images/x3.png"
+import x4 from "../images/x4.png"
+import x41 from "../images/x41.png"
 
 const drawerWidth = "auto"
 
@@ -45,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   logoImg: {
     maxWidth: 300,
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       maxWidth: 250,
     },
   },
@@ -83,6 +89,7 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
+    backgroundImage: `url(${x3}) `,
     overflowX: "hidden",
     width: drawerWidth,
     height: "100vh",
