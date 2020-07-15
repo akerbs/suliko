@@ -97,12 +97,11 @@ const useStyles = makeStyles(theme => ({
   },
   appbarAndDrawer: {},
   reservierenButton: {
-    [theme.breakpoints.down("sm")]: {
-      position: "fixed",
-      bottom: 5,
-      right: 5,
-      zIndex: 99,
-    },
+    position: "fixed",
+    bottom: 5,
+    right: 5,
+    zIndex: 99,
+    [theme.breakpoints.down("sm")]: {},
   },
   main: {
     display: "flex",
