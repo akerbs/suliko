@@ -36,6 +36,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
   },
+  logoImg: {
+    maxWidth: 290,
+    // [theme.breakpoints.up("sm")]: {
+    //   maxWidth: 330,
+    // },
+  },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
@@ -75,6 +81,7 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
+    overflowX: "hidden",
     width: drawerWidth,
     height: "100vh",
     // background: "transparent",
@@ -169,7 +176,7 @@ const AppbarAndDrawer = props => {
             </IconButton>
 
             <Link to="/deu">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" className={classes.logoImg} />
             </Link>
 
             <Hidden smDown>

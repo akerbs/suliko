@@ -63,24 +63,33 @@ const useStyles = makeStyles(theme => ({
 
   content: {
     position: "relative",
-
     overflowX: "hidden",
     // height: "580px",
     maxHeight: " 100vh", //100% view height
     maxWidth: "100vw", // 100% view width
     paddingTop: 50,
+    paddingLeft: 100,
+    paddingRight: 100,
+
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
+      paddingTop: 20,
+    },
+    [theme.breakpoints.down("sm")]: {},
+
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
       // margin: 0,
     },
   },
+  appbarAndDrawer: {},
   reservierenButton: {
     [theme.breakpoints.down("sm")]: {
       position: "fixed",
       bottom: 5,
       right: 5,
-      zIndex: 1,
+      zIndex: 99,
     },
   },
   main: {
@@ -167,7 +176,7 @@ const Layout = ({ children }, props) => {
 
         <Container className={classes.content}>
           {/* <div id="back-to-top-anchor" /> */}
-          <AppbarAndDrawer />
+          <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
             <Button
