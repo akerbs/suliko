@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(0, 0, 1, 0),
+    padding: theme.spacing(1, 0, 1, 0),
     outline: 0,
   },
   timeline: {
@@ -130,6 +130,7 @@ const ModalWindow = props => {
   //   }
   //   setOpen(false);
   // };
+  // https://suliko-mailer.herokuapp.com/
 
   return (
     <Modal
@@ -142,7 +143,7 @@ const ModalWindow = props => {
       <div className={classes.paper}>
         <form
           method="post"
-          action="http://localhost:3000/reservation"
+          action="https://suliko-mailer.herokuapp.com/reservation"
           // onSubmit={submitHandler}
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
