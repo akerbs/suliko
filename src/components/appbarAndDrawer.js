@@ -90,6 +90,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     backgroundImage: `url(${x3}) `,
+    backgroundRepeat: "repeat",
     overflowX: "hidden",
     width: drawerWidth,
     height: "100vh",
