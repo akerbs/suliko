@@ -19,7 +19,7 @@ export default () => {
           style={{
             background: "rgba(49, 10, 10, 0.75)",
             paddingTop: 50,
-           padding: 30,
+           padding: 25,
             marginTop: 50,
             borderRadius: 10,
 
@@ -27,7 +27,7 @@ export default () => {
         >
          <Typography
             variant="body1"
-            // align="center"
+            align="justify"
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
