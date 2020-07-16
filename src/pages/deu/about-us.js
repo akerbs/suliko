@@ -27,7 +27,7 @@ export default () => {
         >
          <Typography
             variant="body1"
-          align="justify"
+        
             style={{ lineHeight: 1.5 }}
             color="secondary"
             
