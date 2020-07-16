@@ -43,10 +43,10 @@ const useStyles = makeStyles(theme => ({
   },
 
   "@keyframes sliderBg": {
-    "60%, 100%": {
+    "0%, 40%": {
       backgroundImage: `url(${img1})`,
     },
-    "0%, 50%": {
+    "60%, 100%": {
       backgroundImage: `url(${img2})`,
     },
 

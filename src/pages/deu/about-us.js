@@ -27,11 +27,12 @@ export default () => {
         >
          <Typography
             variant="body1"
-            // align="center"
+          //  align="justify"
             style={{ lineHeight: 1.5 }}
             color="secondary"
+            
           >
-             <Typography variant="h5"  align="center">Das Essen, das zu Ihrem Lebensstil passt </Typography>
+             <Typography variant="h6"  align="center">Das Essen, das zu Ihrem Lebensstil passt </Typography>
        
           <br />
           Herzlich willkommen in unserem Restaurant Suliko. Bei uns werden Sie
