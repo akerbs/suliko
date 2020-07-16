@@ -120,19 +120,25 @@ const useStyles = makeStyles(theme => ({
     },
   },
 
-  main2: {
-    marginTop: 10,
-    padding: 50,
-    background: "rgba(49, 10, 10, 0.75 )",
+  forChildren: {
+    marginTop: 100,
+    // padding: 50,
+    margin: 0,
+    padding: 0,
+
+    // background: "rgba(255,218,82, 0.5)",
+    // background: "rgba(49, 10, 10, 0.01 )",
     [theme.breakpoints.down("sm")]: {
-      padding: 10,
-      paddingTop: 20,
+      marginTop: 10,
+      // padding: 10,
+      // paddingTop: 20,
     },
     [theme.breakpoints.down("xs")]: {
-      padding: 5,
-      paddingTop: 30,
+      // padding: 5,
+      // paddingTop: 30,
     },
   },
+
   // x: {
   //   position: "fixed",
   //   bottom: theme.spacing(2),
@@ -198,7 +204,7 @@ const Layout = ({ children }, props) => {
             >
               Reservieren
             </Button>
-            <Container maxWidth="md" className={classes.main2}>
+            <Container maxWidth="md" className={classes.forChildren}>
               {children}
             </Container>
             {/* <ScrollTop {...props}>

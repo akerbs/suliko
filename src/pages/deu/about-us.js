@@ -2,17 +2,33 @@ import React from "react"
 import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import { makeStyles } from "@material-ui/core/styles"
-
-const useStyles = makeStyles(theme => ({}))
 
 export default () => {
-  const classes = useStyles()
-
   return (
     <Layout>
-      <Container maxWidth="md">
-        <Typography variant="body1" style={{ lineHeight: 1.5 }}>
+       <Container
+        maxWidth="md"
+        style={{
+          margin: 0,
+          paddingTop: 10,
+          padding: 0,
+          // background: "rgba(255,255,255, 0.75)",
+        }}
+      >
+    <Container
+          style={{
+            background: "rgba(49, 10, 10, 0.75)",
+            paddingTop: "8vh",
+            marginTop: 50,
+            borderRadius: 10,
+          }}
+        >
+         <Typography
+            variant="body1"
+            // align="center"
+            style={{ lineHeight: 1.5 }}
+            color="secondary"
+          >
           DAS ESSEN, DAS ZU IHREM LEBENSSTIL PASST <br />
           <br />
           Herzlich willkommen in unserem Restaurant Suliko. Bei uns werden Sie
@@ -68,6 +84,7 @@ export default () => {
           „Saperavi“, „Chvanchkara“, aber auch Weißweine „Rkatziteli“, „Mtsvane“
           und viele andere hervor.
         </Typography>
+      </Container>
       </Container>
     </Layout>
   )

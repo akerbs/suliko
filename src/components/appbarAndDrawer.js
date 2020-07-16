@@ -9,6 +9,8 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
+import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
+import CloseIcon from '@material-ui/icons/Close';
 
 import Navbar from "./navbar"
 import PropTypes from "prop-types"
@@ -197,7 +199,7 @@ const AppbarAndDrawer = props => {
         >
           <div className={classes.drawerHeader}>
             <IconButton onClick={handleDrawerClose} edge="end">
-              <MenuIcon
+              <CloseIcon
                 color="primary"
                 style={{
                   fontSize: 40,
