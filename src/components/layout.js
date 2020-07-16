@@ -16,7 +16,7 @@ import bgPatternImg from "../images/bgPatternImg.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: "rgba(49, 10, 10)",
+    // backgroundColor: "rgba(49, 10, 10)",
     backgroundImage: `url(${bgPatternImg}) `,
     maxWidth: "100%",
     height: "auto",
