@@ -18,7 +18,7 @@ export default () => {
    <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 40,
+            paddingTop: 50,
            padding: 30,
             marginTop: 50,
             borderRadius: 10,
@@ -31,7 +31,8 @@ export default () => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-          DAS ESSEN, DAS ZU IHREM LEBENSSTIL PASST <br />
+             <Typography variant="h5"  align="center">Das Essen, das zu Ihrem Lebensstil passt </Typography>
+       
           <br />
           Herzlich willkommen in unserem Restaurant Suliko. Bei uns werden Sie
           im richtigen Sinne des Wortes mit leckerem Essen, angenehmen Ambiente

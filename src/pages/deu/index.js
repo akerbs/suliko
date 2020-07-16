@@ -36,7 +36,7 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 40,
+           paddingTop: 50,
              padding:10,
             marginTop: 50,
             borderRadius: 10,
@@ -48,7 +48,8 @@ export default () => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-            Liebe Suliko-Freunde, <br />
+            <Typography variant="h6"  align="center">    Liebe Suliko-Freunde,  </Typography>
+        
             <br />
             wir sind in dieser außergewöhnlichen Zeit weiterhin für Sie da und
             möchten unsere wunderschöne Stadt mit authentisch georgischer Küche
