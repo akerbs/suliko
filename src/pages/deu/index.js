@@ -36,9 +36,9 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: "8vh",
+            paddingTop: 40,
+             padding:10,
             marginTop: 50,
-           
             borderRadius: 10,
           }}
         >

@@ -31,6 +31,7 @@ import TextField from "@material-ui/core/TextField"
 // import { useHttp } from "../hooks/http.hook"
 import { Redirect } from "react-router-dom"
 import Snackbar from "@material-ui/core"
+import bgPatternImg from "../images/bgPatternImg.png"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -43,7 +44,8 @@ const useStyles = makeStyles(theme => ({
     overflowY: "scroll",
     maxHeight: " 100vh",
     width: 320,
-    backgroundColor: theme.palette.background.paper,
+   backgroundImage: `url(${bgPatternImg}) `,
+    // backgroundColor: theme.palette.background.paper,
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 0, 1, 0),

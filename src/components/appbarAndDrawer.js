@@ -23,7 +23,7 @@ import Typography from "@material-ui/core/Typography"
 import logo from "../images/logo.gif"
 import logo1 from "../images/logo1.gif"
 import logo2 from "../images/logo2.gif"
-import x3 from "../images/x3.png"
+import bgPatternImg from "../images/bgPatternImg.png"
 import x4 from "../images/x4.png"
 
 const drawerWidth = "auto"
@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    backgroundImage: `url(${x3}) `,
+    backgroundImage: `url(${bgPatternImg}) `,
     backgroundRepeat: "repeat",
     overflowX: "hidden",
     width: drawerWidth,

@@ -38,8 +38,31 @@ export default () => {
 
   return (
     <Layout>
-      <Container maxWidth="md">
-        <Typography variant="body1" align="center" style={{ lineHeight: 2 }}>
+      <Container
+        maxWidth="md"
+        style={{
+          margin: 0,
+          paddingTop: 10,
+          padding: 0,
+          // background: "rgba(255,255,255, 0.75)",
+        }}
+      >
+    <Container
+          style={{
+            background: "rgba(49, 10, 10, 0.75)",
+            paddingTop: 40,
+           padding: 10,
+            marginTop: 50,
+            borderRadius: 10,
+
+          }}
+        >
+         <Typography
+            variant="body1"
+            align="center"
+            style={{ lineHeight: 2 }}
+            color="secondary"
+          >
           <HomeIcon style={{ fontSize: 20 }} /> Mittelweg 24, 20148 Hamburg
           <br />
           <PhoneIcon style={{ fontSize: 20 }} /> +49(0)40 49201953 <br />
@@ -52,13 +75,15 @@ export default () => {
           Son 15:00 - 22:00 <br />
           <br />
         </Typography>
-      </Container>
-      <Container className={classes.container}>
+          <Container className={classes.container}>
         <iframe
           className={classes.responsiveIframe}
           src="https://www.google.com/maps/d/u/0/embed?mid=1UQMf_-g-DjVCWRAkAVCDWjVNGXkvW4xc"
         ></iframe>
       </Container>
+      </Container>
+    
+       </Container>
     </Layout>
   )
 }

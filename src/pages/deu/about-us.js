@@ -15,12 +15,14 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-    <Container
+   <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: "8vh",
+            paddingTop: 40,
+           padding: 20,
             marginTop: 50,
             borderRadius: 10,
+
           }}
         >
          <Typography

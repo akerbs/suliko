@@ -2,17 +2,35 @@ import React from "react"
 import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import { makeStyles } from "@material-ui/core/styles"
-
-const useStyles = makeStyles(theme => ({}))
 
 export default () => {
-  const classes = useStyles()
-
   return (
     <Layout>
-      <Container maxWidth="md">
-        <Typography variant="body1" style={{ lineHeight: 1.5 }}>
+    <Container
+        maxWidth="md"
+        style={{
+          margin: 0,
+          paddingTop: 10,
+          padding: 0,
+          // background: "rgba(255,255,255, 0.75)",
+        }}
+      >
+    <Container
+          style={{
+            background: "rgba(49, 10, 10, 0.75)",
+            paddingTop: 40,
+           padding: 20,
+            marginTop: 50,
+            borderRadius: 10,
+
+          }}
+        >
+         <Typography
+            variant="body1"
+            // align="center"
+            style={{ lineHeight: 1.5 }}
+            color="secondary"
+          >
           Cheper & Busjar GbR <br />
           <br />
           Mittelweg 24 <br />
@@ -113,6 +131,7 @@ export default () => {
           <br />
         </Typography>
       </Container>
+          </Container>
     </Layout>
   )
 }

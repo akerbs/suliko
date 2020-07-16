@@ -12,11 +12,12 @@ import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 import Typography from "@material-ui/core/Typography"
+import bgPatternImg from "../images/bgPatternImg.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${img1}) `,
+    backgroundImage: `url(${bgPatternImg}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
