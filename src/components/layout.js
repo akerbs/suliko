@@ -20,40 +20,20 @@ const useStyles = makeStyles(theme => ({
     height: "auto",
     color: "white",
     position: "absolute",
+    padding: 0,
     backgroundRepeate: `no-repeat `,
+    // zIndex: -1,
+
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
+
     backgroundSize: "cover",
-    maxWidth: "100vw",
-    maxHeight: "100vh",
-
-    /////////////////////////////////////////////////////////////////////////////
-    // position: "relative",
-    overflowX: "hidden",
-    // height: "580px",
-    // paddingTop: 50,
-    // paddingLeft: 100,
-    // paddingRight: 100,
-    padding: 50,
-
-    // [theme.breakpoints.down("md")]: {
-    //   padding: 20,
-    //   paddingTop: 30,
-    // },
-    // [theme.breakpoints.down("sm")]: {
-    //   paddingTop: 20,
+    // "&:before": {
+    //   content: " ",
+    //   zIndex: -10,
     // },
 
-    // [theme.breakpoints.down("xs")]: {
-    //   padding: 5,
-    //   paddingTop: 20,
-    //   maxHeight: " 100vh", //100% view height
-    //   // margin: 0,
-    // },
-    // maxWidth: "100vw", // 100% view width
-
-    ////////////////////////////////////////////////////////////////////////////////////////
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
@@ -67,6 +47,26 @@ const useStyles = makeStyles(theme => ({
     "50%": {
       backgroundImage: `url(${img2})`,
     },
+
+    // "@keyframes sliderBg": {
+    //   "0%, 18%": {
+    //     backgroundImage: `url(${img1})`,
+    //   },
+    //   "20%, 38%": {
+    //     backgroundImage: `url(${img2})`,
+    //   },
+    //   "40%, 58%": {
+    //     backgroundImage: `url(${img3})`,
+    //   },
+    //   "60%, 78%": {
+    //     backgroundImage: `url(${img4})`,
+    //   },
+    //   "80%, 100%": {
+    //     backgroundImage: `url(${img5})`,
+    //   },
+    //   // "72%, 81%": {
+    //   //   backgroundImage: `url(${img6})`,
+    //   // },
   },
   mediaIcons: {
     display: "flex",
@@ -86,6 +86,31 @@ const useStyles = makeStyles(theme => ({
     "&:hover": { color: "rgba(133,26,29)" },
   },
 
+  content: {
+    position: "relative",
+    overflowX: "hidden",
+    // height: "580px",
+
+    maxWidth: "100vw", // 100% view width
+    paddingTop: 50,
+    paddingLeft: 100,
+    paddingRight: 100,
+
+    [theme.breakpoints.down("md")]: {
+      padding: 20,
+      paddingTop: 30,
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: 20,
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      padding: 5,
+      paddingTop: 20,
+      maxHeight: " 100%", //100% view height
+      // margin: 0,
+    },
+  },
   reservierenButton: {
     position: "fixed",
     bottom: 5,
@@ -94,7 +119,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {},
   },
   main: {
-    // position: "relative",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
@@ -183,23 +207,24 @@ const Layout = ({ children }, props) => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        {/* <div id="back-to-top-anchor" /> */}
-        <AppbarAndDrawer className={classes.appbarAndDrawer} />
+        <Container className={classes.content}>
+          {/* <div id="back-to-top-anchor" /> */}
+          <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
-        <Container maxWidth="md" className={classes.main}>
-          <Button
-            className={classes.reservierenButton}
-            variant="contained"
-            color="primary"
-            onClick={handleOpen}
-          >
-            Reservieren
-          </Button>
-          <Container maxWidth="md" className={classes.forChildren}>
-            {children}
-          </Container>
+          <Container maxWidth="md" className={classes.main}>
+            <Button
+              className={classes.reservierenButton}
+              variant="contained"
+              color="primary"
+              onClick={handleOpen}
+            >
+              Reservieren
+            </Button>
+            <Container maxWidth="md" className={classes.forChildren}>
+              {children}
+            </Container>
 
-          {/* <ScrollTop {...props}>
+            {/* <ScrollTop {...props}>
               <Fab
                 color="secondary"
                 size="small"
@@ -208,10 +233,10 @@ const Layout = ({ children }, props) => {
                 <KeyboardArrowUpIcon />
               </Fab>
             </ScrollTop> */}
+          </Container>
+
+          <Footer />
         </Container>
-
-        <Footer />
-
         <ModalWindow onClose={handleClose} open={open} />
       </ThemeProvider>
     </Container>
