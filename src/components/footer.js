@@ -4,14 +4,13 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
-import logoGeorg from "../images/logo_georg.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "column",
     // minHeight: "100vh",
-    marginTop: 200,
+    // marginTop: 200,
     textAlign: "center",
     color: "white",
     textShadow: "rgba(133,26,29)  0 0 5px",
@@ -33,6 +32,7 @@ const useStyles = makeStyles(theme => ({
       textShadow: "white 0 0 5px",
     },
   },
+  // logoGeorgImg: {},
 }))
 
 const Footer = () => {
@@ -41,8 +41,8 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
+
       <Container maxWidth="sm" className={classes.footerContainer}>
-        <img src={logoGeorg} alt="logo2" className={classes.logoGeorgImg} />
         <Typography variant="body2">
           <Copyright />
           Created by{" "}

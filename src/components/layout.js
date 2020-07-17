@@ -12,9 +12,17 @@ import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 
+import logoGeorg from "../images/logo_georg.png"
+import { flip, flipInY } from "react-animations"
+import styled, { keyframes } from "styled-components"
+
+const FlippyDivComponent = styled.div`
+  animation: 3s ${keyframes`${flipInY}`} infinite;
+`
+
 const useStyles = makeStyles(theme => ({
   root: {
-    // backgroundColor: "rgba(49, 10, 10)",
+    backgroundColor: "rgba(49, 10, 10)",
     // backgroundImage: `url(${bgPatternImg}) `,
     maxWidth: "100%",
     height: "auto",
@@ -37,14 +45,14 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
-    animation: "$sliderBg 8s linear infinite alternate ",
+    animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
   "@keyframes sliderBg": {
-    "0%, 40%": {
+    "0%, 100%": {
       backgroundImage: `url(${img1})`,
     },
-    "60%, 100%": {
+    "50%": {
       backgroundImage: `url(${img2})`,
     },
 
@@ -124,6 +132,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "flex-start",
     padding: 0,
+    marginBottom: 0,
 
     background: "rgba(250,250,250, 0.01)",
 
@@ -223,6 +232,21 @@ const Layout = ({ children }, props) => {
             <Container maxWidth="md" className={classes.forChildren}>
               {children}
             </Container>
+
+            <FlippyDivComponent
+              style={{
+                paddingTop: 200,
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              <img
+                src={logoGeorg}
+                alt="logo2"
+                className={classes.logoGeorgImg}
+              />
+            </FlippyDivComponent>
 
             {/* <ScrollTop {...props}>
               <Fab
