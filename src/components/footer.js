@@ -59,9 +59,9 @@ const Footer = () => {
           //   "animate__animated animate__flipInY	animate__infinite	infinite animate__delay-2s animate__slower	3s"
           // }
           data-sal="flip-left"
-          data-sal-delay="300"
+          // data-sal-delay="300"
           data-sal-easing="ease"
-          data-sal-duration="infinite"
+          // data-sal-duration="infinite"
           className={classes.logoGeorgImg}
           src={logoGeorg}
           alt="logo2"
