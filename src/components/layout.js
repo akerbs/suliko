@@ -159,9 +159,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
-    [theme.breakpoints.down("xs")]: {
-      zoom: 0.5,
-    },
+    [theme.breakpoints.down("xs")]: {},
   },
 
   // x: {
