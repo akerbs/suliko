@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     // minHeight: "100vh",
-    // marginTop: 200,
+    paddingTop: 200,
     textAlign: "center",
     color: "white",
     textShadow: "rgba(133,26,29)  0 0 5px",
@@ -32,7 +32,6 @@ const useStyles = makeStyles(theme => ({
       textShadow: "white 0 0 5px",
     },
   },
-  // logoGeorgImg: {},
 }))
 
 const Footer = () => {
@@ -41,10 +40,12 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-
       <Container maxWidth="sm" className={classes.footerContainer}>
         <Typography variant="body2">
-          <Copyright />
+          <Typography variant="body1">
+            {" © "} Suliko. {new Date().getFullYear()} <br />{" "}
+            {/* <Typography variant="body2">All Rights Reserved</Typography> */}
+          </Typography>
           Created by{" "}
           <Link
             target="_blank"
@@ -61,12 +62,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-function Copyright() {
-  return (
-    <Typography variant="body1">
-      {" © "} Suliko. {new Date().getFullYear()} <br />{" "}
-      {/* <Typography variant="body2">All Rights Reserved</Typography> */}
-    </Typography>
-  )
-}

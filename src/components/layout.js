@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     padding: 0,
     backgroundRepeate: `no-repeat `,
-    zIndex: -1,
+    // zIndex: -1,
 
     backgroundAttachment: "fixed",
     overflow: "hidden",
@@ -111,7 +111,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      maxHeight: " 100%", //100% view height
       // margin: 0,
     },
   },
@@ -159,7 +159,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
-    [theme.breakpoints.down("xs")]: {},
+    // [theme.breakpoints.down("sm")]: {
+    //   maxWidth: 100,
+    // },
   },
 
   // x: {
@@ -235,7 +237,6 @@ const Layout = ({ children }, props) => {
             <Container maxWidth="md" className={classes.forChildren}>
               {children}
             </Container>
-
             <div
               data-aos="flip-left"
               data-aos-delay="100"
@@ -244,6 +245,8 @@ const Layout = ({ children }, props) => {
                 display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
+                // width: "200px",
+                // zIndex: 1000,
               }}
             >
               <img
