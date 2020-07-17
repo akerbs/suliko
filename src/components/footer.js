@@ -4,9 +4,8 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
-
 import logoGeorg from "../images/logo_georg.png"
-import "animate.css"
+// import "animate.css"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,9 +35,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
-    // [theme.breakpoints.down("sm")]: {
-    //   maxWidth: 100,
-    // },
+    [theme.breakpoints.down("xs")]: {
+      maxWidth: 100,
+    },
   },
 }))
 
@@ -56,7 +55,14 @@ const Footer = () => {
         }}
       >
         <img
-          className="animate__animated animate__flipInY	animate__infinite	infinite animate__delay-2s animate__slower	3s "
+          // className={
+          //   "animate__animated animate__flipInY	animate__infinite	infinite animate__delay-2s animate__slower	3s"
+          // }
+          data-sal="flip-left"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="infinite"
+          className={classes.logoGeorgImg}
           src={logoGeorg}
           alt="logo2"
         />

@@ -47,26 +47,6 @@ const useStyles = makeStyles(theme => ({
     "50%": {
       backgroundImage: `url(${img2})`,
     },
-
-    // "@keyframes sliderBg": {
-    //   "0%, 18%": {
-    //     backgroundImage: `url(${img1})`,
-    //   },
-    //   "20%, 38%": {
-    //     backgroundImage: `url(${img2})`,
-    //   },
-    //   "40%, 58%": {
-    //     backgroundImage: `url(${img3})`,
-    //   },
-    //   "60%, 78%": {
-    //     backgroundImage: `url(${img4})`,
-    //   },
-    //   "80%, 100%": {
-    //     backgroundImage: `url(${img5})`,
-    //   },
-    //   // "72%, 81%": {
-    //   //   backgroundImage: `url(${img6})`,
-    //   // },
   },
   mediaIcons: {
     display: "flex",
@@ -189,8 +169,6 @@ const useStyles = makeStyles(theme => ({
 //     </Zoom>
 //   )
 // }
-
-//////////////////////// Modal ////////////////////////
 
 const Layout = ({ children }, props) => {
   const classes = useStyles()
