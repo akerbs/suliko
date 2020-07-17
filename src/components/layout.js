@@ -20,20 +20,14 @@ const useStyles = makeStyles(theme => ({
     height: "auto",
     color: "white",
     position: "absolute",
-    padding: 0,
     backgroundRepeate: `no-repeat `,
-    // zIndex: -1,
-
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
-
     backgroundSize: "cover",
-    // "&:before": {
-    //   content: " ",
-    //   zIndex: -10,
-    // },
     maxWidth: "100vw",
+    maxHeight: "100vh",
+
     /////////////////////////////////////////////////////////////////////////////
     // position: "relative",
     overflowX: "hidden",
