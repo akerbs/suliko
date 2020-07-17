@@ -21,7 +21,7 @@ import ListItem from "@material-ui/core/ListItem"
 const useStyles = makeStyles(theme => ({
   root: {
     // backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${bgPatternImg}) `,
+    // backgroundImage: `url(${bgPatternImg}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",

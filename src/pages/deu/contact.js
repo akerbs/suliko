@@ -47,43 +47,41 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-    <Container
+        <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 10,
+
+            padding: "50px 15px 0px 15px",
             marginTop: 50,
             borderRadius: 10,
-
           }}
         >
-         <Typography
+          <Typography
             variant="body1"
             align="center"
             style={{ lineHeight: 2 }}
             color="secondary"
           >
-          <HomeIcon style={{ fontSize: 20 }} /> Mittelweg 24, 20148 Hamburg
-          <br />
-          <PhoneIcon style={{ fontSize: 20 }} /> +49(0)40 49201953 <br />
-          <EmailIcon style={{ fontSize: 20 }} /> info@restaurant-suliko.de
-          <br /> <br />
-          <ScheduleIcon style={{ fontSize: 20 }} /> Öffnungszeiten <br />
-          Mo- Do 12:00 - 15:00, 17:00 - 22:00 <br />
-          Fr 12:00 - 15:00, 17:00 - 24:00 <br />
-          Sa 17:00 - 24:00 <br />
-          Son 15:00 - 22:00 <br />
-          <br />
-        </Typography>
+            <HomeIcon style={{ fontSize: 20 }} /> Mittelweg 24, 20148 Hamburg
+            <br />
+            <PhoneIcon style={{ fontSize: 20 }} /> +49(0)40 49201953 <br />
+            <EmailIcon style={{ fontSize: 20 }} /> info@restaurant-suliko.de
+            <br /> <br />
+            <ScheduleIcon style={{ fontSize: 20 }} /> Öffnungszeiten <br />
+            Mo- Do 12:00 - 15:00, 17:00 - 22:00 <br />
+            Fr 12:00 - 15:00, 17:00 - 24:00 <br />
+            Sa 17:00 - 24:00 <br />
+            Son 15:00 - 22:00 <br />
+            <br />
+          </Typography>
           <Container className={classes.container}>
-        <iframe
-          className={classes.responsiveIframe}
-          src="https://www.google.com/maps/d/u/0/embed?mid=1UQMf_-g-DjVCWRAkAVCDWjVNGXkvW4xc"
-        ></iframe>
+            <iframe
+              className={classes.responsiveIframe}
+              src="https://www.google.com/maps/d/u/0/embed?mid=1UQMf_-g-DjVCWRAkAVCDWjVNGXkvW4xc"
+            ></iframe>
+          </Container>
+        </Container>
       </Container>
-      </Container>
-    
-       </Container>
     </Layout>
   )
 }

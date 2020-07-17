@@ -58,6 +58,18 @@ const useStyles = makeStyles(theme => ({
       maxWidth: 260,
     },
   },
+
+  navMediaLink: {
+    transition: "transform 250ms",
+    "&:hover": { transform: "translateY(-2px)", cursor: "pointer" },
+  },
+
+  fontAwesomeIcon: {
+    color: "rgba(133,26,29)",
+    // margin: 5,
+    "&:hover": { color: "rgba(255,255,255)" },
+  },
+
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
@@ -198,7 +210,7 @@ const AppbarAndDrawer = props => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="https://www.facebook.com/restaurant.suliko.hamburg"
-                className={classes.navLink}
+                className={classes.navMediaLink}
                 //  onClick="this.blur()"
               >
                 <FontAwesomeIcon
@@ -213,7 +225,7 @@ const AppbarAndDrawer = props => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="https://www.instagram.com/suliko_hamburg_"
-                className={classes.navLink}
+                className={classes.navMediaLink}
                 //  onClick="this.blur()"
               >
                 <FontAwesomeIcon
