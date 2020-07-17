@@ -38,20 +38,17 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-   
-
   },
   paper: {
     overflowX: "hidden",
     [theme.breakpoints.down("xs")]: {
- overflowY: "scroll",
+      overflowY: "scroll",
     },
-   
+
     maxHeight: " 100vh",
     width: 320,
-   backgroundImage: `url(${bgPatternImg}) `,
-  
-  
+    backgroundImage: `url(${bgPatternImg}) `,
+
     // backgroundColor: theme.palette.background.paper,
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
@@ -71,7 +68,6 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(0),
     minWidth: 185,
-  
   },
 }))
 
