@@ -12,13 +12,9 @@ import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 
+import AOS from "aos"
+import "aos/dist/aos.css"
 import logoGeorg from "../images/logo_georg.png"
-import { flip, flipInY } from "react-animations"
-import styled, { keyframes } from "styled-components"
-
-const FlippyDivComponent = styled.div`
-  animation: 3s ${keyframes`${flipInY}`} infinite;
-`
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -119,7 +115,6 @@ const useStyles = makeStyles(theme => ({
       // margin: 0,
     },
   },
-  appbarAndDrawer: {},
   reservierenButton: {
     position: "fixed",
     bottom: 5,
@@ -161,6 +156,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       // padding: 5,
       // paddingTop: 30,
+    },
+  },
+  logoGeorgImg: {
+    [theme.breakpoints.down("xs")]: {
+      zoom: 0.5,
     },
   },
 
@@ -211,6 +211,11 @@ const Layout = ({ children }, props) => {
     setOpen(false)
   }
 
+  React.useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  })
+
   return (
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
@@ -233,7 +238,9 @@ const Layout = ({ children }, props) => {
               {children}
             </Container>
 
-            <FlippyDivComponent
+            <div
+              data-aos="flip-left"
+              data-aos-delay="100"
               style={{
                 paddingTop: 200,
                 display: "block",
@@ -246,7 +253,7 @@ const Layout = ({ children }, props) => {
                 alt="logo2"
                 className={classes.logoGeorgImg}
               />
-            </FlippyDivComponent>
+            </div>
 
             {/* <ScrollTop {...props}>
               <Fab
