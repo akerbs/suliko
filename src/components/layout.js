@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     padding: 0,
     backgroundRepeate: `no-repeat `,
-    // zIndex: -1,
+    zIndex: -1,
 
     backgroundAttachment: "fixed",
     overflow: "hidden",
@@ -99,6 +99,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {
       padding: 20,
       paddingTop: 30,
+      maxHeight: " 100vh",
     },
     [theme.breakpoints.down("sm")]: {
       paddingTop: 20,
@@ -107,10 +108,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100%", //100% view height
+      maxHeight: " 100vh", //100% view height
       // margin: 0,
     },
   },
+  appbarAndDrawer: {},
   reservierenButton: {
     position: "fixed",
     bottom: 5,
