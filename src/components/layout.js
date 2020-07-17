@@ -13,11 +13,10 @@ import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 import Typography from "@material-ui/core/Typography"
 import bgPatternImg from "../images/bgPatternImg.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { Link } from "gatsby"
 import ListItem from "@material-ui/core/ListItem"
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,23 +75,22 @@ const useStyles = makeStyles(theme => ({
     //   // },
   },
   mediaIcons: {
-    display: 'flex',
-     justifyContent: 'flex-start',
-      alignItems: 'start',
-      margin: 0,
-      padding: 0
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "start",
+    margin: 0,
+    padding: 0,
   },
   navLink: {
-    transition: 'transform 250ms',
-    "&:hover": {transform: 'translateY(-2px)', cursor: 'pointer'}
-    },
-
-  fontAwesomeIcon: {
-    color: 'rgba(255,255,255)',
-    margin: 5,
-    "&:hover": {color: 'rgba(133,26,29)'}
+    transition: "transform 250ms",
+    "&:hover": { transform: "translateY(-2px)", cursor: "pointer" },
   },
 
+  fontAwesomeIcon: {
+    color: "rgba(255,255,255)",
+    margin: 5,
+    "&:hover": { color: "rgba(133,26,29)" },
+  },
 
   content: {
     position: "relative",
@@ -220,9 +218,7 @@ const Layout = ({ children }, props) => {
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
-
-
-          <Container className={classes.mediaIcons}>
+            {/* <Container className={classes.mediaIcons}>
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -242,7 +238,7 @@ const Layout = ({ children }, props) => {
             >
               <FontAwesomeIcon icon={faInstagram} size="2x" className={classes.fontAwesomeIcon} />
             </Link>
-           </Container>
+           </Container> */}
             <Button
               className={classes.reservierenButton}
               variant="contained"

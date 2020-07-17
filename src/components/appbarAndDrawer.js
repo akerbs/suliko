@@ -7,12 +7,12 @@ import Toolbar from "@material-ui/core/Toolbar"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
-import List from "@material-ui/core/List";
+import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 
-import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
-import CloseIcon from '@material-ui/icons/Close';
+import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu"
+import CloseIcon from "@material-ui/icons/Close"
 import Navbar from "./navbar"
 import PropTypes from "prop-types"
 import Hidden from "@material-ui/core/Hidden"
@@ -26,9 +26,10 @@ import logo1 from "../images/logo1.gif"
 import logo2 from "../images/logo2.gif"
 import bgPatternImg from "../images/bgPatternImg.png"
 import x4 from "../images/x4.png"
+import Container from "@material-ui/core/Container"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 const drawerWidth = "auto"
 
@@ -43,10 +44,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   navLink: {
-   width: "100vw",
-   color: 'rgba(133,26,29)',
-
-   
+    width: "100vw",
+    color: "rgba(133,26,29)",
   },
 
   logoImg: {
@@ -194,7 +193,39 @@ const AppbarAndDrawer = props => {
 
             <Hidden smDown>
               <Navbar />
+              {/* <Container className={classes.mediaIcons}> */}
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                to="https://www.facebook.com/restaurant.suliko.hamburg"
+                className={classes.navLink}
+                //  onClick="this.blur()"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="1x"
+                  className={classes.fontAwesomeIcon}
+                  style={{ marginRight: 10 }}
+                />
+              </Link>
+
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                to="https://www.instagram.com/suliko_hamburg_"
+                className={classes.navLink}
+                //  onClick="this.blur()"
+              >
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  size="1x"
+                  className={classes.fontAwesomeIcon}
+                  style={{ marginRight: 20 }}
+                />
+              </Link>
+              {/* </Container> */}
             </Hidden>
+
             <LangSwitcher />
           </Toolbar>
         </AppBar>
@@ -208,7 +239,6 @@ const AppbarAndDrawer = props => {
             paper: classes.drawerPaper,
           }}
         >
-        
           <div className={classes.drawerHeader}>
             <IconButton onClick={handleDrawerClose} edge="end">
               <CloseIcon
@@ -220,9 +250,8 @@ const AppbarAndDrawer = props => {
             </IconButton>
           </div>
 
-         {/* <List className={classes.list}> */}
+          {/* <List className={classes.list}> */}
           <div className={classes.drawerItems}>
-          
             <Link to="/deu" className={classes.drawerItem}>
               <ListItem button key={"HOME"}>
                 <ListItemText
@@ -281,10 +310,9 @@ const AppbarAndDrawer = props => {
                   }
                 />
               </ListItem>
-
             </Link>
- 
-             {/* <Tooltip
+
+            {/* <Tooltip
              id="instagram-facebook"
              title="Follow us on facebook"
               placement={window.innerWidth > 959 ? "top" : "left"}
@@ -295,17 +323,23 @@ const AppbarAndDrawer = props => {
               rel="noopener noreferrer"
               to="https://www.facebook.com/restaurant.suliko.hamburg"
               className={classes.navLink}
-                //  onClick="this.blur()"
+              //  onClick="this.blur()"
             >
-             <ListItem button key={"facebook"} style={{display: 'block', textAlign: 'center', paddingTop: 20}}>
-           
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
-            
-                </ListItem>
+              <ListItem
+                button
+                key={"facebook"}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  paddingTop: 20,
+                }}
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </ListItem>
             </Link>
-                {/* </Tooltip> */}
+            {/* </Tooltip> */}
 
-              {/* <Tooltip
+            {/* <Tooltip
                id="instagram-facebook"
                title="Follow us on facebook"
                 placement={window.innerWidth > 959 ? "top" : "left"}
@@ -316,16 +350,23 @@ const AppbarAndDrawer = props => {
               rel="noopener noreferrer"
               to="https://www.instagram.com/suliko_hamburg_"
               className={classes.navLink}
-                //  onClick="this.blur()"
+              //  onClick="this.blur()"
             >
-             <ListItem button key={"instagram"} style={{display: 'block', textAlign: 'center', paddingTop: 20}}>
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-                </ListItem>
+              <ListItem
+                button
+                key={"instagram"}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  paddingTop: 20,
+                }}
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </ListItem>
             </Link>
-                 {/* </Tooltip> */}
-
+            {/* </Tooltip> */}
           </div>
-            {/* </List> */}
+          {/* </List> */}
         </Drawer>
       </ThemeProvider>
     </div>
