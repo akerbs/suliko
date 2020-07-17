@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     // minHeight: "100vh",
     marginTop: 200,
-
     textAlign: "center",
     color: "white",
     textShadow: "rgba(133,26,29)  0 0 5px",
@@ -20,17 +19,9 @@ const useStyles = makeStyles(theme => ({
       marginBottom: 35,
     },
   },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-  },
-  footer: {
+  footerContainer: {
     padding: theme.spacing(3, 2),
     marginTop: "auto",
-    // backgroundColor:
-    //   theme.palette.type === "light"
-    //     ? theme.palette.grey[200]
-    //     : theme.palette.grey[800],
   },
   extLink: {
     cursor: "pointer",
@@ -50,24 +41,21 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-
-      <footer className={classes.footer}>
+      <Container maxWidth="sm" className={classes.footerContainer}>
         <img src={logoGeorg} alt="logo2" className={classes.logoGeorgImg} />
-        <Container maxWidth="sm">
-          <Typography variant="body2">
-            <Copyright />
-            Created by{" "}
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://kerbs.now.sh/"
-              className={classes.extLink}
-            >
-              Anatol Kerbs
-            </Link>
-          </Typography>
-        </Container>
-      </footer>
+        <Typography variant="body2">
+          <Copyright />
+          Created by{" "}
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            to="https://kerbs.now.sh/"
+            className={classes.extLink}
+          >
+            Anatol Kerbs
+          </Link>
+        </Typography>
+      </Container>
     </div>
   )
 }

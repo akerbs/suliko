@@ -43,15 +43,12 @@ const useStyles = makeStyles(theme => ({
     // color: "rgba(133,26,29)",
     fontSize: 40,
   },
-
   navLink: {
     width: "100vw",
     color: "rgba(133,26,29)",
   },
-
   logoImg: {
     maxWidth: 370,
-
     [theme.breakpoints.down("md")]: {
       maxWidth: 330,
     },
@@ -59,18 +56,15 @@ const useStyles = makeStyles(theme => ({
       maxWidth: 260,
     },
   },
-
   navMediaLink: {
     transition: "transform 250ms",
     "&:hover": { transform: "translateY(-2px)", cursor: "pointer" },
   },
-
   fontAwesomeIcon: {
     color: "rgba(133,26,29)",
     // margin: 5,
     "&:hover": { color: "rgba(255,255,255)" },
   },
-
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
@@ -99,7 +93,6 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: "none",
   },
-
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -110,6 +103,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     width: drawerWidth,
     height: "100vh",
+
     // background: "transparent",
     // background: "rgba(0, 0, 0, 0.5)",
     // background: "rgba(255, 255, 255, 1)",
@@ -117,32 +111,17 @@ const useStyles = makeStyles(theme => ({
   drawerHeader: {
     display: "flex",
     alignItems: "center",
-    padding: theme.spacing(0, 1),
+
+    // margin: 0,
+    // padding: 0,
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
-    margin: 0,
-    padding: 0,
   },
-  drawerItems: {
-    // display: "flex",
-    // flexDirection: "column",
-    // alignItems: "center",
-  },
-
   drawerItem: {
     textDecoration: "none",
     color: "rgba(133,26,29)",
     width: "100vw",
-
-    // fontWeight: 900,
-    // fontSize: "1px",
-    // letterSpacing: 1,
-    // padding: 0,
-
-    [theme.breakpoints.down("md")]: {
-      letterSpacing: "1px",
-    },
   },
   content: {
     flexGrow: 1,
@@ -264,121 +243,121 @@ const AppbarAndDrawer = props => {
           </div>
 
           {/* <List className={classes.list}> */}
-          <div className={classes.drawerItems}>
-            <Link to="/deu" className={classes.drawerItem}>
-              <ListItem button key={"HOME"}>
-                <ListItemText
-                  primary={
-                    <Typography align="center" variant="h6">
-                      HOME
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+          {/* <div className={classes.drawerItems}> */}
+          <Link to="/deu" className={classes.drawerItem}>
+            <ListItem button key={"HOME"}>
+              <ListItemText
+                primary={
+                  <Typography align="center" variant="h6">
+                    HOME
+                  </Typography>
+                }
+              />
+            </ListItem>
+          </Link>
 
-            <Link to="/deu/about-us" className={classes.drawerItem}>
-              <ListItem button key={"ÜBER UNS"}>
-                <ListItemText
-                  primary={
-                    <Typography align="center" variant="h6">
-                      ÜBER UNS
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+          <Link to="/deu/about-us" className={classes.drawerItem}>
+            <ListItem button key={"ÜBER UNS"}>
+              <ListItemText
+                primary={
+                  <Typography align="center" variant="h6">
+                    ÜBER UNS
+                  </Typography>
+                }
+              />
+            </ListItem>
+          </Link>
 
-            <Link to="/deu/menu" className={classes.drawerItem}>
-              <ListItem button key={"MENÜ"}>
-                <ListItemText
-                  primary={
-                    <Typography align="center" variant="h6">
-                      MENÜ
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+          <Link to="/deu/menu" className={classes.drawerItem}>
+            <ListItem button key={"MENÜ"}>
+              <ListItemText
+                primary={
+                  <Typography align="center" variant="h6">
+                    MENÜ
+                  </Typography>
+                }
+              />
+            </ListItem>
+          </Link>
 
-            <Link to="/deu/imprint" className={classes.drawerItem}>
-              <ListItem button key={"IMPRESSUM"}>
-                <ListItemText
-                  primary={
-                    <Typography align="center" variant="h6">
-                      IMPRESSUM
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+          <Link to="/deu/imprint" className={classes.drawerItem}>
+            <ListItem button key={"IMPRESSUM"}>
+              <ListItemText
+                primary={
+                  <Typography align="center" variant="h6">
+                    IMPRESSUM
+                  </Typography>
+                }
+              />
+            </ListItem>
+          </Link>
 
-            <Link to="/deu/contact" className={classes.drawerItem}>
-              <ListItem button key={"KONTAKT"}>
-                <ListItemText
-                  primary={
-                    <Typography align="center" variant="h6">
-                      KONTAKT
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+          <Link to="/deu/contact" className={classes.drawerItem}>
+            <ListItem button key={"KONTAKT"}>
+              <ListItemText
+                primary={
+                  <Typography align="center" variant="h6">
+                    KONTAKT
+                  </Typography>
+                }
+              />
+            </ListItem>
+          </Link>
 
-            {/* <Tooltip
+          {/* <Tooltip
              id="instagram-facebook"
              title="Follow us on facebook"
               placement={window.innerWidth > 959 ? "top" : "left"}
              classes={{ tooltip: classes.tooltip }}
               > */}
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://www.facebook.com/restaurant.suliko.hamburg"
-              className={classes.navLink}
-              //  onClick="this.blur()"
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            to="https://www.facebook.com/restaurant.suliko.hamburg"
+            className={classes.navLink}
+            //  onClick="this.blur()"
+          >
+            <ListItem
+              button
+              key={"facebook"}
+              style={{
+                display: "block",
+                textAlign: "center",
+                paddingTop: 15,
+              }}
             >
-              <ListItem
-                button
-                key={"facebook"}
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  paddingTop: 20,
-                }}
-              >
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
-              </ListItem>
-            </Link>
-            {/* </Tooltip> */}
+              <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </ListItem>
+          </Link>
+          {/* </Tooltip> */}
 
-            {/* <Tooltip
+          {/* <Tooltip
                id="instagram-facebook"
                title="Follow us on facebook"
                 placement={window.innerWidth > 959 ? "top" : "left"}
                 classes={{ tooltip: classes.tooltip }}
                 > */}
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://www.instagram.com/suliko_hamburg_"
-              className={classes.navLink}
-              //  onClick="this.blur()"
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            to="https://www.instagram.com/suliko_hamburg_"
+            className={classes.navLink}
+            //  onClick="this.blur()"
+          >
+            <ListItem
+              button
+              key={"instagram"}
+              style={{
+                display: "block",
+                textAlign: "center",
+                paddingTop: 15,
+              }}
             >
-              <ListItem
-                button
-                key={"instagram"}
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  paddingTop: 20,
-                }}
-              >
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-              </ListItem>
-            </Link>
-            {/* </Tooltip> */}
-          </div>
+              <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </ListItem>
+          </Link>
+          {/* </Tooltip> */}
+          {/* </div> */}
           {/* </List> */}
         </Drawer>
       </ThemeProvider>
