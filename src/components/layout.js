@@ -17,9 +17,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     // backgroundColor: "rgba(49, 10, 10)",
     // // backgroundImage: `url(${bgPatternImg}) `,
-    // maxWidth: "100%",
-    // height: "auto",
-    // color: "white",
+    maxWidth: "100%",
+    height: "auto",
+    color: "white",
     // position: "absolute",
     // padding: 0,
     // backgroundRepeate: `no-repeat `,
