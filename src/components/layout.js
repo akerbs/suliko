@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
-// import Scroll from "./scrollToTopBtn"
+import ScrollUpBtn from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      maxHeight: 2000, //100% view height
       // margin: 0,
     },
   },
@@ -176,9 +176,9 @@ const Layout = ({ children }, props) => {
     setOpen(false)
   }
 
-  // const handleClick = () => {
-  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  // }
+  const handleClick = () => {
+    window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  }
 
   return (
     <Container className={classes.root}>
@@ -186,11 +186,12 @@ const Layout = ({ children }, props) => {
         <CssBaseline />
 
         <Container className={classes.content}>
-          {/* <Scroll showBelow={250} /> */}
           {/* <div id="back-to-top-anchor" /> */}
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
+            <ScrollUpBtn showBelow={1} />
+
             <Button
               className={classes.reservierenButton}
               variant="contained"

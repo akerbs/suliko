@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: "7vh",
     backgroundColor: "rgba(133,26,29)",
-    color: "white",
+    color: "black",
     "&:hover, &.Mui-focusVisible": {
       transition: "0.3s",
       color: "#397BA6",
