@@ -15,24 +15,23 @@ import ScrollUpBtn from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: "rgba(49, 10, 10)",
-    // backgroundImage: `url(${bgPatternImg}) `,
-    maxWidth: "100%",
-    height: "auto",
-    color: "white",
-    position: "absolute",
-    padding: 0,
-    backgroundRepeate: `no-repeat `,
-    zIndex: 0,
-    backgroundAttachment: "fixed",
-    overflow: "hidden",
-    backgroundPosition: "center center",
-    backgroundSize: "100% 100%",
-
-    [theme.breakpoints.down("md")]: {},
-    [theme.breakpoints.down("sm")]: {},
-    [theme.breakpoints.down("xs")]: {},
-    animation: "$sliderBg 15s ease-in-out infinite alternate ",
+    // backgroundColor: "rgba(49, 10, 10)",
+    // // backgroundImage: `url(${bgPatternImg}) `,
+    // maxWidth: "100%",
+    // height: "auto",
+    // color: "white",
+    // position: "absolute",
+    // padding: 0,
+    // backgroundRepeate: `no-repeat `,
+    // zIndex: 0,
+    // backgroundAttachment: "fixed",
+    // overflow: "hidden",
+    // backgroundPosition: "0% 0%",
+    // backgroundSize: "100% 100%",
+    // [theme.breakpoints.down("md")]: {},
+    // [theme.breakpoints.down("sm")]: {},
+    // [theme.breakpoints.down("xs")]: {},
+    // animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
   "@keyframes sliderBg": {
@@ -190,7 +189,7 @@ const Layout = ({ children }, props) => {
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
-            <ScrollUpBtn showBelow={1} />
+            <ScrollUpBtn showBelow={200} />
 
             <Button
               className={classes.reservierenButton}
