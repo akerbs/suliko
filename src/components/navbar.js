@@ -32,6 +32,10 @@ const useStyles = makeStyles(theme => ({
       textShadow: "rgba(133,26,29) 0 0 5px",
     },
   },
+  active: {
+    color: "rgba(255,255,255)",
+    textShadow: "rgba(133,26,29) 0 0 5px",
+  },
 
   title: {
     flexGrow: 1,
@@ -43,7 +47,11 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <Link to="/deu" className={classes.navLink}>
+      <Link
+        to="/deu"
+        className={classes.navLink}
+        activeClassName={classes.active}
+      >
         <Box className={classes.navLinkBox}>
           <Typography variant="subtitle2" noWrap className={classes.title}>
             HOME
@@ -51,7 +59,11 @@ const Navbar = () => {
         </Box>
       </Link>
 
-      <Link to="/deu/about-us" className={classes.navLink}>
+      <Link
+        to="/deu/about-us"
+        className={classes.navLink}
+        activeClassName={classes.active}
+      >
         <Box className={classes.navLinkBox}>
           <Typography variant="subtitle2" noWrap className={classes.title}>
             ÜBER UNS
@@ -59,7 +71,11 @@ const Navbar = () => {
         </Box>
       </Link>
 
-      <Link to="/deu/menu" className={classes.navLink}>
+      <Link
+        to="/deu/menu"
+        className={classes.navLink}
+        activeClassName={classes.active}
+      >
         <Box className={classes.navLinkBox}>
           <Typography variant="subtitle2" noWrap className={classes.title}>
             MENÜ
@@ -67,7 +83,11 @@ const Navbar = () => {
         </Box>
       </Link>
 
-      <Link to="/deu/imprint" className={classes.navLink}>
+      <Link
+        to="/deu/imprint"
+        className={classes.navLink}
+        activeClassName={classes.active}
+      >
         <Box className={classes.navLinkBox}>
           <Typography variant="subtitle2" noWrap className={classes.title}>
             IMPRESSUM
@@ -75,7 +95,11 @@ const Navbar = () => {
         </Box>
       </Link>
 
-      <Link to="/deu/contact" className={classes.navLink}>
+      <Link
+        to="/deu/contact"
+        className={classes.navLink}
+        activeClassName={classes.active}
+      >
         <Box className={classes.navLinkBox}>
           <Typography variant="subtitle2" noWrap className={classes.title}>
             KONTAKT

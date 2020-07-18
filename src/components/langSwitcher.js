@@ -10,8 +10,7 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     margin: 0,
     padding: 0,
-    //  margin: 0,
-    // margin: theme.spacing(1),
+    marginBottom: 3,
     autoWidth: "true",
   },
   select: {},
@@ -20,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
     color: "white",
     textShadow: "rgba(133,26,29) 0 0 5px",
-    fontWeight: 900,
+    fontWeight: 500,
   },
 }))
 
