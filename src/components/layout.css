@@ -17,14 +17,13 @@ body:after {
   left: 0;
   bottom: 0;
   content: "";
-  z-index: -9999;
-  background-position: center center;
+  z-index: -1;
 
-  max-width: 100%;
+  /* max-width: 100%;
   height: auto;
   background-attachment: fixed;
   overflow: hidden;
-  background-position: center center;
+  background-position: center center; */
 }
 
 article,

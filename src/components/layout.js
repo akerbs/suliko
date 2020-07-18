@@ -17,11 +17,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     // backgroundColor: "rgba(49, 10, 10)",
     // // backgroundImage: `url(${bgPatternImg}) `,
-    maxWidth: "100%",
-    height: "auto",
-    color: "white",
-    position: "relative",
-    padding: 0,
+    // maxWidth: "100%",
+    // height: "auto",
+    // color: "white",
+    // position: "relative",
+    // padding: 0,
     // backgroundRepeate: `no-repeat `,
     // zIndex: 0,
     // backgroundAttachment: "fixed",
@@ -61,11 +61,11 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
-    // position: "relative",
-    // overflowX: "hidden",
+    position: "relative",
+    overflowX: "hidden",
     // height: "580px",
 
-    // maxWidth: "100vw", // 100% view width
+    maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
     paddingRight: 100,
