@@ -65,6 +65,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     // height: "580px",
 
+    maxHeight: "100vh",
     maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
@@ -81,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: "100%", //100% view height
+      // maxHeight: "100%", //100% view height
       // margin: 0,
     },
   },
