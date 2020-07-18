@@ -17,15 +17,15 @@ const useStyles = makeStyles(theme => ({
   root: {
     // backgroundColor: "rgba(49, 10, 10)",
     // // backgroundImage: `url(${bgPatternImg}) `,
-    maxWidth: "100%",
-    height: "auto",
+    // maxWidth: "100%",
+    // height: "auto",
     color: "white",
     position: "relative",
     padding: 0,
     // backgroundRepeate: `no-repeat `,
     // zIndex: 0,
     // backgroundAttachment: "fixed",
-    overflow: "hidden",
+    // overflow: "hidden",
     // backgroundPosition: "0% 0%",
     // backgroundSize: "100% 100%",
     // [theme.breakpoints.down("md")]: {},
@@ -62,10 +62,10 @@ const useStyles = makeStyles(theme => ({
 
   content: {
     // position: "relative",
-    overflowX: "hidden",
+    // overflowX: "hidden",
     // height: "580px",
 
-    maxWidth: "100vw", // 100% view width
+    // maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
     paddingRight: 100,
@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 5,
     right: 5,
-    zIndex: 99,
+    zIndex: 1,
     [theme.breakpoints.down("sm")]: {},
   },
   main: {
