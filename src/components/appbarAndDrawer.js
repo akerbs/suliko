@@ -175,6 +175,7 @@ const AppbarAndDrawer = props => {
               edge="end"
               onClick={handleDrawerOpen}
               className={clsx(open && classes.hide)}
+              style={{ marginRight: 5, marginTop: 5, marginBottom: 0 }}
             >
               <Hidden mdUp>
                 <MenuIcon className={classes.menuIcon} />
@@ -234,7 +235,11 @@ const AppbarAndDrawer = props => {
           }}
         >
           <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose} edge="end">
+            <IconButton
+              onClick={handleDrawerClose}
+              edge="end"
+              style={{ marginRight: 5, marginTop: 5, marginBottom: 0 }}
+            >
               <CloseIcon
                 color="primary"
                 style={{
