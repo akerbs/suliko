@@ -31,7 +31,9 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
-    [theme.breakpoints.down("xs")]: {},
+    [theme.breakpoints.down("xs")]: {
+      backgroundSize: "100%",
+    },
     animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
@@ -82,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: 5000, //100% view height
+      maxHeight: "100%", //100% view height
       // margin: 0,
     },
   },
