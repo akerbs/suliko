@@ -11,27 +11,28 @@ import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
-import ScrollUpBtn from "./scrollToTopBtn"
+// import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // backgroundColor: "rgba(49, 10, 10)",
-    // // backgroundImage: `url(${bgPatternImg}) `,
-    // maxWidth: "100%",
-    // height: "auto",
-    // color: "white",
-    // position: "relative",
-    // padding: 0,
-    // backgroundRepeate: `no-repeat `,
-    // zIndex: 0,
-    // backgroundAttachment: "fixed",
-    // overflow: "hidden",
-    // backgroundPosition: "0% 0%",
-    // backgroundSize: "100% 100%",
-    // [theme.breakpoints.down("md")]: {},
-    // [theme.breakpoints.down("sm")]: {},
-    // [theme.breakpoints.down("xs")]: {},
-    // animation: "$sliderBg 15s ease-in-out infinite alternate ",
+    backgroundColor: "rgba(49, 10, 10)",
+    // backgroundImage: `url(${bgPatternImg}) `,
+    maxWidth: "100%",
+    height: "auto",
+    color: "white",
+    position: "absolute",
+    padding: 0,
+    backgroundRepeate: `no-repeat `,
+    zIndex: -1,
+    backgroundAttachment: "fixed",
+    overflow: "hidden",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("xs")]: {},
+    animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
   "@keyframes sliderBg": {
@@ -65,7 +66,6 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     // height: "580px",
 
-    maxHeight: "100vh",
     maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      // maxHeight: "100%", //100% view height
+      maxHeight: " 100vh", //100% view height
       // margin: 0,
     },
   },
@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 5,
     right: 5,
-    zIndex: 1,
+    zIndex: 99,
     [theme.breakpoints.down("sm")]: {},
   },
   main: {
@@ -176,9 +176,9 @@ const Layout = ({ children }, props) => {
     setOpen(false)
   }
 
-  const handleClick = () => {
-    window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  }
+  // const handleClick = () => {
+  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  // }
 
   return (
     <Container className={classes.root}>
@@ -186,12 +186,11 @@ const Layout = ({ children }, props) => {
         <CssBaseline />
 
         <Container className={classes.content}>
+          {/* <Scroll showBelow={250} /> */}
           {/* <div id="back-to-top-anchor" /> */}
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
-            <ScrollUpBtn showBelow={200} />
-
             <Button
               className={classes.reservierenButton}
               variant="contained"
