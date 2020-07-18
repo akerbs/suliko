@@ -125,6 +125,11 @@ const useStyles = makeStyles(theme => ({
     color: "rgba(133,26,29)",
     width: "100vw",
   },
+  active: {
+    color: "rgba(255,255,255)",
+    textShadow: "rgba(133,26,29) 0 0 5px",
+  },
+
   content: {
     flexGrow: 1,
     padding: theme.spacing(1),
@@ -251,7 +256,11 @@ const AppbarAndDrawer = props => {
 
           {/* <List className={classes.list}> */}
           {/* <div className={classes.drawerItems}> */}
-          <Link to="/deu" className={classes.drawerItem}>
+          <Link
+            to="/deu"
+            className={classes.drawerItem}
+            activeClassName={classes.active}
+          >
             <ListItem button key={"HOME"}>
               <ListItemText
                 primary={
@@ -263,7 +272,11 @@ const AppbarAndDrawer = props => {
             </ListItem>
           </Link>
 
-          <Link to="/deu/about-us" className={classes.drawerItem}>
+          <Link
+            to="/deu/about-us"
+            className={classes.drawerItem}
+            activeClassName={classes.active}
+          >
             <ListItem button key={"ÜBER UNS"}>
               <ListItemText
                 primary={
@@ -275,7 +288,11 @@ const AppbarAndDrawer = props => {
             </ListItem>
           </Link>
 
-          <Link to="/deu/menu" className={classes.drawerItem}>
+          <Link
+            to="/deu/menu"
+            className={classes.drawerItem}
+            activeClassName={classes.active}
+          >
             <ListItem button key={"MENÜ"}>
               <ListItemText
                 primary={
@@ -287,7 +304,11 @@ const AppbarAndDrawer = props => {
             </ListItem>
           </Link>
 
-          <Link to="/deu/imprint" className={classes.drawerItem}>
+          <Link
+            to="/deu/imprint"
+            className={classes.drawerItem}
+            activeClassName={classes.active}
+          >
             <ListItem button key={"IMPRESSUM"}>
               <ListItemText
                 primary={
@@ -299,7 +320,11 @@ const AppbarAndDrawer = props => {
             </ListItem>
           </Link>
 
-          <Link to="/deu/contact" className={classes.drawerItem}>
+          <Link
+            to="/deu/contact"
+            className={classes.drawerItem}
+            activeClassName={classes.active}
+          >
             <ListItem button key={"KONTAKT"}>
               <ListItemText
                 primary={
