@@ -18,6 +18,14 @@ body:after {
   bottom: 0;
   content: "";
   z-index: -9999;
+  background-attachment: fixed;
+
+  /* 
+  maxWidth: "100%",
+  height: "auto", */
+  /* backgroundAttachment: "fixed",
+  overflow: "hidden",
+  backgroundPosition: "center center", */
 }
 
 article,
