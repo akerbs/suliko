@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "100%",
     height: "auto",
     color: "white",
-    // position: "absolute",
+    position: "absolute",
     padding: 0,
     // backgroundRepeate: `no-repeat `,
     // zIndex: 0,
