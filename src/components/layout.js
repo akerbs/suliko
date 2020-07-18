@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: 2000, //100% view height
+      maxHeight: 5000, //100% view height
       // margin: 0,
     },
   },
