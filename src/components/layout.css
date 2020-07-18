@@ -20,14 +20,12 @@ body:after {
   z-index: -9999;
   background-position: center center;
 
-  /* 
-  maxWidth: "100%",
-  height: "auto", */
-  /* backgroundAttachment: "fixed",
-  overflow: "hidden",
-  backgroundPosition: "center center", */
-
-  /* NO ! background-attachment: fixed; */
+  max-width: 100%;
+  height: auto;
+  height: auto;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-position: center center;
 }
 
 article,
