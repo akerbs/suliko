@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
+// import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,16 +24,10 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
     backgroundRepeate: `no-repeat `,
     zIndex: -1,
-
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
-
     backgroundSize: "cover",
-    // "&:before": {
-    //   content: " ",
-    //   zIndex: -10,
-    // },
 
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
@@ -79,7 +74,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {
       padding: 20,
       paddingTop: 30,
-      maxHeight: " 100vh",
     },
     [theme.breakpoints.down("sm")]: {
       paddingTop: 20,
@@ -182,12 +176,17 @@ const Layout = ({ children }, props) => {
     setOpen(false)
   }
 
+  // const handleClick = () => {
+  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  // }
+
   return (
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
         <Container className={classes.content}>
+          {/* <Scroll showBelow={250} /> */}
           {/* <div id="back-to-top-anchor" /> */}
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 

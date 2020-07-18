@@ -48,7 +48,7 @@ const Footer = () => {
     <div className={classes.root}>
       <div
         style={{
-          paddingTop: 200,
+          paddingTop: 100,
           display: "block",
           marginLeft: "auto",
           marginRight: "auto",
