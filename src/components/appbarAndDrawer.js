@@ -48,6 +48,8 @@ const useStyles = makeStyles(theme => ({
     color: "rgba(133,26,29)",
   },
   logoImg: {
+    marginBottom: 0,
+    paddingBottom: 0,
     maxWidth: 370,
     [theme.breakpoints.down("md")]: {
       maxWidth: 330,

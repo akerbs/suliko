@@ -31,6 +31,15 @@ const useStyles = makeStyles(theme => ({
     border: 0,
     marginTop: -150,
   },
+  phoneEmailLink: {
+    color: " rgba(255,255,255)",
+    textDecoration: "none",
+
+    "&:hover": {
+      color: "rgba(133,26,29)",
+      textShadow: "rgba(255,255,255) 0 0 5px",
+    },
+  },
 }))
 
 export default () => {
@@ -64,8 +73,25 @@ export default () => {
           >
             <HomeIcon style={{ fontSize: 20 }} /> Mittelweg 24, 20148 Hamburg
             <br />
-            <PhoneIcon style={{ fontSize: 20 }} /> +49(0)40 49201953 <br />
-            <EmailIcon style={{ fontSize: 20 }} /> info@restaurant-suliko.de
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="tel:+4904049201953"
+              className={classes.phoneEmailLink}
+              //  onClick="this.blur()"
+            >
+              <PhoneIcon style={{ fontSize: 20 }} /> +49(0)40 49201953
+            </a>
+            <br />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:info@restaurant-suliko.de"
+              className={classes.phoneEmailLink}
+              //  onClick="this.blur()"
+            >
+              <EmailIcon style={{ fontSize: 20 }} /> info@restaurant-suliko.de
+            </a>
             <br /> <br />
             <ScheduleIcon style={{ fontSize: 20 }} /> Öffnungszeiten <br />
             Mo- Do 12:00 - 15:00, 17:00 - 22:00 <br />
