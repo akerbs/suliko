@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "100%",
     height: "auto",
     color: "white",
-    position: "absolute",
+    position: "relative",
     padding: 0,
     // backgroundRepeate: `no-repeat `,
     // zIndex: 0,
@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
-    position: "relative",
+    // position: "relative",
     overflowX: "hidden",
     // height: "580px",
 
