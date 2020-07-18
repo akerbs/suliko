@@ -27,15 +27,11 @@ const useStyles = makeStyles(theme => ({
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
-    backgroundSize: "cover",
-    float: "none",
-    display: "block",
+    backgroundSize: "100% 100%",
 
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
-    [theme.breakpoints.down("xs")]: {
-      backgroundSize: "100%",
-    },
+    [theme.breakpoints.down("xs")]: {},
     animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
