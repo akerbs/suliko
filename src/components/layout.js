@@ -9,10 +9,10 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
-import img1_599 from "../images/1_599.jpg"
-import img1_959 from "../images/1_959.jpg"
-import img1_1279 from "../images/1_1279.jpg"
-import img1_1919 from "../images/1_1919.jpg"
+import img1_600 from "../images/1_600.jpg"
+import img1_960 from "../images/1_960.jpg"
+import img1_1280 from "../images/1_1280.jpg"
+import img1_1920 from "../images/1_1920.jpg"
 
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
@@ -22,15 +22,15 @@ import { ParallaxProvider } from "react-scroll-parallax"
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${img1_599}) `,
+    backgroundImage: `url(${img1_600}) `,
     [theme.breakpoints.up("xs")]: {
-      backgroundImage: `url(${img1_959}) `,
+      backgroundImage: `url(${img1_960}) `,
     },
     [theme.breakpoints.up("md")]: {
-      backgroundImage: `url(${img1_1279}) `,
+      backgroundImage: `url(${img1_1280}) `,
     },
     [theme.breakpoints.up("lg")]: {
-      backgroundImage: `url(${img1_1919}) `,
+      backgroundImage: `url(${img1_1920}) `,
     },
 
     maxWidth: "100%",
@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     // height: "580px",
 
-    maxWidth: "100vw", // 100% view width
+    // maxWidth: "100vw", // 100% view width
     paddingTop: 50,
     paddingLeft: 100,
     paddingRight: 100,
@@ -100,7 +100,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      // maxHeight: " 100vh", //100% view height
       // margin: 0,
     },
   },
