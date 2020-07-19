@@ -7,8 +7,10 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(../images/1.jpg) center center / cover no-repeat fixed;
 }
-body:after {
+
+/* body:after {
   /* background: url(../images/1.jpg);
   background-size: cover;
   position: fixed;
@@ -19,14 +21,12 @@ body:after {
   content: "";
   z-index: -1; */
 
-  /* max-width: 100%;
+/* max-width: 100%;
   height: auto;
   background-attachment: fixed;
   overflow: hidden;
   background-position: center center; */
-}
-
-article,
+*/ article,
 aside,
 details,
 figcaption,

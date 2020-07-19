@@ -22,7 +22,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundImage: `url(${img1}) `,
+    // backgroundImage: `url(${img1}) `,
     // [theme.breakpoints.up("xs")]: {
     //   backgroundImage: `url(${img1_960}) `,
     // },
@@ -33,22 +33,18 @@ const useStyles = makeStyles(theme => ({
     //   backgroundImage: `url(${img1_1920}) `,
     // },
     // background: url(background-photo.jpg) center center cover no-repeat fixed;
-    backgroundPosition: "center center",
-    backgroundRepeate: "no-repeat",
-    backgroundAttachment: "fixed",
-    backgroundSize: "cover",
-    backgroundColor: "rgba(49, 10, 10)",
-
+    // backgroundPosition: "center center",
+    // backgroundRepeate: "no-repeat",
+    // backgroundAttachment: "fixed",
+    // backgroundSize: "cover",
+    // backgroundColor: "rgba(49, 10, 10)",
     // maxWidth: "100%",
     // height: "auto",
     // color: "white",
     // position: "absolute",
     // padding: 0,
-
     // zIndex: -1,
-
     // overflow: "hidden",
-
     // [theme.breakpoints.down("md")]: {},
     // [theme.breakpoints.down("sm")]: {},
     // [theme.breakpoints.down("xs")]: {
