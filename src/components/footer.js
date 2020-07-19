@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
+    maxWidth: 200,
     [theme.breakpoints.down("xs")]: {
       maxWidth: 100,
     },
@@ -71,10 +72,11 @@ const Footer = () => {
       <Container maxWidth="sm" className={classes.footerContainer}>
         <Typography variant="body2">
           <Typography variant="body1">
-            {" © "} Suliko. {new Date().getFullYear()} <br />{" "}
+            {" © "} {new Date().getFullYear()} Suliko. All Rights Reserved
+            <br />{" "}
             {/* <Typography variant="body2">All Rights Reserved</Typography> */}
           </Typography>
-          Created by{" "}
+          {/* Created by{" "}
           <Link
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +84,7 @@ const Footer = () => {
             className={classes.extLink}
           >
             Anatol Kerbs
-          </Link>
+          </Link> */}
         </Typography>
       </Container>
     </div>
