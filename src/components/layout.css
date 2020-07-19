@@ -7,7 +7,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(../images/1.jpg) center center / 100% no-repeat fixed;
+  background: url(../images/1.jpg) center center / contain no-repeat fixed;
 }
 
 /* body:after {
