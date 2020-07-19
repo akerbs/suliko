@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
+import img1_320 from "../images/1_320.jpg"
 import img1_600 from "../images/1_600.jpg"
 import img1_960 from "../images/1_960.jpg"
 import img1_1280 from "../images/1_1280.jpg"
@@ -22,7 +23,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${img1_600}) `,
+    backgroundImage: `url(${img1_320}) `,
     [theme.breakpoints.up("xs")]: {
       backgroundImage: `url(${img1_960}) `,
     },
