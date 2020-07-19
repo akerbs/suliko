@@ -9,6 +9,7 @@ import sloganImg from "../../images/slogan_eng.png"
 import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import sloganImg3 from "../../images/slogan_eng3.png"
+import { Parallax } from "react-scroll-parallax"
 
 export default () => {
   return (
@@ -22,22 +23,24 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        <img
-          src={sloganImg2}
-          alt="slogan"
-          style={{
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: 900,
-          }}
-        />
+        <Parallax className="custom-class" x={[-270, 200]} tagOuter="figure">
+          <img
+            src={sloganImg2}
+            alt="slogan"
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: 900,
+            }}
+          />
+        </Parallax>
 
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-           paddingTop: 50,
-             padding:25,
+            paddingTop: 50,
+            padding: 25,
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -48,8 +51,10 @@ export default () => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-            <Typography variant="h6"  align="center">    Liebe Suliko-Freunde,  </Typography>
-        
+            <Typography variant="h6" align="center">
+              {" "}
+              Liebe Suliko-Freunde,{" "}
+            </Typography>
             <br />
             wir sind in dieser außergewöhnlichen Zeit weiterhin für Sie da und
             möchten unsere wunderschöne Stadt mit authentisch georgischer Küche

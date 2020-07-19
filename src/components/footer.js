@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   footerContainer: {
     padding: theme.spacing(3, 2),
-    marginTop: "auto",
+    // marginTop: "auto",
   },
   extLink: {
     cursor: "pointer",
