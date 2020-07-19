@@ -32,12 +32,12 @@ const useStyles = makeStyles(theme => ({
     // [theme.breakpoints.up("lg")]: {
     //   backgroundImage: `url(${img1_1920}) `,
     // },
-    // background: url(background-photo.jpg) center center cover no-repeat fixed;
     // backgroundPosition: "center center",
     // backgroundRepeate: "no-repeat",
     // backgroundAttachment: "fixed",
     // backgroundSize: "cover",
     // backgroundColor: "rgba(49, 10, 10)",
+    //////////
     // maxWidth: "100%",
     // height: "auto",
     // color: "white",
@@ -200,29 +200,29 @@ const Layout = ({ children }, props) => {
 
   return (
     <Container className={classes.root}>
-      <ParallaxProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+      {/* <ParallaxProvider> */}
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
 
-          <Container className={classes.content}>
-            <Scroll showBelow={250} />
-            {/* <div id="back-to-top-anchor" /> */}
-            <AppbarAndDrawer className={classes.appbarAndDrawer} />
+        <Container className={classes.content}>
+          <Scroll showBelow={250} />
+          {/* <div id="back-to-top-anchor" /> */}
+          {/* <AppbarAndDrawer className={classes.appbarAndDrawer} /> */}
 
-            <Container maxWidth="md" className={classes.main}>
-              <Button
-                className={classes.reservierenButton}
-                variant="contained"
-                color="primary"
-                onClick={handleOpen}
-              >
-                Reservieren
-              </Button>
-              <Container maxWidth="md" className={classes.forChildren}>
-                {children}
-              </Container>
+          <Container maxWidth="md" className={classes.main}>
+            <Button
+              className={classes.reservierenButton}
+              variant="contained"
+              color="primary"
+              onClick={handleOpen}
+            >
+              Reservieren
+            </Button>
+            <Container maxWidth="md" className={classes.forChildren}>
+              {children}
+            </Container>
 
-              {/* <ScrollTop {...props}>
+            {/* <ScrollTop {...props}>
               <Fab
                 color="secondary"
                 size="small"
@@ -231,13 +231,13 @@ const Layout = ({ children }, props) => {
                 <KeyboardArrowUpIcon />
               </Fab>
             </ScrollTop> */}
-            </Container>
-
-            <Footer />
           </Container>
-          <ModalWindow onClose={handleClose} open={open} />
-        </ThemeProvider>
-      </ParallaxProvider>
+
+          <Footer />
+        </Container>
+        <ModalWindow onClose={handleClose} open={open} />
+      </ThemeProvider>
+      {/* </ParallaxProvider> */}
     </Container>
   )
 }
