@@ -104,7 +104,6 @@ const useStyles = makeStyles(theme => ({
       // margin: 0,
     },
   },
-  appbarAndDrawer: {},
   reservierenButton: {
     position: "fixed",
     bottom: 5,
@@ -207,7 +206,7 @@ const Layout = ({ children }, props) => {
         <Container className={classes.content}>
           <Scroll showBelow={250} />
           {/* <div id="back-to-top-anchor" /> */}
-          {/* <AppbarAndDrawer className={classes.appbarAndDrawer} /> */}
+          <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
             <Button
