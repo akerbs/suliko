@@ -9,6 +9,11 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
+import img1_599 from "../images/1_599.jpg"
+import img1_959 from "../images/1_959.jpg"
+import img1_1279 from "../images/1_1279.jpg"
+import img1_1919 from "../images/1_1919.jpg"
+
 import img2 from "../images/2.jpg"
 import ModalWindow from "./modalWindow"
 import Scroll from "./scrollToTopBtn"
@@ -17,7 +22,17 @@ import { ParallaxProvider } from "react-scroll-parallax"
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    // backgroundImage: `url(${bgPatternImg}) `,
+    backgroundImage: `url(${img1_599}) `,
+    [theme.breakpoints.up("xs")]: {
+      backgroundImage: `url(${img1_959}) `,
+    },
+    [theme.breakpoints.up("md")]: {
+      backgroundImage: `url(${img1_1279}) `,
+    },
+    [theme.breakpoints.up("lg")]: {
+      backgroundImage: `url(${img1_1919}) `,
+    },
+
     maxWidth: "100%",
     height: "auto",
     color: "white",
@@ -38,14 +53,14 @@ const useStyles = makeStyles(theme => ({
     animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
-  "@keyframes sliderBg": {
-    "0%, 100%": {
-      backgroundImage: `url(${img1})`,
-    },
-    "50%": {
-      backgroundImage: `url(${img2})`,
-    },
-  },
+  // "@keyframes sliderBg": {
+  //   "0%, 100%": {
+  //     backgroundImage: `url(${img1})`,
+  //   },
+  //   "50%": {
+  //     backgroundImage: `url(${img2})`,
+  //   },
+  // },
   mediaIcons: {
     display: "flex",
     justifyContent: "flex-start",
@@ -85,7 +100,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      // maxHeight: " 100vh", //100% view height
       // margin: 0,
     },
   },

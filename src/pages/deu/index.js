@@ -23,18 +23,18 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        <Parallax className="custom-class" x={[-270, 200]} tagOuter="figure">
-          <img
-            src={sloganImg2}
-            alt="slogan"
-            style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 900,
-            }}
-          />
-        </Parallax>
+        {/* <Parallax className="custom-class" x={[0, 50]} tagOuter="figure"> */}
+        <img
+          src={sloganImg2}
+          alt="slogan"
+          style={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: 900,
+          }}
+        />
+        {/* </Parallax> */}
 
         <Container
           style={{
