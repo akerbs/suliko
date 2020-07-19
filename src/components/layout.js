@@ -22,36 +22,39 @@ import { ParallaxProvider } from "react-scroll-parallax"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${img1_320}) `,
-    [theme.breakpoints.up("xs")]: {
-      backgroundImage: `url(${img1_960}) `,
-    },
-    [theme.breakpoints.up("md")]: {
-      backgroundImage: `url(${img1_1280}) `,
-    },
-    [theme.breakpoints.up("lg")]: {
-      backgroundImage: `url(${img1_1920}) `,
-    },
-
-    maxWidth: "100%",
-    height: "auto",
-    color: "white",
-    position: "absolute",
-    padding: 0,
-    backgroundRepeate: `no-repeat `,
-    zIndex: -1,
-    backgroundAttachment: "fixed",
-    overflow: "hidden",
+    backgroundImage: `url(${img1}) `,
+    // [theme.breakpoints.up("xs")]: {
+    //   backgroundImage: `url(${img1_960}) `,
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   backgroundImage: `url(${img1_1280}) `,
+    // },
+    // [theme.breakpoints.up("lg")]: {
+    //   backgroundImage: `url(${img1_1920}) `,
+    // },
+    // background: url(background-photo.jpg) center center cover no-repeat fixed;
     backgroundPosition: "center center",
+    backgroundRepeate: "no-repeat",
+    backgroundAttachment: "fixed",
     backgroundSize: "cover",
+    backgroundColor: "rgba(49, 10, 10)",
 
-    [theme.breakpoints.down("md")]: {},
-    [theme.breakpoints.down("sm")]: {},
+    // maxWidth: "100%",
+    // height: "auto",
+    // color: "white",
+    // position: "absolute",
+    // padding: 0,
+
+    // zIndex: -1,
+
+    // overflow: "hidden",
+
+    // [theme.breakpoints.down("md")]: {},
+    // [theme.breakpoints.down("sm")]: {},
     // [theme.breakpoints.down("xs")]: {
     //   backgroundAttachment: "scroll",
     // },
-    animation: "$sliderBg 15s ease-in-out infinite alternate ",
+    // animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
   // "@keyframes sliderBg": {
@@ -81,8 +84,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
-    position: "relative",
-    overflowX: "hidden",
+    // position: "relative",
+    // overflowX: "hidden",
     // height: "580px",
 
     // maxWidth: "100vw", // 100% view width
