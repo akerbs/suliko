@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
-    // backgroundSize: "cover",
+    backgroundSize: "cover",
 
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
