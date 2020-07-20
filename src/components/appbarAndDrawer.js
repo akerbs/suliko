@@ -24,8 +24,6 @@ import Typography from "@material-ui/core/Typography"
 
 import logo2 from "../images/logo2.gif"
 import bgPatternImg from "../images/bgPatternImg.png"
-import x4 from "../images/x4.png"
-import x5 from "../images/logo_465x320.png"
 import Container from "@material-ui/core/Container"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

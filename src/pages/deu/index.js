@@ -5,10 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
 import { ThemeProvider } from "@material-ui/core/styles"
-import sloganImg from "../../images/slogan_eng.png"
-import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
-import sloganImg3 from "../../images/slogan_eng3.png"
 
 export default () => {
   return (

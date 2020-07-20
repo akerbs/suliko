@@ -3,7 +3,6 @@ import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
-import pageHeaderImg from "../../images/footer.png"
 
 const useStyles = makeStyles(theme => ({
   pageHeader: {},
