@@ -21,8 +21,8 @@ body:before {
   height: 100%;
   z-index: -9999;
   background: url(../images/1.jpg);
-  background-size: cover;
-  background-attachment: scroll;
+  background-size: contain;
+  /* background-attachment: scroll; */
   /* overflow: hidden; */
 }
 
