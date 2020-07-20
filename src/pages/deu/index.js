@@ -20,6 +20,9 @@ export default () => {
         }}
       >
         <img
+          data-sal="slide-left"
+          data-sal-delay="500"
+          data-sal-easing="ease"
           src={sloganImg2}
           alt="slogan"
           style={{
