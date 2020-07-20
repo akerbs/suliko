@@ -232,7 +232,7 @@ const Layout = ({ children }, props) => {
             </ScrollTop> */}
           </Container>
 
-          {/* <Footer /> */}
+          <Footer />
         </Container>
         <ModalWindow onClose={handleClose} open={open} />
       </ThemeProvider>
