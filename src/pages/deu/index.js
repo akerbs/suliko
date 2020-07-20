@@ -27,7 +27,7 @@ export default () => {
           smoothScrolling: true,
           forceHeight: false,
         }}
-        getScrollTop={scrollTop => console.log("scrollTop", scrollTop)}
+        // getScrollTop={scrollTop => console.log("scrollTop", scrollTop)}
       >
         <Container
           maxWidth="md"
