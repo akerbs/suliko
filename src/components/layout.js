@@ -38,11 +38,10 @@ const useStyles = makeStyles(theme => ({
     // backgroundSize: "cover",
     // backgroundColor: "rgba(49, 10, 10)",
     //////////
-
     // maxWidth: "100%",
     // height: "auto",
     // color: "white",
-    position: "relative",
+    // position: "absolute",
     // padding: 0,
     // zIndex: -1,
     // overflow: "hidden",
