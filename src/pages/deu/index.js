@@ -9,13 +9,6 @@ import sloganImg from "../../images/slogan_eng.png"
 import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import sloganImg3 from "../../images/slogan_eng3.png"
-import { ParallaxProvider, Parallax } from "react-skrollr"
-
-const paralaxData = {
-  "data-top-bottom": "transform: translateX(-100%);",
-  "data-center-center": "opacity: 1;",
-  "data-bottom-top": "opacity: 0;transform: translateX(0%);",
-}
 
 export default () => {
   return (
@@ -29,18 +22,16 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        <Parallax data={paralaxData}>
-          <img
-            src={sloganImg2}
-            alt="slogan"
-            style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 900,
-            }}
-          />
-        </Parallax>
+        <img
+          src={sloganImg2}
+          alt="slogan"
+          style={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: 900,
+          }}
+        />
 
         <Container
           style={{
