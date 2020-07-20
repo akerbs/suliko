@@ -32,13 +32,13 @@ const useStyles = makeStyles(theme => ({
     // [theme.breakpoints.up("lg")]: {
     //   backgroundImage: `url(${img1_1920}) `,
     // },
-    // backgroundPosition: "center center",
-    // backgroundRepeate: "no-repeat",
-    // backgroundAttachment: "fixed",
-    // backgroundSize: "cover",
-    // backgroundColor: "rgba(49, 10, 10)",
+    backgroundPosition: "center center",
+    backgroundRepeate: "no-repeat",
+    backgroundAttachment: "fixed",
+    backgroundSize: "cover",
+    backgroundColor: "rgba(49, 10, 10)",
     //////////
-    // maxWidth: "100%",
+    maxWidth: "100%",
     // height: "auto",
     // color: "white",
     // position: "absolute",
@@ -50,17 +50,17 @@ const useStyles = makeStyles(theme => ({
     // [theme.breakpoints.down("xs")]: {
     //   backgroundAttachment: "scroll",
     // },
-    // animation: "$sliderBg 15s ease-in-out infinite alternate ",
+    animation: "$sliderBg 15s ease-in-out infinite alternate ",
   },
 
-  // "@keyframes sliderBg": {
-  //   "0%, 100%": {
-  //     backgroundImage: `url(${img1})`,
-  //   },
-  //   "50%": {
-  //     backgroundImage: `url(${img2})`,
-  //   },
-  // },
+  "@keyframes sliderBg": {
+    "0%, 100%": {
+      backgroundImage: `url(${img1})`,
+    },
+    "50%": {
+      backgroundImage: `url(${img2})`,
+    },
+  },
   mediaIcons: {
     display: "flex",
     justifyContent: "flex-start",

@@ -11,7 +11,7 @@ body {
   background-size: cover; */
 }
 
-body:before {
+/* body:before {
   content: "";
   display: block;
   position: fixed;
@@ -21,10 +21,10 @@ body:before {
   height: 100%;
   z-index: -9999;
   background: url(../images/1.jpg);
-  background-size: auto auto;
+  background-size: contain;
   /* background-attachment: scroll; */
-  /* overflow: hidden; */
-}
+/* overflow: hidden; */
+*/
 
 /* body:after {
   /* background: url(../images/1.jpg);
