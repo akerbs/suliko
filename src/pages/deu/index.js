@@ -9,7 +9,7 @@ import sloganImg from "../../images/slogan_eng.png"
 import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import sloganImg3 from "../../images/slogan_eng3.png"
-// import { Parallax } from "react-scroll-parallax"
+
 import { ParallaxProvider, Parallax } from "react-skrollr"
 
 const data = {
