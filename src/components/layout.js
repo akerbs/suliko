@@ -206,17 +206,17 @@ const Layout = ({ children }, props) => {
         <Container className={classes.content}>
           <Scroll showBelow={250} />
           {/* <div id="back-to-top-anchor" /> */}
-          {/* <AppbarAndDrawer className={classes.appbarAndDrawer} /> */}
+          <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
           <Container maxWidth="md" className={classes.main}>
-            {/* <Button
+            <Button
               className={classes.reservierenButton}
               variant="contained"
               color="primary"
               onClick={handleOpen}
             >
               Reservieren
-            </Button> */}
+            </Button>
             <Container maxWidth="md" className={classes.forChildren}>
               {children}
             </Container>
