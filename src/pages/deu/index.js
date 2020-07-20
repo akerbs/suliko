@@ -9,129 +9,146 @@ import sloganImg from "../../images/slogan_eng.png"
 import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import sloganImg3 from "../../images/slogan_eng3.png"
-import { Parallax } from "react-scroll-parallax"
+// import { Parallax } from "react-scroll-parallax"
+import { ParallaxProvider, Parallax } from "react-skrollr"
+
+const data = {
+  "data-top-bottom": "transform: translateX(-100%);",
+  "data-center-center": "opacity: 1;",
+  "data-bottom-top": "opacity: 0;transform: translateX(0%);",
+}
 
 export default () => {
   return (
     <Layout>
-      <Container
-        maxWidth="md"
-        style={{
-          margin: 0,
-          paddingTop: 10,
-          padding: 0,
-          // background: "rgba(255,255,255, 0.75)",
+      <ParallaxProvider
+        init={{
+          smoothScrollingDuration: 1000,
+          smoothScrolling: true,
+          forceHeight: false,
         }}
+        getScrollTop={scrollTop => console.log("scrollTop", scrollTop)}
       >
-        {/* <Parallax className="custom-class" x={[0, 50]} tagOuter="figure"> */}
-        <img
-          src={sloganImg2}
-          alt="slogan"
-          style={{
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: 900,
-          }}
-        />
-        {/* </Parallax> */}
-
         <Container
+          maxWidth="md"
           style={{
-            background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
-            marginTop: 50,
-            borderRadius: 10,
+            margin: 0,
+            paddingTop: 10,
+            padding: 0,
+            // background: "rgba(255,255,255, 0.75)",
           }}
         >
-          <Typography
-            variant="body1"
-            align="center"
-            style={{ lineHeight: 1.5 }}
-            color="secondary"
+          {/* <Parallax className="custom-class" x={[0, 50]} tagOuter="figure"> */}
+          <Parallax data={data}>
+            <img
+              src={sloganImg2}
+              alt="slogan"
+              style={{
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                width: 900,
+              }}
+            />
+          </Parallax>
+          {/* </Parallax> */}
+
+          <Container
+            style={{
+              background: "rgba(49, 10, 10, 0.75)",
+              paddingTop: 50,
+              padding: 25,
+              marginTop: 50,
+              borderRadius: 10,
+            }}
           >
-            <Typography variant="h6" align="center">
-              {" "}
-              Liebe Suliko-Freunde,{" "}
+            <Typography
+              variant="body1"
+              align="center"
+              style={{ lineHeight: 1.5 }}
+              color="secondary"
+            >
+              <Typography variant="h6" align="center">
+                Liebe Suliko-Freunde,
+              </Typography>
+              <br />
+              wir sind in dieser außergewöhnlichen Zeit weiterhin für Sie da und
+              möchten unsere wunderschöne Stadt mit authentisch georgischer
+              Küche verwöhnen. Essen Sie zu unseren regulären Öffnungszeiten im
+              Restaurant Suliko oder bestellen Sie Ihre Lieblingsgerichte und
+              lassen Sie es sich außer Haus schmecken. Für diesen Zweck bieten
+              wir Ihnen eine speziell angefertigte Bestellmenükarte an.
+              <br />
+              <br />
+              <Link
+                to={"/Speisekarte.pdf"}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="outlined" color="secondary">
+                  Bestellmenükarte
+                </Button>
+              </Link>
+              <br />
+              <br />
+              In dieser finden Sie die traditionelle Vielfalt der georgischen
+              Küche, die zu allen Lebensstilen und Geschmäckern passt.
+              <br />
+              Für alle, die in die georgische Welt zunächst reinschnuppern
+              wollen, bieten wir als besonders preiswerte Alternative die
+              georgische Supra/Tafel ab 2 Personen an.
+              <br />
+              <br />
+              Apropos Wein, schauen Sie in unsere Weinkarte. Dort finden Sie die
+              bekanntesten georgischen Weine, unter anderem die nach alter
+              Tradition hergestellten und ungefilterten Amphorenweine, für die
+              Georgien so bekannt ist.
+              <br />
+              <br />
+              <Link
+                to={"/Weinkarte.pdf"}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="outlined" color="secondary">
+                  Weinkarte
+                </Button>
+              </Link>
+              <br />
+              <br />
+              Unsere Öffnungszeiten:
+              <br />
+              Montag bis Donnerstag 12:00 – 15:00 Uhr, 17:00 – 22:00 Uhr
+              <br />
+              Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
+              <br />
+              Samstag 15:00 – 00:00 Uhr
+              <br />
+              Sonntag 15:00 – 22:00 Uhr
+              <br />
+              <br />
+              Lieferungen & Abholungen:
+              <br />
+              Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
+              <br />
+              <br />
+              Wir freuen uns auf Sie!
+              <br />
+              <br />
+              Ihr Restaurant Suliko
+              <br />
+              <br />
+              Sie finden uns im Mittelweg 24, 20148 Hamburg
+              <br />
+              Sie erreichen uns telefonisch unter 040/49201953
+              <br />
+              Unter den Lieferdiensten finden Sie uns auf Lieferando
+              <br />
+              <br />
             </Typography>
-            <br />
-            wir sind in dieser außergewöhnlichen Zeit weiterhin für Sie da und
-            möchten unsere wunderschöne Stadt mit authentisch georgischer Küche
-            verwöhnen. Essen Sie zu unseren regulären Öffnungszeiten im
-            Restaurant Suliko oder bestellen Sie Ihre Lieblingsgerichte und
-            lassen Sie es sich außer Haus schmecken. Für diesen Zweck bieten wir
-            Ihnen eine speziell angefertigte Bestellmenükarte an.
-            <br />
-            <br />
-            <Link
-              to={"/Speisekarte.pdf"}
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              <Button variant="outlined" color="secondary">
-                Bestellmenükarte
-              </Button>
-            </Link>
-            <br />
-            <br />
-            In dieser finden Sie die traditionelle Vielfalt der georgischen
-            Küche, die zu allen Lebensstilen und Geschmäckern passt.
-            <br />
-            Für alle, die in die georgische Welt zunächst reinschnuppern wollen,
-            bieten wir als besonders preiswerte Alternative die georgische
-            Supra/Tafel ab 2 Personen an.
-            <br />
-            <br />
-            Apropos Wein, schauen Sie in unsere Weinkarte. Dort finden Sie die
-            bekanntesten georgischen Weine, unter anderem die nach alter
-            Tradition hergestellten und ungefilterten Amphorenweine, für die
-            Georgien so bekannt ist.
-            <br />
-            <br />
-            <Link
-              to={"/Weinkarte.pdf"}
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              <Button variant="outlined" color="secondary">
-                Weinkarte
-              </Button>
-            </Link>
-            <br />
-            <br />
-            Unsere Öffnungszeiten:
-            <br />
-            Montag bis Donnerstag 12:00 – 15:00 Uhr, 17:00 – 22:00 Uhr
-            <br />
-            Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
-            <br />
-            Samstag 15:00 – 00:00 Uhr
-            <br />
-            Sonntag 15:00 – 22:00 Uhr
-            <br />
-            <br />
-            Lieferungen & Abholungen:
-            <br />
-            Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
-            <br />
-            <br />
-            Wir freuen uns auf Sie!
-            <br />
-            <br />
-            Ihr Restaurant Suliko
-            <br />
-            <br />
-            Sie finden uns im Mittelweg 24, 20148 Hamburg
-            <br />
-            Sie erreichen uns telefonisch unter 040/49201953
-            <br />
-            Unter den Lieferdiensten finden Sie uns auf Lieferando
-            <br />
-            <br />
-          </Typography>
+          </Container>
         </Container>
-      </Container>
+      </ParallaxProvider>
     </Layout>
   )
 }
