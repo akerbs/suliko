@@ -32,11 +32,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
-    animation: "$sliderBg 15s ease-in-out infinite alternate ",
+    animation: "$sliderBg 10s ease-in-out infinite alternate ",
   },
 
   "@keyframes sliderBg": {
-    "0%, 50%": {
+    "0%, 40%": {
       backgroundImage: `url(${img1})`,
     },
     "60%, 100%": {
