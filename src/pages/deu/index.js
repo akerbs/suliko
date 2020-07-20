@@ -10,13 +10,13 @@ import sloganImg1 from "../../images/slogan_eng1.png"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import sloganImg3 from "../../images/slogan_eng3.png"
 
-import { ParallaxProvider, Parallax } from "react-skrollr"
+// import { ParallaxProvider, Parallax } from "react-skrollr"
 
-const data = {
-  "data-top-bottom": "transform: translateX(-100%);",
-  "data-center-center": "opacity: 1;",
-  "data-bottom-top": "opacity: 0;transform: translateX(0%);",
-}
+// const data = {
+//   "data-top-bottom": "transform: translateX(-100%);",
+//   "data-center-center": "opacity: 1;",
+//   "data-bottom-top": "opacity: 0;transform: translateX(0%);",
+// }
 
 export default () => {
   return (
