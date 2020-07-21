@@ -16,7 +16,7 @@ import ModalWindow from "./modalWindow"
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    // backgroundImage: `url(${bgPatternImg}) `,
+    // backgroundImage: `url(${img1}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
@@ -36,13 +36,14 @@ const useStyles = makeStyles(theme => ({
   },
 
   "@keyframes sliderBg": {
-    "0%, 40%": {
+    "0%, 50%": {
       backgroundImage: `url(${img1})`,
     },
-    "60%, 100%": {
+    "50.01%, 100%": {
       backgroundImage: `url(${img2})`,
     },
   },
+
   mediaIcons: {
     display: "flex",
     justifyContent: "flex-start",
@@ -164,7 +165,7 @@ const useStyles = makeStyles(theme => ({
 //   )
 // }
 
-const Layout = ({ children }, props) => {
+const Layout = ({ location, children }, props) => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
 
