@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
+    zIndex: 9999,
     maxWidth: 200,
     [theme.breakpoints.down("xs")]: {
       maxWidth: 100,
