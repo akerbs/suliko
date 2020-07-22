@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   footerContainer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(1, 1),
     // marginTop: "auto",
   },
   extLink: {
@@ -37,6 +37,10 @@ const useStyles = makeStyles(theme => ({
   logoGeorgImg: {
     zIndex: 9999,
     maxWidth: 200,
+    marginBottom: 5,
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 150,
+    },
     [theme.breakpoints.down("xs")]: {
       maxWidth: 100,
     },
@@ -57,13 +61,9 @@ const Footer = () => {
         }}
       >
         <img
-          // className={
-          //   "animate__animated animate__flipInY	animate__infinite	infinite animate__delay-2s animate__slower	3s"
-          // }
-
-          data-sal="zoom-in"
-          data-sal-delay="300"
-          data-sal-easing="ease"
+          // data-sal="zoom-in"
+          // data-sal-delay="300"
+          // data-sal-easing="ease"
           // data-sal-duration="infinite"
           className={classes.logoGeorgImg}
           src={logoGeorg}
