@@ -12,6 +12,11 @@ const useStyles = makeStyles(theme => ({
     color: "white",
     textShadow: "rgba(133,26,29) 0 0 5px",
     fontWeight: 500,
+    [theme.breakpoints.down("sm")]: {
+      color: "rgba(133,26,29) ",
+      textShadow: "rgba(255,255,255) 0 0 5px",
+      fontWeight: 400,
+    },
   },
 }))
 

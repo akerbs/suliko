@@ -107,7 +107,7 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down("sm")]: {
       // padding: "20px 10px",
-      marginTop: 0,
+      marginTop: 30,
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0px 10px",
