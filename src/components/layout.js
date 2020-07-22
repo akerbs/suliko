@@ -16,7 +16,7 @@ import bgImg960 from "../images/bgImg960.gif"
 import bgImg1280 from "../images/bgImg1280.gif"
 import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
-// import Scroll from "./scrollToTopBtn"
+import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      maxHeight: " 100%", //100% view height
       // margin: 0,
     },
   },
@@ -178,9 +178,9 @@ const Layout = ({ location, children }, props) => {
     setOpen(false)
   }
 
-  // const handleClick = () => {
-  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  // }
+  const handleClick = () => {
+    window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  }
 
   return (
     <Container className={classes.root}>
@@ -188,7 +188,7 @@ const Layout = ({ location, children }, props) => {
         <CssBaseline />
 
         <Container className={classes.content}>
-          {/* <Scroll showBelow={250} /> */}
+          <Scroll showBelow={250} />
           {/* <div id="back-to-top-anchor" /> */}
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
 
