@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
-    zIndex: 1,
+    zIndex: 999,
     position: "relative",
     overflowX: "hidden",
     // height: "580px",
