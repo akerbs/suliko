@@ -8,16 +8,19 @@ import CssBaseline from "@material-ui/core/CssBaseline"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
-import img1 from "../images/1.jpg"
-import img2 from "../images/2.jpg"
-import bgImg1 from "../images/bgImg1.gif"
+// import img1 from "../images/1.jpg"
+// import img2 from "../images/2.jpg"
+import bgImg600 from "../images/bgImg600.gif"
+import bgImg960 from "../images/bgImg960.gif"
+import bgImg1280 from "../images/bgImg1280.gif"
+import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
 // import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${bgImg1}) `,
+
     maxWidth: "100%",
     height: "auto",
     color: "white",
@@ -29,10 +32,17 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     backgroundPosition: "center center",
     backgroundSize: "cover",
+    backgroundImage: `url(${bgImg600}) `,
+    [theme.breakpoints.up("xs")]: {
+      backgroundImage: `url(${bgImg960}) `,
+    },
+    [theme.breakpoints.up("md")]: {
+      backgroundImage: `url(${bgImg1280}) `,
+    },
+    [theme.breakpoints.up("lg")]: {
+      backgroundImage: `url(${bgImg1600}) `,
+    },
 
-    [theme.breakpoints.down("md")]: {},
-    [theme.breakpoints.down("sm")]: {},
-    [theme.breakpoints.down("xs")]: {},
     // animation: "$sliderBg 10s ease-in-out infinite alternate ",
   },
 
