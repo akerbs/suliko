@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuIcon: {
     position: "fixed",
-    // color: "rgba(133,26,29)",
+    color: "rgba(133,26,29)",
     fontSize: 40,
   },
   navLink: {
