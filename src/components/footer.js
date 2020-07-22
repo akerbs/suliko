@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
     textShadow: "rgba(133,26,29)  0 0 5px",
     [theme.breakpoints.down("sm")]: {
       marginBottom: 35,
+      paddingTop: 50,
     },
   },
   footerContainer: {
