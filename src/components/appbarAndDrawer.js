@@ -191,20 +191,6 @@ const AppbarAndDrawer = props => {
             <Hidden smDown>
               <Navbar />
               {/* <Container className={classes.mediaIcons}> */}
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                to="https://www.facebook.com/restaurant.suliko.hamburg"
-                className={classes.navMediaLink}
-                //  onClick="this.blur()"
-              >
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  size="1x"
-                  className={classes.fontAwesomeIcon}
-                  style={{ marginRight: 10 }}
-                />
-              </Link>
 
               <Link
                 target="_blank"
@@ -217,9 +203,25 @@ const AppbarAndDrawer = props => {
                   icon={faInstagram}
                   size="1x"
                   className={classes.fontAwesomeIcon}
+                  style={{ marginRight: 10 }}
+                />
+              </Link>
+
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                to="https://www.facebook.com/restaurant.suliko.hamburg"
+                className={classes.navMediaLink}
+                //  onClick="this.blur()"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="1x"
+                  className={classes.fontAwesomeIcon}
                   style={{ marginRight: 20 }}
                 />
               </Link>
+
               {/* </Container> */}
             </Hidden>
 
@@ -333,39 +335,6 @@ const AppbarAndDrawer = props => {
             </ListItem>
           </Link>
 
-          {/* <Tooltip
-             id="instagram-facebook"
-             title="Follow us on facebook"
-              placement={window.innerWidth > 959 ? "top" : "left"}
-             classes={{ tooltip: classes.tooltip }}
-              > */}
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            to="https://www.facebook.com/restaurant.suliko.hamburg"
-            className={classes.navLink}
-            //  onClick="this.blur()"
-          >
-            <ListItem
-              button
-              key={"facebook"}
-              style={{
-                display: "block",
-                textAlign: "center",
-                paddingTop: 15,
-              }}
-            >
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </ListItem>
-          </Link>
-          {/* </Tooltip> */}
-
-          {/* <Tooltip
-               id="instagram-facebook"
-               title="Follow us on facebook"
-                placement={window.innerWidth > 959 ? "top" : "left"}
-                classes={{ tooltip: classes.tooltip }}
-                > */}
           <Link
             target="_blank"
             rel="noopener noreferrer"
@@ -385,7 +354,27 @@ const AppbarAndDrawer = props => {
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </ListItem>
           </Link>
-          {/* </Tooltip> */}
+
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            to="https://www.facebook.com/restaurant.suliko.hamburg"
+            className={classes.navLink}
+            //  onClick="this.blur()"
+          >
+            <ListItem
+              button
+              key={"facebook"}
+              style={{
+                display: "block",
+                textAlign: "center",
+                paddingTop: 15,
+              }}
+            >
+              <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </ListItem>
+          </Link>
+
           {/* </div> */}
           {/* </List> */}
         </Drawer>

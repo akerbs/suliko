@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   navLinkBox: {
-    padding: "0px 30px 0px 20px",
+    padding: "0px 28px 0px 20px",
     transition: "transform 250ms",
     "&:hover": { transform: "translateY(-2px)", cursor: "pointer" },
     [theme.breakpoints.down("md")]: {
