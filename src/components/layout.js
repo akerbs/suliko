@@ -33,17 +33,17 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundImage: `url(${bgImg960}) `,
+    backgroundImage: `url(${bgImg1600}) `,
 
     // [theme.breakpoints.up("sm")]: {
     //   backgroundImage: `url(${bgImg960}) `,
     // },
-    [theme.breakpoints.up("md")]: {
-      backgroundImage: `url(${bgImg1280}) `,
-    },
-    [theme.breakpoints.up("lg")]: {
-      backgroundImage: `url(${bgImg1600}) `,
-    },
+    // [theme.breakpoints.up("md")]: {
+    //   backgroundImage: `url(${bgImg1280}) `,
+    // },
+    // [theme.breakpoints.up("lg")]: {
+    //   backgroundImage: `url(${bgImg1600}) `,
+    // },
 
     // animation: "$sliderBg 10s ease-in-out infinite alternate ",
   },
