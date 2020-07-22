@@ -10,14 +10,14 @@ import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
-import bgImg from "../images/bgImg.gif"
+import bgImg1 from "../images/bgImg1.gif"
 import ModalWindow from "./modalWindow"
 // import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    backgroundImage: `url(${bgImg}) `,
+    backgroundImage: `url(${bgImg1}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
