@@ -10,7 +10,7 @@ import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 // import img1 from "../images/1.jpg"
 // import img2 from "../images/2.jpg"
-import bgImg320 from "../images/bgImg320.gif"
+// import bgImg320 from "../images/bgImg320.gif"
 import bgImg600 from "../images/bgImg600.gif"
 import bgImg960 from "../images/bgImg960.gif"
 import bgImg1280 from "../images/bgImg1280.gif"
@@ -33,8 +33,8 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundImage: `url(${bgImg320}) `,
-    [theme.breakpoints.up("xs")]: {
+    backgroundImage: `url(${bgImg600}) `,
+    [theme.breakpoints.up("sm")]: {
       backgroundImage: `url(${bgImg960}) `,
     },
     [theme.breakpoints.up("md")]: {
