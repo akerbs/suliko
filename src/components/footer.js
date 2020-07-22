@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoGeorgImg: {
-    // zIndex: 9999,
+    zIndex: 9999,
     maxWidth: 200,
     [theme.breakpoints.down("xs")]: {
       maxWidth: 100,
@@ -60,6 +60,7 @@ const Footer = () => {
           // className={
           //   "animate__animated animate__flipInY	animate__infinite	infinite animate__delay-2s animate__slower	3s"
           // }
+
           data-sal="zoom-in"
           data-sal-delay="300"
           data-sal-easing="ease"
