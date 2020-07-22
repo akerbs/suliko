@@ -33,10 +33,11 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundImage: `url(${bgImg600}) `,
-    [theme.breakpoints.up("sm")]: {
-      backgroundImage: `url(${bgImg960}) `,
-    },
+    backgroundImage: `url(${bgImg960}) `,
+
+    // [theme.breakpoints.up("sm")]: {
+    //   backgroundImage: `url(${bgImg960}) `,
+    // },
     [theme.breakpoints.up("md")]: {
       backgroundImage: `url(${bgImg1280}) `,
     },
@@ -62,6 +63,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
+    zIndex: 1,
     position: "relative",
     overflowX: "hidden",
     // height: "580px",
@@ -91,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 5,
     right: 5,
-    zIndex: 99,
+    zIndex: 9999,
     [theme.breakpoints.down("sm")]: {},
   },
   main: {
