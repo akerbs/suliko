@@ -1,45 +1,80 @@
 import React from "react"
-import { graphql, useStaticQuery, StaticQuery } from "gatsby"
-import styled from "styled-components"
-import BackgroundSlider from "gatsby-image-background-slider"
+import CssBaseline from "@material-ui/core/CssBaseline"
+import { makeStyles } from "@material-ui/core/styles"
+import img1 from "../images/1.jpg"
+import img2 from "../images/2.jpg"
+import bgPatternImg from "../images/bgPatternImg.png"
 
-const BgSlider = ({ children }) => (
-  <BackgroundSlider
-    query={useStaticQuery(graphql`
-      query {
-        backgrounds: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-          nodes {
-            relativePath
-            childImageSharp {
-              fluid(maxWidth: 4000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    `)}
-    initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
-    transition={4} // transition duration between images
-    duration={8} // how long an image is shown
-    // specify images to include (and their order) according to `relativePath`
-    images={["1.jpg", "2.jpg"]}
-    // pass down standard element props
-    style={{
-      transform: "rotate(0deg) scale(1)",
-    }}
-  >
-    {children}
-  </BackgroundSlider>
-)
+const useStyles = makeStyles(theme => ({
+  cbSlideshow: {
+    position: "fixed",
+    width: "100%",
+    height: "100%",
+    top: 0,
+    left: 0,
+    zIndex: 0,
+    "&:after": {
+      position: "fixed",
+      width: "100%",
+      height: "100%",
+      top: 0,
+      left: 0,
+      zIndex: 0,
+      content: "",
+      background: `transparent url(${bgPatternImg}) repeat top left`,
+    },
+  },
+  span1: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    color: "transparent",
+    backgroundSize: "cover",
+    backgroundPosition: "50% 50%",
+    backgroundRepeat: "none",
+    opacity: 0,
+    zIndex: 0,
+    animation: "imageAnimation 11s linear infinite 0s",
+    backgroundImage: `url(${img1})`,
+  },
+  span2: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    color: "transparent",
+    backgroundSize: "cover",
+    backgroundPosition: "50% 50%",
+    backgroundRepeat: "none",
+    opacity: 0,
+    zIndex: 0,
+    animation: "imageAnimation 11s linear infinite 0s",
+    backgroundImage: `url(${img2})`,
+    animationDelay: "5s",
+  },
+  "@keyframes imageAnimation": {
+    "0%": { opacity: 0, animationTimingFunction: "ease-in" },
+    "50%": { opacity: 1, animationTimingFunction: "ease-out" },
+    "100%": { opacity: 0 },
+  },
+}))
 
-const StyledBgSlider = styled(BgSlider)`
-  width: 100%;
-  heigth: 100vh;
-  background-position: center center;
+const BgSlider = () => {
+  const classes = useStyles()
 
-  background-size: cover;
-  background-attachment: fixed;
-`
+  return (
+    <ul class={classes.cbSlideshow}>
+      <li class={classes.li}>
+        <span className={classes.span1} />
+      </li>
+      <li class={classes.li}>
+        <span className={classes.span2} />
+      </li>
+    </ul>
+  )
+}
 
-export default StyledBgSlider
+export default BgSlider

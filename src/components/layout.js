@@ -10,20 +10,21 @@ import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import img1 from "../images/1.jpg"
 import img2 from "../images/2.jpg"
+import bgImg from "../images/bgImg.gif"
 import ModalWindow from "./modalWindow"
 // import Scroll from "./scrollToTopBtn"
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "rgba(49, 10, 10)",
-    // backgroundImage: `url(${img1}) `,
+    backgroundImage: `url(${bgImg}) `,
     maxWidth: "100%",
     height: "auto",
     color: "white",
     position: "absolute",
     padding: 0,
     backgroundRepeate: `no-repeat `,
-    zIndex: -1,
+    zIndex: -9999,
     backgroundAttachment: "fixed",
     overflow: "hidden",
     backgroundPosition: "center center",
@@ -32,34 +33,21 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
-    animation: "$sliderBg 10s ease-in-out infinite alternate ",
+    // animation: "$sliderBg 10s ease-in-out infinite alternate ",
   },
 
-  "@keyframes sliderBg": {
-    "0%, 50%": {
-      backgroundImage: `url(${img1})`,
-    },
-    "50.01%, 100%": {
-      backgroundImage: `url(${img2})`,
-    },
-  },
+  // "@keyframes sliderBg": {
+  //   "0%, 50%": {
+  //     backgroundImage: `url(${img1})`,
+  //   },
+  //   "50.01%, 100%": {
+  //     backgroundImage: `url(${img2})`,
+  //   },
+  // },
 
-  mediaIcons: {
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "start",
-    margin: 0,
-    padding: 0,
-  },
   navLink: {
     transition: "transform 250ms",
     "&:hover": { transform: "translateY(-2px)", cursor: "pointer" },
-  },
-
-  fontAwesomeIcon: {
-    color: "rgba(255,255,255)",
-    margin: 5,
-    "&:hover": { color: "rgba(133,26,29)" },
   },
 
   content: {
