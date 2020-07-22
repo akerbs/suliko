@@ -102,7 +102,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     width: drawerWidth,
     height: "100vh",
-
+    zIndex: 9999,
     // background: "transparent",
     // background: "rgba(0, 0, 0, 0.5)",
     // background: "rgba(255, 255, 255, 1)",

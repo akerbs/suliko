@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
-    zIndex: 999,
+    zIndex: 99,
     position: "relative",
     overflowX: "hidden",
     // height: "580px",
@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 5,
     right: 5,
-    zIndex: 9999,
+    zIndex: 999,
     [theme.breakpoints.down("sm")]: {},
   },
   main: {
