@@ -187,17 +187,27 @@ const Layout = ({ location, children }, props) => {
 
   return (
     <Container className={classes.root}>
-      <iframe
-        type="audio/mpeg"
-        autoplay
-        style={{ zIndex: -99999, margin: 0, padding: 0, top: 0, left: 0 }}
-        width="40%"
-        height="20"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-      />
+      <Container style={{ position: "relative" }}>
+        <iframe
+          type="audio/mpeg"
+          autoplay
+          style={{
+            zIndex: -99999,
+            margin: 0,
+            padding: 0,
+            top: 0,
+            left: 0,
+            position: "absolute",
+          }}
+          width="40%"
+          height="20"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+        />
+      </Container>
+
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
