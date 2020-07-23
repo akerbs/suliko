@@ -194,13 +194,14 @@ const Layout = ({ location, children }, props) => {
           style={{
             zIndex: 999,
             margin: 0,
-            padding: 0,
+            padding: "5px 0px 0px 5px",
+
             top: 0,
             left: 0,
             position: "absolute",
           }}
           width="40%"
-          height="20"
+          height="25"
           scrolling="no"
           frameborder="no"
           allow="autoplay"
