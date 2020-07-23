@@ -39,8 +39,7 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
+            padding: "50px 40px",
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -50,64 +49,35 @@ export default () => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-            <Typography variant="h6" align="center">
-              Das Essen, das zu Ihrem Lebensstil passt{" "}
-            </Typography>
-            <br />
-            Herzlich willkommen in unserem Restaurant Suliko. Bei uns werden Sie
-            im richtigen Sinne des Wortes mit leckerem Essen, angenehmen
-            Ambiente und georgischer Gastfreundlichkeit verwöhnt. Lassen Sie
-            einen Blick auf unser Menü werfen und sprechen Sie uns an. Bei uns
-            können Sie zwischen abwechslungsreichen Gerichten, gutem Wein und
-            gebackenen georgischen Brot wählen. Wir würden Ihnen dabei für alle
-            festlichen Anlässe oder / und einfachen Abend mit Freunden und
-            Familie oder einem romantischen Abend zur Zweit zur Seite stehen und
-            machen für Sie ein individuelles Angebot, das zu Ihrem Lebensstil
-            passt.
-            <br />
-            <br /> Die georgische Küche ist eine der ältesten und
-            abwechslungsreichsten Küchen der Welt. Die georgische Festtafel ist
-            somit mit sehr schmackhaften und abwechslungsreichen Gerichten und
-            Trinksprüchen unter der Tischführung von “Tamada“ (ausgewählter
-            Tischführer) ein wahres Fest unter der Freunden. Mit der Eröffnung
-            unseres Restaurants im Herzen von Hamburg wollen wir Ihnen ein
-            Gefühl der Gastfreundlichkeit und Festlichkeit vermitteln. <br />
-            Fühlen Sie sich bei uns wie zuhause und genießen Sie die
-            umfangreiche Speise- und Getränkekarte. Hier unsere kleine
-            Vorstellung der georgischen Speisen:
-            <br /> Vorspeisen: <br />
-            Typische Vorspeisen sind gefüllte Auberginen mit Walnusspastete
-            Badridschani und verschiedene Pchali – Spinat, Rote Bete oder Porree
-            püriert mit Waldnüsse, Gewürzen, Koriander
-            <br />
-            <br />
-            Hauptspeisen:
-            <br /> Sehr verbreitet sind Teigtaschen mit Hackfleischfüllung
-            Chinkali, Chatschapuri ist eine weitere Spezialität der georgischen
-            Küche. Es handelt sich um ein überbackenes Käsebrot, das in Georgien
-            meist als Zwischenmahlzeit für den kleinen Hunger gegessen wird.
-            Lobio ist ein traditionelles Bohnengericht der georgischen Küche,
-            das als Beilage oder allein als Vorspeise serviert wird. Des
-            Weiteren wird das für Westgeorgien typische Maisbrot Mschadi, das
-            mit Sulguni (einer Käsesorte aus der Region Mingrelien) zubereitet
-            wird, sowie andere Brotsorten gegessen. Weitere Käsesorten sind der
-            Imeruli (Käse aus der Region Imereti) und der Guda (Käse aus den
-            Bergen); oft wird Käse aber auch zur Hauptspeise gereicht.
-            <br />
-            <br /> Desserts:
-            <br /> Als Nachtisch werden einige Desserts gereicht, darunter eine
-            beliebte georgische Süßigkeit namens Tschurtschchela, bei der man
-            Haselnuss- oder Walnusskerne auf taucht, welche mit Mais- und
-            Weizenmehl angedickt ist, bis sich eine dünne Schicht über die Nüsse
-            gelegt hat eine Leine bindet und diese so lange in Traubensaft{" "}
-            <br />
-            <br />
-            Weine: <br />
-            Georgien hat eine über 8000 Jahre alte Weinbrautradition und gilt
-            damit als Ursprungsland des Weines. Einzigartige klimatische und
-            geologische Gegebenheiten bringen ausgezeichnete Rotweine wie
-            „Saperavi“, „Chvanchkara“, aber auch Weißweine „Rkatziteli“,
-            „Mtsvane“ und viele andere hervor.
+            <Typography variant="h6" align="center"></Typography>
+            კეთილი იყოს თქვენი მობრძანება!
+            <br /> <br />
+            ქართული რესტორანი ულამაზეს ქალაქ ჰამბ ურგში უკვე რეალობაა და გვაქვს
+            პატივი მის მოსახლეობას და სტუმრებს უნიკალური ქართული სამზარეულო და
+            სტუმართმოყვარეობა გავაცნოთ.
+            <br /> <br />
+            ქართული სუფრა თავისი მრავალფეროვანი კერძებით და ღვინოს ფართო
+            არჩევანით არის მსოფლიოში აღიარებული და ის უდავოდ საქართველოს
+            სავიზიტო ბარათს წარმოადგენს.
+            <br /> <br />
+            რესტორანი "სულიკო" მდებარეობს ჰამბურგის შუაგულში და გვსურს, რომ იგი
+            ქართული კულტურისა და ტრადიციული სტუმართმოყვარეობის იდეალური
+            გზამკვლევი გახდეს.
+            <br /> <br />
+            ჩვენ გთავაზობთ უგემრიელესი ქართული კერძებისა სასმელების ფართო
+            არჩევანს. სტილისტურად ნაციონალური,დახვეწილი ინტერიერი ცოცხალ ქართულ
+            თუ პოპულარულ მუსიკასთან ერთად მყუდრო და კომფორტულ გარემოს შეგიქმნით.
+            <br /> <br />
+            თქვენ შეგიძლიათ მოიწყოთ სასიამოვნო და რომანტიული ვახშამი, დაგეგმოთ
+            ბიზნეს ლანჩი ან კორპორატიული წვეულება და დააგემოვნოთ დაუვიწყარი
+            კერძები ჩვენთან თონეში გამომცხვარი ქართულ პურთან ერთად.
+            <br /> <br />
+            წვეულებებისა და სადღესასწაულო სუფრის მენიუს შედგენისას მზად ვართ
+            გავითვალისწინოთ ჩვენი სტუმრების ინდივიდუალური მოთხოვნები და
+            სურვილები რათა ჩვენთან მათი სტუმრობა ლამაზი და დაუვიწყარ
+            დღესასწაულად იქცეს.
+            <br /> <br />
+            მოხარული ვიქნებით თქვენი სტუმრობისა
           </Typography>
         </Container>
       </Container>

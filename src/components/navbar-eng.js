@@ -61,7 +61,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/about-us"
+        to="/eng/about-us"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -73,7 +73,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/menu"
+        to="/eng/menu"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -85,7 +85,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/imprint"
+        to="/eng/imprint"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -97,7 +97,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/contact"
+        to="/eng/contact"
         className={classes.navLink}
         activeClassName={classes.active}
       >

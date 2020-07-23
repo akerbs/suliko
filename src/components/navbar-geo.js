@@ -62,7 +62,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/about-us"
+        to="/geo/about-us"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -74,7 +74,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/menu"
+        to="/geo/menu"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -86,7 +86,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/imprint"
+        to="/geo/imprint"
         className={classes.navLink}
         activeClassName={classes.active}
       >
@@ -98,7 +98,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        to="/deu/contact"
+        to="/geo/contact"
         className={classes.navLink}
         activeClassName={classes.active}
       >
