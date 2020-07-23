@@ -192,7 +192,7 @@ const Layout = ({ location, children }, props) => {
           type="audio/mpeg"
           autoplay
           style={{
-            zIndex: -99999,
+            zIndex: 999,
             margin: 0,
             padding: 0,
             top: 0,
