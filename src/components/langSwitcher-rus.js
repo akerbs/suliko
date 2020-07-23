@@ -65,7 +65,7 @@ export default function SimpleMenu() {
         className={classes.button}
         variant="text"
       >
-        🇩🇪
+        🇷🇺
       </Button>
       <Menu
         id="simple-menu"

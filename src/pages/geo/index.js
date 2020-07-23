@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/layout-rus"
+import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
@@ -36,7 +36,8 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            padding: "60px 25px 50px 25px",
+            paddingTop: 50,
+            padding: 25,
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -64,7 +65,13 @@ export default () => {
               target="_blank"
               style={{ textDecoration: "none" }}
             >
-              <Button variant="outlined" color="secondary">
+              <Button
+                variant="outlined"
+                color="secondary"
+                data-sal="zoom-in"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
                 Bestellmenükarte
               </Button>
             </Link>
@@ -122,6 +129,8 @@ export default () => {
             Sie erreichen uns telefonisch unter 040/49201953
             <br />
             Unter den Lieferdiensten finden Sie uns auf Lieferando
+            <br />
+            <br />
           </Typography>
         </Container>
       </Container>

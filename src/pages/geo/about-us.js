@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 
+
 const useStyles = makeStyles(theme => ({
   pageHeader: {},
 }))
@@ -39,7 +40,8 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            padding: "50px 40px",
+            paddingTop: 50,
+            padding: 25,
             marginTop: 50,
             borderRadius: 10,
           }}

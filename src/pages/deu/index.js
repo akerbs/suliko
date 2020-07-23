@@ -36,8 +36,7 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
+            padding: "60px 25px 50px 25px",
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -65,13 +64,7 @@ export default () => {
               target="_blank"
               style={{ textDecoration: "none" }}
             >
-              <Button
-                variant="outlined"
-                color="secondary"
-                data-sal="zoom-in"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-              >
+              <Button variant="outlined" color="secondary">
                 Bestellmenükarte
               </Button>
             </Link>
@@ -129,8 +122,6 @@ export default () => {
             Sie erreichen uns telefonisch unter 040/49201953
             <br />
             Unter den Lieferdiensten finden Sie uns auf Lieferando
-            <br />
-            <br />
           </Typography>
         </Container>
       </Container>

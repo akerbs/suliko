@@ -13,11 +13,11 @@ import ListItemText from "@material-ui/core/ListItemText"
 
 import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu"
 import CloseIcon from "@material-ui/icons/Close"
-import Navbar from "./navbar"
+import Navbar from "./navbar-rus"
 import PropTypes from "prop-types"
 import Hidden from "@material-ui/core/Hidden"
 import withWidth from "@material-ui/core/withWidth"
-import LangSwitcher from "./langSwitcher"
+import LangSwitcher from "./langSwitcher-rus"
 import { Link } from "gatsby"
 import { ThemeProvider } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
@@ -184,7 +184,7 @@ const AppbarAndDrawer = props => {
               </Hidden>
             </IconButton>
 
-            <Link to="/deu">
+            <Link to="/rus">
               <img src={logo2} alt="logo" className={classes.logoImg} />
             </Link>
 
@@ -256,7 +256,7 @@ const AppbarAndDrawer = props => {
           {/* <List className={classes.list}> */}
           {/* <div className={classes.drawerItems}> */}
           <Link
-            to="/deu"
+            to="/rus"
             className={classes.drawerItem}
             activeClassName={classes.active}
           >
@@ -264,7 +264,7 @@ const AppbarAndDrawer = props => {
               <ListItemText
                 primary={
                   <Typography align="center" variant="h6">
-                    HOME
+                    ГЛАВНОЕ
                   </Typography>
                 }
               />
@@ -272,7 +272,7 @@ const AppbarAndDrawer = props => {
           </Link>
 
           <Link
-            to="/deu/about-us"
+            to="/rus/about-us"
             className={classes.drawerItem}
             activeClassName={classes.active}
           >
@@ -280,7 +280,7 @@ const AppbarAndDrawer = props => {
               <ListItemText
                 primary={
                   <Typography align="center" variant="h6">
-                    ÜBER UNS
+                    О РЕСТОРАНЕ
                   </Typography>
                 }
               />
@@ -288,7 +288,7 @@ const AppbarAndDrawer = props => {
           </Link>
 
           <Link
-            to="/deu/menu"
+            to="/rus/menu"
             className={classes.drawerItem}
             activeClassName={classes.active}
           >
@@ -296,7 +296,7 @@ const AppbarAndDrawer = props => {
               <ListItemText
                 primary={
                   <Typography align="center" variant="h6">
-                    MENÜ
+                    МЕНЮ
                   </Typography>
                 }
               />
@@ -304,7 +304,7 @@ const AppbarAndDrawer = props => {
           </Link>
 
           <Link
-            to="/deu/imprint"
+            to="/rus/imprint"
             className={classes.drawerItem}
             activeClassName={classes.active}
           >
@@ -312,7 +312,7 @@ const AppbarAndDrawer = props => {
               <ListItemText
                 primary={
                   <Typography align="center" variant="h6">
-                    IMPRESSUM
+                    РЕЦЕНЗИИ
                   </Typography>
                 }
               />
@@ -320,7 +320,7 @@ const AppbarAndDrawer = props => {
           </Link>
 
           <Link
-            to="/deu/contact"
+            to="/rus/contact"
             className={classes.drawerItem}
             activeClassName={classes.active}
           >
@@ -328,7 +328,7 @@ const AppbarAndDrawer = props => {
               <ListItemText
                 primary={
                   <Typography align="center" variant="h6">
-                    KONTAKT
+                    КОНТАКТЫ
                   </Typography>
                 }
               />

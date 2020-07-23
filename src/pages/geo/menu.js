@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/layout-rus"
+import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 
@@ -18,7 +18,8 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            padding: "50px 40px",
+            paddingTop: 50,
+            padding: 25,
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -387,6 +388,7 @@ export default () => {
             <br />
             <br />
             135. Khvanchkara, lieblich (2010) 10,90 € / 39,90 € <br />
+            <br />
           </Typography>
         </Container>
       </Container>

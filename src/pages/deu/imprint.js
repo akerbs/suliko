@@ -18,8 +18,7 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
+            padding: "50px 40px",
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -126,9 +125,6 @@ export default () => {
             ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich
             ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung
             von Werbeinformationen, etwa durch Spam-Mails, vor.
-            <br />
-            <br />
-            <br />
           </Typography>
         </Container>
       </Container>

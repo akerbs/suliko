@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 0, 1, 0),
-    zIndex: 9999999,
+    zIndex: 9999,
     position: "fixed",
     outline: 0,
   },

@@ -18,8 +18,7 @@ export default () => {
         <Container
           style={{
             background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
+            padding: "50px 40px",
             marginTop: 50,
             borderRadius: 10,
           }}
@@ -388,7 +387,6 @@ export default () => {
             <br />
             <br />
             135. Khvanchkara, lieblich (2010) 10,90 € / 39,90 € <br />
-            <br />
           </Typography>
         </Container>
       </Container>
