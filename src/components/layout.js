@@ -190,7 +190,7 @@ const Layout = ({ location, children }, props) => {
       <iframe
         type="audio/mpeg"
         autoplay
-        style={{ zIndex: -9999, margin: 0, padding: 0, top: 0, left: 0 }}
+        style={{ zIndex: -99999, margin: 0, padding: 0, top: 0, left: 0 }}
         width="40%"
         height="20"
         scrolling="no"
