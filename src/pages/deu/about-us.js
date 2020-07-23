@@ -3,6 +3,7 @@ import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
+import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 const useStyles = makeStyles(theme => ({
   pageHeader: {},
@@ -13,23 +14,7 @@ export default () => {
 
   return (
     <Layout>
-      <iframe
-        title="music"
-        type="audio/mpeg"
-        style={{
-          zIndex: 100,
-          margin: 0,
-          padding: "7px 0px 0px 7px",
-          top: 0,
-          left: 0,
-          position: "absolute",
-        }}
-        width="30vw"
-        height="27"
-        scrolling="no"
-        frameborder="no"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-      />
+      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{
