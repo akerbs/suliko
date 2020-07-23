@@ -69,6 +69,7 @@ const useStyles = makeStyles(theme => ({
     // height: "580px",
 
     maxWidth: "100vw", // 100% view width
+
     paddingTop: 50,
     paddingLeft: 100,
     paddingRight: 100,
@@ -85,6 +86,7 @@ const useStyles = makeStyles(theme => ({
       padding: 5,
       paddingTop: 20,
       maxHeight: " 100vh", //100% view height
+
       // margin: 0,
     },
   },

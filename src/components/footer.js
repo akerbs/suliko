@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     color: "white",
     textShadow: "rgba(133,26,29)  0 0 5px",
     [theme.breakpoints.down("sm")]: {
-      marginBottom: 35,
+      marginBottom: 50,
       paddingTop: 50,
     },
   },
