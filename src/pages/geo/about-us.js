@@ -1,9 +1,8 @@
 import React from "react"
-import Layout from "../../components/layout"
+import Layout from "../../components/layout-geo"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
-
 
 const useStyles = makeStyles(theme => ({
   pageHeader: {},
