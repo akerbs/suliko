@@ -17,7 +17,7 @@ import bgImg1280 from "../images/bgImg1280.gif"
 import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
 // import Scroll from "./scrollToTopBtn"
-import CardMedia from "@material-ui/core/CardMedia"
+import Audio from "./audio"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -189,13 +189,8 @@ const Layout = ({ location, children }, props) => {
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <CardMedia
-          component="audio"
-          src="suliko.mp3"
-          controls
-          autoPlay
-          style={{ zIndex: 999 }}
-        ></CardMedia>
+
+        <Audio style={{ zIndex: 999 }} />
         {/* <section>
           <audio src="suliko.mp3" controls autoPlay style={{ zIndex: 999 }} />
         </section> */}
