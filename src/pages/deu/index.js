@@ -4,12 +4,31 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
-import { ThemeProvider } from "@material-ui/core/styles"
+
 import sloganImg2 from "../../images/slogan_eng2.png"
 
-export default () => {
+export default props => {
   return (
     <Layout>
+      <iframe
+        title="music"
+        type="audio/mpeg"
+        autoplay
+        style={{
+          zIndex: 100,
+          margin: 0,
+          padding: "7px 0px 0px 7px",
+          top: 0,
+          left: 0,
+          position: "absolute",
+        }}
+        width="30vw"
+        height="27"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+      />
       <Container
         maxWidth="md"
         style={{

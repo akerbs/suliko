@@ -10,7 +10,6 @@ import MenuIcon from "@material-ui/icons/Menu"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-
 import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu"
 import CloseIcon from "@material-ui/icons/Close"
 import Navbar from "./navbar"
@@ -21,11 +20,9 @@ import LangSwitcher from "./langSwitcher"
 import { Link } from "gatsby"
 import { ThemeProvider } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
-
 import logo2 from "../images/logo2.gif"
 import bgPatternImg from "../images/bgPatternImg.png"
 import Container from "@material-ui/core/Container"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
@@ -103,16 +100,10 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     height: "100vh",
     zIndex: 9999,
-    // background: "transparent",
-    // background: "rgba(0, 0, 0, 0.5)",
-    // background: "rgba(255, 255, 255, 1)",
   },
   drawerHeader: {
     display: "flex",
     alignItems: "center",
-
-    // margin: 0,
-    // padding: 0,
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
@@ -126,7 +117,6 @@ const useStyles = makeStyles(theme => ({
     color: "rgba(255,255,255)",
     textShadow: "rgba(133,26,29) 0 0 5px",
   },
-
   content: {
     flexGrow: 1,
     padding: theme.spacing(1),
@@ -149,11 +139,9 @@ const AppbarAndDrawer = props => {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
-
   const handleDrawerOpen = () => {
     setOpen(true)
   }
-
   const handleDrawerClose = () => {
     setOpen(false)
   }
@@ -183,15 +171,12 @@ const AppbarAndDrawer = props => {
                 <MenuIcon className={classes.menuIcon} />
               </Hidden>
             </IconButton>
-
             <Link to="/deu">
               <img src={logo2} alt="logo" className={classes.logoImg} />
             </Link>
-
             <Hidden smDown>
               <Navbar />
               {/* <Container className={classes.mediaIcons}> */}
-
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -206,7 +191,6 @@ const AppbarAndDrawer = props => {
                   style={{ marginRight: 20 }}
                 />
               </a>
-
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -221,14 +205,11 @@ const AppbarAndDrawer = props => {
                   style={{ marginRight: 3 }}
                 />
               </a>
-
               {/* </Container> */}
             </Hidden>
-
             <LangSwitcher />
           </Toolbar>
         </AppBar>
-
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -252,7 +233,6 @@ const AppbarAndDrawer = props => {
               />
             </IconButton>
           </div>
-
           {/* <List className={classes.list}> */}
           {/* <div className={classes.drawerItems}> */}
           <Link
@@ -270,7 +250,6 @@ const AppbarAndDrawer = props => {
               />
             </ListItem>
           </Link>
-
           <Link
             to="/deu/about-us"
             className={classes.drawerItem}
@@ -286,7 +265,6 @@ const AppbarAndDrawer = props => {
               />
             </ListItem>
           </Link>
-
           <Link
             to="/deu/menu"
             className={classes.drawerItem}
@@ -302,7 +280,6 @@ const AppbarAndDrawer = props => {
               />
             </ListItem>
           </Link>
-
           <Link
             to="/deu/imprint"
             className={classes.drawerItem}
@@ -318,7 +295,6 @@ const AppbarAndDrawer = props => {
               />
             </ListItem>
           </Link>
-
           <Link
             to="/deu/contact"
             className={classes.drawerItem}
@@ -334,7 +310,6 @@ const AppbarAndDrawer = props => {
               />
             </ListItem>
           </Link>
-
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -354,7 +329,6 @@ const AppbarAndDrawer = props => {
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </ListItem>
           </a>
-
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -374,7 +348,6 @@ const AppbarAndDrawer = props => {
               <FontAwesomeIcon icon={faFacebook} size="2x" />
             </ListItem>
           </a>
-
           {/* </div> */}
           {/* </List> */}
         </Drawer>
@@ -382,7 +355,6 @@ const AppbarAndDrawer = props => {
     </div>
   )
 }
-
 AppbarAndDrawer.propTypes = {
   width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 }

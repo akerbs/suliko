@@ -14,3 +14,9 @@ export default function Audio() {
     </>
   )
 }
+
+{
+  /* <section id="music">
+          <audio src="suliko.mp3" controls autoplay />
+        </section> */
+}
