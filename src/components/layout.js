@@ -188,6 +188,9 @@ const Layout = ({ location, children }, props) => {
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <section>
+          <audio src="./z.mp3" controls autoPlay style={{ zIndex: 999 }} />
+        </section>
 
         <Container className={classes.content}>
           {/* <Scroll showBelow={250} /> */}

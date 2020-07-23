@@ -28,7 +28,6 @@ import Container from "@material-ui/core/Container"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
-import Audio from "./audio"
 
 const drawerWidth = "auto"
 
@@ -227,7 +226,6 @@ const AppbarAndDrawer = props => {
             </Hidden>
 
             <LangSwitcher />
-            <Audio />
           </Toolbar>
         </AppBar>
 
