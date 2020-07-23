@@ -187,17 +187,19 @@ const Layout = ({ location, children }, props) => {
 
   return (
     <Container className={classes.root}>
+      <iframe
+        type="audio/mpeg"
+        autoplay
+        style={{ zIndex: 999, margin: 0, padding: 0, top: 0, left: 0 }}
+        width="40%"
+        height="20"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+      />
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <iframe
-          style={{ zIndex: 999 }}
-          width="50%"
-          height="20"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15237004&color=%23851a1d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        />
 
         {/* <section>
           <audio src="suliko.mp3" controls autoPlay style={{ zIndex: 999 }} />
