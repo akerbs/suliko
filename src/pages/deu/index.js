@@ -10,7 +10,6 @@ import sloganImg2 from "../../images/slogan_eng2.png"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const IndexContentfulPage = ({data}) => {
- 
   return (
     <Layout>
    
