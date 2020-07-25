@@ -4,14 +4,15 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
-import AudioAutoPlay from "../../components/audio-autoplay"
+// import AudioAutoPlay from "../../components/audio-autoplay"
+import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 import sloganImg2 from "../../images/slogan_eng2.png"
 
 export default props => {
   return (
     <Layout>
-      <AudioAutoPlay />
+      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{
@@ -97,9 +98,10 @@ export default props => {
             </Link>
             <br />
             <br />
-            Unsere Öffnungszeiten:
+             <b> Unsere Öffnungszeiten: </b>
             <br />
-            Montag bis Donnerstag 12:00 – 15:00 Uhr, 17:00 – 22:00 Uhr
+            Montag bis Donnerstag 12:00 – 15:00 Uhr,
+             <br /> 17:00 – 22:00 Uhr
             <br />
             Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
             <br />
@@ -108,7 +110,7 @@ export default props => {
             Sonntag 15:00 – 22:00 Uhr
             <br />
             <br />
-            Lieferungen & Abholungen:
+             <b> Lieferungen & Abholungen:</b>
             <br />
             Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
             <br />
