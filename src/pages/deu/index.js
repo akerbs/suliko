@@ -10,7 +10,7 @@ import sloganImg2 from "../../images/slogan_eng2.png"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const IndexContentfulPage = ({data}) => {
-   const firstRichContent = data.allContentfulRichContent.nodes[0]
+ 
   return (
     <Layout>
    
@@ -52,7 +52,7 @@ const IndexContentfulPage = ({data}) => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-                {documentToReactComponents(firstRichContent.text.json)}
+                {documentToReactComponents(data.allContentfulRichContent.nodes[0].text.json)}
 
                 
            
