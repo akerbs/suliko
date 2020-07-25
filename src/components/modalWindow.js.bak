@@ -27,8 +27,9 @@ import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
+// import Checkbox from "@material-ui/core/Checkbox"
 import bgPatternImg from "../images/bgPatternImg.png"
-import { useForm, Controller } from "react-hook-form"
+import Snackbar from "@material-ui/core/Snackbar"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -68,13 +69,94 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+)
+
+const formValid = formErrors => {
+  let valid = true
+
+  Object.values(formErrors).forEach(val => {
+    val.length > 0 && (valid = false)
+  })
+  return valid
+}
+
 const ModalWindow = props => {
   const classes = useStyles()
-  const { register, handleSubmit, control, errors } = useForm()
+  const [state, setState] = useState({
+    peopleCount: null,
+    date: null,
+    time: null,
+    fullname: null,
+    phone: null,
+    email: null,
+    formErrors: {
+      peopleCount: "",
+      fullname: "",
+      phone: "",
+      email: "",
+    },
+  })
   const [selectedDate, handleDateChange] = React.useState(new Date())
+  const [openSb, setOpenSb] = React.useState(false)
 
-  const onSubmit = data => {
-    console.log(data)
+  const changeHandler = event => {
+    event.preventDefault()
+    // setState({ ...state, [event.target.name]: event.target.value })
+    const { name, value } = event.target
+    let formErrors = state.formErrors
+
+    console.log("vame: ", name)
+    console.log("value: ", value)
+
+    switch (name) {
+      case "peopleCount":
+        formErrors.fullname = !value.length ? "select the number of guests" : ""
+        break
+      case "fullname":
+        formErrors.fullname =
+          value.length < 3 && value.length > 0
+            ? "minimum 3 characters required"
+            : ""
+        break
+      case "phone":
+        formErrors.fullname =
+          value.length < 8 && value.length > 0
+            ? "enter a valid phone number"
+            : ""
+        break
+      case "email":
+        formErrors.fullname =
+          emailRegex.test(value) && value.length < 3 && value.length > 0
+            ? ""
+            : "enter a valid email address"
+        break
+      default:
+        break
+    }
+
+    setState({ formErrors, [name]: value })
+  }
+
+  const handleClick = () => {
+    setOpenSb(true)
+  }
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return
+    }
+    setOpenSb(false)
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+
+    if (formValid(state.formErrors)) {
+      console.log("success!")
+    } else {
+      console.error("form invalid, error")
+    }
   }
 
   return (
@@ -82,19 +164,33 @@ const ModalWindow = props => {
       className={classes.modalWrapper}
       onClose={props.onClose}
       open={props.open}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
     >
       <div className={classes.paper}>
         <form
           method="post"
           action="https://suliko-mailer.herokuapp.com/reservation"
-          // onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
-          // onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
+          noValidate
         >
+          <div>
+            {/* <Button onClick={handleClick}>Open simple snackbar</Button> */}
+            <Snackbar
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              open={openSb}
+              autoHideDuration={2000}
+              onClose={handleClose}
+              message="Note archived"
+            />
+          </div>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
-              <TimelineItem className={classes.timelineItem}>
+              <TimelineItem
+                className={classes.timelineItem}
+                // style={{ marginBottom: 5 }}
+              >
                 <TimelineOppositeContent
                   style={{ flex: 0 }}
                 ></TimelineOppositeContent>
@@ -109,32 +205,28 @@ const ModalWindow = props => {
                     <InputLabel id="demo-simple-select-label">
                       People
                     </InputLabel>
-
-                    <Controller
-                      as={
-                        <Select>
-                          <MenuItem value={1}>1</MenuItem>
-                          <MenuItem value={2}>2</MenuItem>
-                          <MenuItem value={3}>3</MenuItem>
-                          <MenuItem value={4}>4</MenuItem>
-                          <MenuItem value={5}>5</MenuItem>
-                          <MenuItem value={6}>6</MenuItem>
-                          <MenuItem value={7}>7</MenuItem>
-                          <MenuItem value={8}>8</MenuItem>
-                          <MenuItem value={9}>9</MenuItem>
-                          <MenuItem value={10}>10</MenuItem>
-                          <MenuItem value={11}>11-15</MenuItem>
-                          <MenuItem value={16}>16-20</MenuItem>
-                          <MenuItem value={20}>20+</MenuItem>
-                        </Select>
-                      }
+                    <Select
                       name="peopleCount"
-                      rules={{ required: "this is required" }}
-                      control={control}
-                      defaultValue=""
-                    />
-
-                    {errors.peopleCount && "this is required"}
+                      id="peopleCount"
+                      labelId="demo-simple-select-label"
+                      value={state.peopleCount}
+                      onChange={changeHandler}
+                      noValidate
+                    >
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}>2</MenuItem>
+                      <MenuItem value={3}>3</MenuItem>
+                      <MenuItem value={4}>4</MenuItem>
+                      <MenuItem value={5}>5</MenuItem>
+                      <MenuItem value={6}>6</MenuItem>
+                      <MenuItem value={7}>7</MenuItem>
+                      <MenuItem value={8}>8</MenuItem>
+                      <MenuItem value={9}>9</MenuItem>
+                      <MenuItem value={10}>10</MenuItem>
+                      <MenuItem value={11}>11-15</MenuItem>
+                      <MenuItem value={16}>16-20</MenuItem>
+                      <MenuItem value={20}>20+</MenuItem>
+                    </Select>
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -203,25 +295,21 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
+                      value={state.fullname}
                       name="fullname"
+                      id="fullname"
                       label="Name"
                       placeholder="Enter your name"
-                      inputRef={register({
-                        required: true,
-                        minLength: 3,
-                        maxLength: 20,
-                      })}
+                      onChange={changeHandler}
+                      noValidate
+                      // helperText={
+                      //   error ? "Name length must be >= 2" : "Perfect!"
+                      // }
+                      // error={error}
+                      // required
+                      // minlength={2}
+                      // maxlength={20}
                     />
-                    {/* {errors.fullname && "fullname is required"} */}
-                    {errors.fullname &&
-                      errors.fullname.type === "required" &&
-                      "this is required"}
-                    {errors.fullname &&
-                      errors.fullname.type === "minLength" &&
-                      "Enter a correct name"}
-                    {errors.fullname &&
-                      errors.fullname.type === "maxLength" &&
-                      "Enter a correct name"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -240,20 +328,13 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
+                      value={state.phone}
                       name="phone"
                       id="phone"
                       label="Phone"
-                      inputRef={register({
-                        required: true,
-                        pattern: /^[0-9\-\+]{9,15}$/,
-                      })}
+                      onChange={changeHandler}
+                      noValidate
                     />
-                    {errors.phone &&
-                      errors.phone.type === "required" &&
-                      "this is required"}
-                    {errors.phone &&
-                      errors.phone.type === "pattern" &&
-                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -271,19 +352,13 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="email"
+                      value={state.email}
                       name="email"
+                      id="email"
                       label="Email"
-                      inputRef={register({
-                        required: true,
-                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      })}
+                      onChange={changeHandler}
+                      noValidate
                     />
-                    {errors.email &&
-                      errors.email.type === "required" &&
-                      "this is required"}
-                    {errors.email &&
-                      errors.email.type === "pattern" &&
-                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -291,7 +366,7 @@ const ModalWindow = props => {
           </MuiPickersUtilsProvider>
 
           <Button
-            // onClick={submitHandler}
+            // onClick={handleClick}
             type="submit"
             variant="contained"
             color="primary"
@@ -308,4 +383,5 @@ const ModalWindow = props => {
     </Modal>
   )
 }
+
 export default ModalWindow
