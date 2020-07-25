@@ -51,7 +51,22 @@ const IndexContentfulPage = ({data}) => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-                {documentToReactComponents(data.allContentfulRichContent.nodes[0].text.json)}
+          <StaticQuery query ={  graphql`
+            {
+  allContentfulRichContent {
+    nodes {
+      title
+      text {
+        json
+      }
+    }
+  }
+}
+            `} render={data => (
+            <p>  {documentToReactComponents(data.allContentfulRichContent.nodes[0].text.json)} </p> 
+            )
+                }
+  />
 
                 
            
@@ -118,18 +133,18 @@ const IndexContentfulPage = ({data}) => {
   )
 }
 
-export const query = graphql`
-            {
-  allContentfulRichContent {
-    nodes {
-      title
-      text {
-        json
-      }
-    }
-  }
-}
-            `
+// export const query = graphql`
+//             {
+//   allContentfulRichContent {
+//     nodes {
+//       title
+//       text {
+//         json
+//       }
+//     }
+//   }
+// }
+//             `
 
 export default IndexContentfulPage
 
