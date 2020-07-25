@@ -5,11 +5,10 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
 import AudioNoAutoPlay from "../../components/audio-no-autoplay"
-import { StaticQuery, graphql } from "gatsby"
-import sloganImg2 from "../../images/slogan_eng2.png"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const IndexContentfulPage = ({ data }) => {
+import sloganImg2 from "../../images/slogan_eng2.png"
+
+export default props => {
   return (
     <Layout>
       <AudioNoAutoPlay />
@@ -50,42 +49,57 @@ const IndexContentfulPage = ({ data }) => {
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
-            {documentToReactComponents(
-              data.allContentfulRichContent.nodes[0].text.json
-            )}
+            <Typography variant="h6" align="center">
+              Liebe Suliko-Freunde,
+            </Typography>
+            <br />
+            wir sind in dieser außergewöhnlichen Zeit weiterhin für Sie da und
+            möchten unsere wunderschöne Stadt mit authentisch georgischer Küche
+            verwöhnen. Essen Sie zu unseren regulären Öffnungszeiten im
+            Restaurant Suliko oder bestellen Sie Ihre Lieblingsgerichte und
+            lassen Sie es sich außer Haus schmecken. Für diesen Zweck bieten wir
+            Ihnen eine speziell angefertigte Bestellmenükarte an.
+            <br />
+            <br />
             <Link
               to={"/Speisekarte.pdf"}
               target="_blank"
               style={{ textDecoration: "none" }}
             >
-              <Button
-                variant="outlined"
-                color="secondary"
-                style={{ marginRight: 10, marginTop: 10, width: 200 }}
-              >
+              <Button variant="outlined" color="secondary">
                 Bestellmenükarte
               </Button>
             </Link>
+            <br />
+            <br />
+            In dieser finden Sie die traditionelle Vielfalt der georgischen
+            Küche, die zu allen Lebensstilen und Geschmäckern passt.
+            <br />
+            Für alle, die in die georgische Welt zunächst reinschnuppern wollen,
+            bieten wir als besonders preiswerte Alternative die georgische
+            Supra/Tafel ab 2 Personen an.
+            <br />
+            <br />
+            Apropos Wein, schauen Sie in unsere Weinkarte. Dort finden Sie die
+            bekanntesten georgischen Weine, unter anderem die nach alter
+            Tradition hergestellten und ungefilterten Amphorenweine, für die
+            Georgien so bekannt ist.
+            <br />
+            <br />
             <Link
               to={"/Weinkarte.pdf"}
               target="_blank"
               style={{ textDecoration: "none" }}
             >
-              <Button
-                variant="outlined"
-                color="secondary"
-                style={{ marginRight: 10, marginTop: 10, width: 200 }}
-              >
+              <Button variant="outlined" color="secondary">
                 Weinkarte
               </Button>
             </Link>
             <br />
             <br />
-            <b> Unsere Öffnungszeiten: </b>
+            Unsere Öffnungszeiten:
             <br />
-            Montag bis Donnerstag 12:00 – 15:00 Uhr,
-            <br />
-            17:00 – 22:00 Uhr
+            Montag bis Donnerstag 12:00 – 15:00 Uhr, 17:00 – 22:00 Uhr
             <br />
             Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
             <br />
@@ -94,7 +108,7 @@ const IndexContentfulPage = ({ data }) => {
             Sonntag 15:00 – 22:00 Uhr
             <br />
             <br />
-            <b> Lieferungen & Abholungen:</b>
+            Lieferungen & Abholungen:
             <br />
             Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
             <br />
@@ -116,40 +130,3 @@ const IndexContentfulPage = ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  {
-    allContentfulRichContent {
-      nodes {
-        title
-        text {
-          json
-        }
-      }
-    }
-  }
-`
-
-export default IndexContentfulPage
-
-// {
-//   contentfulArticle {
-//     title
-//     text {
-//       text
-//     }
-//   }
-// }
-// {data.contentfulArticle.title}
-// {data.contentfulArticle.text.text}
-
-// {
-//   markdownRemark {
-//     frontmatter {
-//       title
-//     }
-//     html
-//   }
-// }
-// {data.markdownRemark.frontmatter.title}
-// {data.markdownRemark.html}
