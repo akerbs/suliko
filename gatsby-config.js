@@ -9,6 +9,11 @@ module.exports = {
     author: `@anatol_kerbs`,
   },
   plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: JSON.stringify('development')
+        }
+    }),
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
