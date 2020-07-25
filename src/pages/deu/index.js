@@ -9,10 +9,9 @@ import { StaticQuery, graphql } from "gatsby"
 import sloganImg2 from "../../images/slogan_eng2.png"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const IndexContentfulPage = ({data}) => {
+const IndexContentfulPage = ({ data }) => {
   return (
     <Layout>
-   
       <AudioNoAutoPlay />
       <Container
         maxWidth="md"
@@ -45,38 +44,16 @@ const IndexContentfulPage = ({data}) => {
             borderRadius: 10,
           }}
         >
-                <Typography
+          <Typography
             variant="body1"
             align="center"
             style={{ lineHeight: 1.5 }}
             color="secondary"
           >
- <StaticQuery
-        query={graphql`
-         {
-          allContentfulRichContent {
-           nodes {
-              title
-              text {
-               json
-              }
-            }
-          }
-        }
-        `}
-        render={data => (
-          <div style={{}}>
-           
-            <p>{documentToReactComponents(data.allContentfulRichContent.nodes[0].text.json)}</p>
-          </div>
-        )}
-      />
-
-       
-
-                
-           
-           <Link
+            {documentToReactComponents(
+              data.allContentfulRichContent.nodes[0].text.json
+            )}
+            <Link
               to={"/Speisekarte.pdf"}
               target="_blank"
               style={{ textDecoration: "none" }}
@@ -84,26 +61,31 @@ const IndexContentfulPage = ({data}) => {
               <Button
                 variant="outlined"
                 color="secondary"
-                style={{marginRight: 10, marginTop: 10, width: 200}}
+                style={{ marginRight: 10, marginTop: 10, width: 200 }}
               >
                 Bestellmenükarte
               </Button>
             </Link>
-             <Link
+            <Link
               to={"/Weinkarte.pdf"}
               target="_blank"
               style={{ textDecoration: "none" }}
             >
-              <Button variant="outlined" color="secondary" style={{ marginRight: 10, marginTop: 10, width: 200}}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                style={{ marginRight: 10, marginTop: 10, width: 200 }}
+              >
                 Weinkarte
               </Button>
             </Link>
-             <br />
             <br />
-             <b> Unsere Öffnungszeiten: </b>
             <br />
-            Montag bis Donnerstag 12:00 – 15:00 Uhr, 
-            <br />17:00 – 22:00 Uhr
+            <b> Unsere Öffnungszeiten: </b>
+            <br />
+            Montag bis Donnerstag 12:00 – 15:00 Uhr,
+            <br />
+            17:00 – 22:00 Uhr
             <br />
             Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
             <br />
@@ -112,7 +94,7 @@ const IndexContentfulPage = ({data}) => {
             Sonntag 15:00 – 22:00 Uhr
             <br />
             <br />
-             <b> Lieferungen & Abholungen:</b>
+            <b> Lieferungen & Abholungen:</b>
             <br />
             Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
             <br />
@@ -128,29 +110,25 @@ const IndexContentfulPage = ({data}) => {
             Sie erreichen uns telefonisch unter 040/49201953
             <br />
             Unter den Lieferdiensten finden Sie uns auf Lieferando
-         
-
-                </Typography>
-
-
+          </Typography>
         </Container>
       </Container>
     </Layout>
   )
 }
 
-// export const query = graphql`
-//             {
-//   allContentfulRichContent {
-//     nodes {
-//       title
-//       text {
-//         json
-//       }
-//     }
-//   }
-// }
-//             `
+export const query = graphql`
+  {
+    allContentfulRichContent {
+      nodes {
+        title
+        text {
+          json
+        }
+      }
+    }
+  }
+`
 
 export default IndexContentfulPage
 
