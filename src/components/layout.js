@@ -10,11 +10,12 @@ import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
-// import Scroll from "./scrollToTopBtn"
+import Scroll from "./scrollToTopBtn"
 // import Audio from "./audio"
 
 const useStyles = makeStyles(theme => ({
   root: {
+    flex: 1,
     backgroundColor: "rgba(49, 10, 10)",
     maxWidth: "100%",
     height: "auto",
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100vh", //100% view height
+      maxHeight: " 100%", //100% view height
     },
   },
   appbarAndDrawer: {},
@@ -99,19 +100,20 @@ const Layout = ({ location, children }, props) => {
   const handleClose = () => {
     setOpen(false)
   }
-  // const handleClick = () => {
-  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  // }
+  const handleClick = () => {
+    window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  }
   return (
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container
+
+        {/* <Container
           style={{ position: "relative", margin: 0, padding: 0 }}
-        ></Container>
+        ></Container> */}
         <Container className={classes.content}>
-          {/* <Scroll showBelow={250} /> */}
-          {/* <div id="back-to-top-anchor" /> */}
+          <Scroll showBelow={250} />
+
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
           <Container maxWidth="md" className={classes.main}>
             <Button

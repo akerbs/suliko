@@ -155,6 +155,7 @@ const ModalWindow = props => {
           method="post"
           action="https://suliko-mailer.herokuapp.com/reservation"
           // onSubmit={submitHandler}
+          novalidate
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
