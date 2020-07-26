@@ -156,14 +156,14 @@ const ModalWindow = props => {
                       as={<TextField />}
                       id="datetime-local"
                       name="dateTime"
-                      label="Date and time"
+                      // label="Date and time"
                       type="datetime-local"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       rules={{ required: "this is required" }}
                       control={control}
-                      defaultValue=""
+                      defaultValue={"Date and time"}
                     />
                     {errors.peopleCount && "this is required"}
                   </FormControl>
