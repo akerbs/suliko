@@ -64,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(0),
-    minWidth: 185,
+    width: 185,
   },
 }))
 
@@ -87,9 +87,9 @@ const ModalWindow = props => {
     >
       <div className={classes.paper}>
         <form
-          method="post"
-          action="https://suliko-mailer.herokuapp.com/reservation"
-          // onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
+          // method="post"
+          // action="https://suliko-mailer.herokuapp.com/reservation"
+          onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
           // onSubmit={handleSubmit(onSubmit)}
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -151,39 +151,15 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <DatePicker
-                      name="date"
-                      id="date"
-                      value={selectedDate}
-                      onChange={handleDateChange}
-                      style={{ marginTop: 15 }}
-                      autoOk={true}
-                      disablePast={true}
-                    />
-                  </FormControl>
-                </TimelineContent>
-              </TimelineItem>
-
-              <TimelineItem className={classes.timelineItem}>
-                <TimelineOppositeContent
-                  style={{ flex: 0 }}
-                ></TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot color="primary">
-                    <ScheduleIcon />
-                  </TimelineDot>
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <FormControl className={classes.formControl}>
-                    <TimePicker
-                      name="time"
-                      id="time"
-                      value={selectedDate}
-                      onChange={handleDateChange}
-                      ampm={false}
-                      style={{ marginTop: 15 }}
-                      autoOk={true}
+                    <TextField
+                      id="datetime-local"
+                      label="Next appointment"
+                      type="datetime-local"
+                      defaultValue={Date()}
+                      className={classes.textField}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
                     />
                   </FormControl>
                 </TimelineContent>
