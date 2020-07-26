@@ -27,8 +27,11 @@ import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
+// import Checkbox from "@material-ui/core/Checkbox"
+// import { useHttp } from "../hooks/http.hook"
+import { Redirect } from "react-router-dom"
+import Snackbar from "@material-ui/core"
 import bgPatternImg from "../images/bgPatternImg.png"
-import { useForm, Controller } from "react-hook-form"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -50,7 +53,6 @@ const useStyles = makeStyles(theme => ({
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 0, 1, 0),
-    margin: 0,
     zIndex: 9999,
     position: "fixed",
     outline: 0,
@@ -65,18 +67,80 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(0),
-    width: 185,
+    minWidth: 185,
   },
 }))
 
 const ModalWindow = props => {
   const classes = useStyles()
-  const { register, handleSubmit, control, errors } = useForm()
+  // const { request } = useHttp()
+  // const [open, setOpen] = useState(false);
+  const [state, setState] = useState({
+    peopleCount: "",
+    date: "",
+    time: "",
+    name: "",
+    phone: "",
+    email: "",
+  })
   const [selectedDate, handleDateChange] = React.useState(new Date())
 
-  const onSubmit = data => {
-    console.log(data)
+  const changeHandler = event => {
+    setState({ ...state, [event.target.name]: event.target.value })
   }
+
+  // const [checked, setChecked] = React.useState(true)
+  // const handleCheckbox = event => {
+  //   setChecked(event.target.checked)
+  // }
+
+  //  const handleSubmit = event => {
+  //   //   // event.preventDefault()
+  //   //   // alert(`Your reservation was successful! Thank you! :-) `)
+  //   //   return <Redirect to="/" />
+
+  // const handleSubmit = async () => {
+  //   try {
+  //     await fetch("http://localhost:3000/reservation", "POST", {
+  //       ...form,
+  //     }).then(function (response) {
+  //       if (response.ok) {
+  //         console.log("OK!")
+  //       } else {
+  //         console.log("try again")
+  //       }
+  //     })
+  //   } catch (e) {}
+  // }
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault()
+  //   await fetch("http://localhost:3000/reservation", "POST")
+  //   .then(() => console.log('Book Created'))
+  //   .catch(err => {
+  //     console.error(err);
+  //   });
+
+  // const submitHandler = async () => {
+  //   try {
+  //     const data = await request("http://localhost:3000/reservation", "POST", { ...state });
+  //     console.log("Data", data);
+  //     console.log("Message", data.message);
+  //     message(data.message);
+
+  //     // history.push("/profile");
+  //   } catch (error) {
+  //     setOpen(true);
+  //   }
+  // };
+
+  // const handleClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+  //   setOpen(false);
+  // };
+  // https://suliko-mailer.herokuapp.com/
 
   return (
     <Modal
@@ -88,14 +152,16 @@ const ModalWindow = props => {
     >
       <div className={classes.paper}>
         <form
-          // method="post"
-          // action="https://suliko-mailer.herokuapp.com/reservation"
-          onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
-          // onSubmit={handleSubmit(onSubmit)}
+          method="post"
+          action="https://suliko-mailer.herokuapp.com/reservation"
+          // onSubmit={submitHandler}
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
-              <TimelineItem className={classes.timelineItem}>
+              <TimelineItem
+                className={classes.timelineItem}
+                // style={{ marginBottom: 5 }}
+              >
                 <TimelineOppositeContent
                   style={{ flex: 0 }}
                 ></TimelineOppositeContent>
@@ -110,32 +176,28 @@ const ModalWindow = props => {
                     <InputLabel id="demo-simple-select-label">
                       People
                     </InputLabel>
-
-                    <Controller
-                      as={
-                        <Select>
-                          <MenuItem value={1}>1</MenuItem>
-                          <MenuItem value={2}>2</MenuItem>
-                          <MenuItem value={3}>3</MenuItem>
-                          <MenuItem value={4}>4</MenuItem>
-                          <MenuItem value={5}>5</MenuItem>
-                          <MenuItem value={6}>6</MenuItem>
-                          <MenuItem value={7}>7</MenuItem>
-                          <MenuItem value={8}>8</MenuItem>
-                          <MenuItem value={9}>9</MenuItem>
-                          <MenuItem value={10}>10</MenuItem>
-                          <MenuItem value={11}>11-15</MenuItem>
-                          <MenuItem value={16}>16-20</MenuItem>
-                          <MenuItem value={20}>20+</MenuItem>
-                        </Select>
-                      }
+                    <Select
                       name="peopleCount"
-                      rules={{ required: "this is required" }}
-                      control={control}
-                      defaultValue=""
-                    />
-
-                    {errors.peopleCount && "this is required"}
+                      id="peopleCount"
+                      labelId="demo-simple-select-label"
+                      value={state.peopleCount}
+                      onChange={changeHandler}
+                      required
+                    >
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}>2</MenuItem>
+                      <MenuItem value={3}>3</MenuItem>
+                      <MenuItem value={4}>4</MenuItem>
+                      <MenuItem value={5}>5</MenuItem>
+                      <MenuItem value={6}>6</MenuItem>
+                      <MenuItem value={7}>7</MenuItem>
+                      <MenuItem value={8}>8</MenuItem>
+                      <MenuItem value={9}>9</MenuItem>
+                      <MenuItem value={10}>10</MenuItem>
+                      <MenuItem value={11}>11-15</MenuItem>
+                      <MenuItem value={16}>16-20</MenuItem>
+                      <MenuItem value={20}>20+</MenuItem>
+                    </Select>
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -152,20 +214,40 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <Controller
-                      as={<TextField />}
-                      id="datetime-local"
-                      name="dateTime"
-                      // label="Date and time"
-                      type="datetime-local"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      rules={{ required: "this is required" }}
-                      control={control}
-                      defaultValue={"Date and time"}
+                    <DatePicker
+                      name="date"
+                      id="date"
+                      value={selectedDate}
+                      onChange={handleDateChange}
+                      style={{ marginTop: 15 }}
+                      autoOk={true}
+                      disablePast={true}
                     />
-                    {errors.peopleCount && "this is required"}
+                  </FormControl>
+                </TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem className={classes.timelineItem}>
+                <TimelineOppositeContent
+                  style={{ flex: 0 }}
+                ></TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot color="primary">
+                    <ScheduleIcon />
+                  </TimelineDot>
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <FormControl className={classes.formControl}>
+                    <TimePicker
+                      name="time"
+                      id="time"
+                      value={selectedDate}
+                      onChange={handleDateChange}
+                      ampm={false}
+                      style={{ marginTop: 15 }}
+                      autoOk={true}
+                    />
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -184,24 +266,21 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
-                      name="fullname"
+                      value={state.name}
+                      name="name"
+                      id="name"
                       label="Name"
-                      inputRef={register({
-                        required: true,
-                        minLength: 3,
-                        maxLength: 20,
-                      })}
+                      placeholder="Enter your name"
+                      onChange={changeHandler}
+                      required
+                      // helperText={
+                      //   error ? "Name length must be >= 2" : "Perfect!"
+                      // }
+                      // error={error}
+                      // required
+                      // minlength={2}
+                      // maxlength={20}
                     />
-                    {/* {errors.fullname && "fullname is required"} */}
-                    {errors.fullname &&
-                      errors.fullname.type === "required" &&
-                      "this is required"}
-                    {errors.fullname &&
-                      errors.fullname.type === "minLength" &&
-                      "Enter a correct name"}
-                    {errors.fullname &&
-                      errors.fullname.type === "maxLength" &&
-                      "Enter a correct name"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -220,20 +299,13 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
+                      value={state.phone}
                       name="phone"
                       id="phone"
                       label="Phone"
-                      inputRef={register({
-                        required: true,
-                        pattern: /^[0-9\-\+]{9,15}$/,
-                      })}
+                      onChange={changeHandler}
+                      required
                     />
-                    {errors.phone &&
-                      errors.phone.type === "required" &&
-                      "this is required"}
-                    {errors.phone &&
-                      errors.phone.type === "pattern" &&
-                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -251,19 +323,13 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="email"
+                      value={state.email}
                       name="email"
+                      id="email"
                       label="Email"
-                      inputRef={register({
-                        required: true,
-                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      })}
+                      required
+                      onChange={changeHandler}
                     />
-                    {errors.email &&
-                      errors.email.type === "required" &&
-                      "this is required"}
-                    {errors.email &&
-                      errors.email.type === "pattern" &&
-                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -283,9 +349,33 @@ const ModalWindow = props => {
           >
             Reservieren jetzt
           </Button>
+
+          {/* <Checkbox checked={checked} onChange={handleCheckbox} color="primary" />
+              <Typography
+              variant="caption"
+              // align="center"
+              style={{
+                color: "rgba(133, 26, 29)",
+                display: "inline",
+                lineHight: 0,
+              }}
+              >
+              Argee to receive news and offers from Suliko
+              </Typography> */}
         </form>
       </div>
+      {/* <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={open}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        message={message || error}
+      ></Snackbar> */}
     </Modal>
   )
 }
+
 export default ModalWindow
