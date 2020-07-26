@@ -50,6 +50,7 @@ const useStyles = makeStyles(theme => ({
     border: "2px solid rgba(133,26,29)",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 0, 1, 0),
+    margin: 0,
     zIndex: 9999,
     position: "fixed",
     outline: 0,
@@ -151,16 +152,20 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <TextField
+                    <Controller
+                      as={<TextField />}
                       id="datetime-local"
-                      label="Next appointment"
+                      name="dateTime"
+                      label="Date and time"
                       type="datetime-local"
-                      defaultValue={Date()}
-                      className={classes.textField}
                       InputLabelProps={{
                         shrink: true,
                       }}
+                      rules={{ required: "this is required" }}
+                      control={control}
+                      defaultValue=""
                     />
+                    {errors.peopleCount && "this is required"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -181,7 +186,6 @@ const ModalWindow = props => {
                       type="text"
                       name="fullname"
                       label="Name"
-                      placeholder="Enter your name"
                       inputRef={register({
                         required: true,
                         minLength: 3,
