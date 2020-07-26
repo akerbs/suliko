@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       padding: 5,
       paddingTop: 20,
-      maxHeight: " 100%", //100% view height
+      maxHeight: " 100vh", //100% view height
     },
   },
   appbarAndDrawer: {},

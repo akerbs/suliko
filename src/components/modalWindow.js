@@ -7,6 +7,7 @@ import {
   TimePicker,
   DatePicker,
 } from "@material-ui/pickers"
+import "date-fns"
 import DateFnsUtils from "@date-io/date-fns"
 import Modal from "@material-ui/core/Modal"
 import Timeline from "@material-ui/lab/Timeline"
@@ -27,11 +28,8 @@ import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
-// import Checkbox from "@material-ui/core/Checkbox"
-// import { useHttp } from "../hooks/http.hook"
-import { Redirect } from "react-router-dom"
-import Snackbar from "@material-ui/core"
 import bgPatternImg from "../images/bgPatternImg.png"
+import { useForm, Controller } from "react-hook-form"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -71,76 +69,70 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+////////////// material-ui/pickers validation //////////////
+function required(displayName) {
+  return function validateRequired(value) {
+    // console.log("VALIDATING: ", displayName, value);
+    return value !== null || `${displayName} is required.`
+  }
+}
+
+function useOnMount(handler) {
+  return React.useEffect(handler, [])
+}
+
+const defaultValues = {
+  eventDate: null,
+  startTime: null,
+}
+////////////// material-ui/pickers validation //////////////
+
 const ModalWindow = props => {
   const classes = useStyles()
-  // const { request } = useHttp()
-  // const [open, setOpen] = useState(false);
-  const [state, setState] = useState({
-    peopleCount: "",
-    date: "",
-    time: "",
-    name: "",
-    phone: "",
-    email: "",
+  const {
+    register,
+    handleSubmit,
+    control,
+    errors,
+    getValues,
+    setValue,
+  } = useForm({
+    defaultValues,
   })
-  const [selectedDate, handleDateChange] = React.useState(new Date())
+  // const [selectedDate, handleDateChange] = React.useState(new Date())
 
-  const changeHandler = event => {
-    setState({ ...state, [event.target.name]: event.target.value })
+  const onSubmit = data => {
+    console.log("DATA: ", data)
   }
 
-  // const [checked, setChecked] = React.useState(true)
-  // const handleCheckbox = event => {
-  //   setChecked(event.target.checked)
-  // }
+  ////////////// material-ui/pickers validation //////////////
+  const handleDateChange = date => {
+    console.log("eventDate CHANGED: ", date)
+    setValue("eventDate", date)
+  }
 
-  //  const handleSubmit = event => {
-  //   //   // event.preventDefault()
-  //   //   // alert(`Your reservation was successful! Thank you! :-) `)
-  //   //   return <Redirect to="/" />
+  const handleStartTime = date => {
+    setValue("startTime", date)
+  }
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     await fetch("http://localhost:3000/reservation", "POST", {
-  //       ...form,
-  //     }).then(function (response) {
-  //       if (response.ok) {
-  //         console.log("OK!")
-  //       } else {
-  //         console.log("try again")
-  //       }
-  //     })
-  //   } catch (e) {}
-  // }
+  React.useEffect(() => {
+    console.log("useEffect register")
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault()
-  //   await fetch("http://localhost:3000/reservation", "POST")
-  //   .then(() => console.log('Book Created'))
-  //   .catch(err => {
-  //     console.error(err);
-  //   });
+    register(
+      { name: "eventDate", type: "text" },
+      { validate: required("Event date") }
+    )
+    register(
+      { name: "startTime", type: "text" },
+      { validate: required("Start time") }
+    )
+  })
 
-  // const submitHandler = async () => {
-  //   try {
-  //     const data = await request("http://localhost:3000/reservation", "POST", { ...state });
-  //     console.log("Data", data);
-  //     console.log("Message", data.message);
-  //     message(data.message);
+  const values = getValues()
 
-  //     // history.push("/profile");
-  //   } catch (error) {
-  //     setOpen(true);
-  //   }
-  // };
-
-  // const handleClose = (event, reason) => {
-  //   if (reason === "clickaway") {
-  //     return;
-  //   }
-  //   setOpen(false);
-  // };
-  // https://suliko-mailer.herokuapp.com/
+  console.log("RENDERING VALUES: ", values)
+  console.log("RENDERING ERRORS: ", errors)
+  ////////////// material-ui/pickers validation //////////////
 
   return (
     <Modal
@@ -152,17 +144,14 @@ const ModalWindow = props => {
     >
       <div className={classes.paper}>
         <form
-          method="post"
-          action="https://suliko-mailer.herokuapp.com/reservation"
-          // onSubmit={submitHandler}
-          novalidate
+          // method="post"
+          // action="https://suliko-mailer.herokuapp.com/reservation"
+          // onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
-              <TimelineItem
-                className={classes.timelineItem}
-                // style={{ marginBottom: 5 }}
-              >
+              <TimelineItem className={classes.timelineItem}>
                 <TimelineOppositeContent
                   style={{ flex: 0 }}
                 ></TimelineOppositeContent>
@@ -177,28 +166,32 @@ const ModalWindow = props => {
                     <InputLabel id="demo-simple-select-label">
                       People
                     </InputLabel>
-                    <Select
+
+                    <Controller
+                      as={
+                        <Select>
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                          <MenuItem value={4}>4</MenuItem>
+                          <MenuItem value={5}>5</MenuItem>
+                          <MenuItem value={6}>6</MenuItem>
+                          <MenuItem value={7}>7</MenuItem>
+                          <MenuItem value={8}>8</MenuItem>
+                          <MenuItem value={9}>9</MenuItem>
+                          <MenuItem value={10}>10</MenuItem>
+                          <MenuItem value={11}>11-15</MenuItem>
+                          <MenuItem value={16}>16-20</MenuItem>
+                          <MenuItem value={20}>20+</MenuItem>
+                        </Select>
+                      }
                       name="peopleCount"
-                      id="peopleCount"
-                      labelId="demo-simple-select-label"
-                      value={state.peopleCount}
-                      onChange={changeHandler}
-                      required
-                    >
-                      <MenuItem value={1}>1</MenuItem>
-                      <MenuItem value={2}>2</MenuItem>
-                      <MenuItem value={3}>3</MenuItem>
-                      <MenuItem value={4}>4</MenuItem>
-                      <MenuItem value={5}>5</MenuItem>
-                      <MenuItem value={6}>6</MenuItem>
-                      <MenuItem value={7}>7</MenuItem>
-                      <MenuItem value={8}>8</MenuItem>
-                      <MenuItem value={9}>9</MenuItem>
-                      <MenuItem value={10}>10</MenuItem>
-                      <MenuItem value={11}>11-15</MenuItem>
-                      <MenuItem value={16}>16-20</MenuItem>
-                      <MenuItem value={20}>20+</MenuItem>
-                    </Select>
+                      rules={{ required: "this is required" }}
+                      control={control}
+                      defaultValue=""
+                    />
+
+                    {errors.peopleCount && "this is required"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -215,7 +208,7 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <DatePicker
+                    {/* <DatePicker
                       name="date"
                       id="date"
                       value={selectedDate}
@@ -223,6 +216,23 @@ const ModalWindow = props => {
                       style={{ marginTop: 15 }}
                       autoOk={true}
                       disablePast={true}
+                    /> */}
+                    <DatePicker
+                      id="eventDate"
+                      name="eventDate"
+                      label="Event date"
+                      format="dd.MM.yyyy"
+                      disablePast
+                      margin="normal"
+                      disableToolbar
+                      fullWidth
+                      value={values.eventDate}
+                      onChange={handleDateChange}
+                      KeyboardButtonProps={{
+                        "aria-label": "change date",
+                      }}
+                      error={errors.hasOwnProperty("eventDate")}
+                      helperText={errors.eventDate && errors.eventDate.message}
                     />
                   </FormControl>
                 </TimelineContent>
@@ -240,7 +250,7 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <TimePicker
+                    {/* <TimePicker
                       name="time"
                       id="time"
                       value={selectedDate}
@@ -248,6 +258,21 @@ const ModalWindow = props => {
                       ampm={false}
                       style={{ marginTop: 15 }}
                       autoOk={true}
+                    /> */}
+                    <TimePicker
+                      id="startTime"
+                      name="startTime"
+                      label="Starts at"
+                      margin="normal"
+                      ampm={false}
+                      fullWidth
+                      value={values.startTime}
+                      onChange={handleStartTime}
+                      KeyboardButtonProps={{
+                        "aria-label": "change start time",
+                      }}
+                      error={errors.hasOwnProperty("startTime")}
+                      helperText={errors.startTime && errors.startTime.message}
                     />
                   </FormControl>
                 </TimelineContent>
@@ -267,21 +292,25 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
-                      value={state.name}
-                      name="name"
-                      id="name"
+                      name="fullname"
                       label="Name"
                       placeholder="Enter your name"
-                      onChange={changeHandler}
-                      required
-                      // helperText={
-                      //   error ? "Name length must be >= 2" : "Perfect!"
-                      // }
-                      // error={error}
-                      // required
-                      // minlength={2}
-                      // maxlength={20}
+                      inputRef={register({
+                        required: true,
+                        minLength: 3,
+                        maxLength: 20,
+                      })}
                     />
+                    {/* {errors.fullname && "fullname is required"} */}
+                    {errors.fullname &&
+                      errors.fullname.type === "required" &&
+                      "this is required"}
+                    {errors.fullname &&
+                      errors.fullname.type === "minLength" &&
+                      "Enter a correct name"}
+                    {errors.fullname &&
+                      errors.fullname.type === "maxLength" &&
+                      "Enter a correct name"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -300,13 +329,20 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="text"
-                      value={state.phone}
                       name="phone"
                       id="phone"
                       label="Phone"
-                      onChange={changeHandler}
-                      required
+                      inputRef={register({
+                        required: true,
+                        pattern: /^[0-9\-\+]{9,15}$/,
+                      })}
                     />
+                    {errors.phone &&
+                      errors.phone.type === "required" &&
+                      "this is required"}
+                    {errors.phone &&
+                      errors.phone.type === "pattern" &&
+                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -324,13 +360,19 @@ const ModalWindow = props => {
                   <FormControl className={classes.formControl}>
                     <TextField
                       type="email"
-                      value={state.email}
                       name="email"
-                      id="email"
                       label="Email"
-                      required
-                      onChange={changeHandler}
+                      inputRef={register({
+                        required: true,
+                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      })}
                     />
+                    {errors.email &&
+                      errors.email.type === "required" &&
+                      "this is required"}
+                    {errors.email &&
+                      errors.email.type === "pattern" &&
+                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -339,6 +381,8 @@ const ModalWindow = props => {
 
           <Button
             // onClick={submitHandler}
+            id="submit"
+            name="submit"
             type="submit"
             variant="contained"
             color="primary"
@@ -350,33 +394,9 @@ const ModalWindow = props => {
           >
             Reservieren jetzt
           </Button>
-
-          {/* <Checkbox checked={checked} onChange={handleCheckbox} color="primary" />
-              <Typography
-              variant="caption"
-              // align="center"
-              style={{
-                color: "rgba(133, 26, 29)",
-                display: "inline",
-                lineHight: 0,
-              }}
-              >
-              Argee to receive news and offers from Suliko
-              </Typography> */}
         </form>
       </div>
-      {/* <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={open}
-        autoHideDuration={2000}
-        onClose={handleClose}
-        message={message || error}
-      ></Snackbar> */}
     </Modal>
   )
 }
-
 export default ModalWindow
