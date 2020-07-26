@@ -30,8 +30,6 @@ import Select from "@material-ui/core/Select"
 import TextField from "@material-ui/core/TextField"
 import bgPatternImg from "../images/bgPatternImg.png"
 import { useForm, Controller } from "react-hook-form"
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -71,20 +69,23 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const schema = yup.object().shape({
-  peopleCount: yup.string().nullable().required("Field is required"),
-  eventDate: yup.string().nullable().required("Field is required"),
-  eventTime: yup.string().nullable().required("Field is required"),
-  fullname: yup.string().required("Field is required"),
-  phone: yup.string().required("Field is required"),
-  email: yup.string().required("Field is required"),
-})
+////////////// material-ui/pickers validation //////////////
+function required(displayName) {
+  return function validateRequired(value) {
+    // console.log("VALIDATING: ", displayName, value);
+    return value !== null || `${displayName} is required.`
+  }
+}
+
+function useOnMount(handler) {
+  return React.useEffect(handler, [])
+}
 
 const defaultValues = {
-  peopleCount: null,
-  eventDate: null, // Don't use empty strings ""
-  eventTime: null,
+  eventDate: null,
+  startTime: null,
 }
+////////////// material-ui/pickers validation //////////////
 
 const ModalWindow = props => {
   const classes = useStyles()
@@ -96,43 +97,42 @@ const ModalWindow = props => {
     getValues,
     setValue,
   } = useForm({
-    resolver: yupResolver(schema),
     defaultValues,
   })
   // const [selectedDate, handleDateChange] = React.useState(new Date())
 
-  const errorPeopleCount =
-    errors.hasOwnProperty("peopleCount") && errors["peopleCount"].message
-
-  const errorEventDate =
-    errors.hasOwnProperty("eventDate") && errors["eventDate"].message
-
-  const errorEventTime =
-    errors.hasOwnProperty("eventTime") && errors["eventTime"].message
-
-  const errorFullname =
-    errors.hasOwnProperty("fullname") && errors["fullname"].message
-
-  const errorPhone = errors.hasOwnProperty("phone") && errors["phone"].message
-
-  const errorEmail = errors.hasOwnProperty("email") && errors["email"].message
-
-  const onSubmit = (data, event) => {
-    // console.log("DATA: ", data)
-    event.preventDefault()
-    const url = "https://suliko-mailer.herokuapp.com/reservation"
-
-    // const data = { name:this.state.name, email:this.state.email }
-
-    fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data), // data can be `string` or {object}!
-      headers: { "Content-Type": "application/json" },
-    })
-      .then(res => res.json())
-      .catch(error => console.error("Error:", error))
-      .then(response => console.log("Success:", response))
+  const onSubmit = data => {
+    console.log("DATA: ", data)
   }
+
+  ////////////// material-ui/pickers validation //////////////
+  const handleDateChange = date => {
+    console.log("eventDate CHANGED: ", date)
+    setValue("eventDate", date)
+  }
+
+  const handleStartTime = date => {
+    setValue("startTime", date)
+  }
+
+  React.useEffect(() => {
+    console.log("useEffect register")
+
+    register(
+      { name: "eventDate", type: "text" },
+      { validate: required("Event date") }
+    )
+    register(
+      { name: "startTime", type: "text" },
+      { validate: required("Start time") }
+    )
+  })
+
+  const values = getValues()
+
+  console.log("RENDERING VALUES: ", values)
+  console.log("RENDERING ERRORS: ", errors)
+  ////////////// material-ui/pickers validation //////////////
 
   return (
     <Modal
@@ -189,14 +189,9 @@ const ModalWindow = props => {
                       rules={{ required: "this is required" }}
                       control={control}
                       defaultValue=""
-                      error={!!errorPeopleCount}
-                      helperText={errorPeopleCount}
-                      // inputRef={register({
-                      //   required: true,
-                      // })}
                     />
 
-                    {/* {errors.peopleCount && "this is required"} */}
+                    {errors.peopleCount && "this is required"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -213,31 +208,16 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <Controller
-                      as={
-                        <DatePicker
-                          // disableToolbar
-                          disablePast
-                          autoOk
-                          style={{ marginTop: 15 }}
-                          variant="inline"
-                          format="dd/MM/yyyy"
-                          error={!!errorEventDate}
-                          helperText={errorEventDate}
-                        />
-                      }
-                      control={control}
-                      name="eventDate"
-                      placeholder="Event Date"
-                    />
-
                     {/* <DatePicker
-                    
+                      name="date"
+                      id="date"
                       value={selectedDate}
                       onChange={handleDateChange}
-  
+                      style={{ marginTop: 15 }}
+                      autoOk={true}
+                      disablePast={true}
                     /> */}
-                    {/* <DatePicker
+                    <DatePicker
                       id="eventDate"
                       name="eventDate"
                       label="Event date"
@@ -253,7 +233,7 @@ const ModalWindow = props => {
                       }}
                       error={errors.hasOwnProperty("eventDate")}
                       helperText={errors.eventDate && errors.eventDate.message}
-                    /> */}
+                    />
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -270,24 +250,6 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <Controller
-                      as={
-                        <TimePicker
-                          // fullWidth
-                          autoOk
-                          ampm={false}
-                          style={{ marginTop: 15 }}
-                          // inputVariant="outlined"
-                          variant="inline"
-                          // format="hh:MM"
-                          error={!!errorEventTime}
-                          helperText={errorEventTime}
-                        />
-                      }
-                      control={control}
-                      name="eventTime"
-                      placeholder="Event Time"
-                    />
                     {/* <TimePicker
                       name="time"
                       id="time"
@@ -297,7 +259,7 @@ const ModalWindow = props => {
                       style={{ marginTop: 15 }}
                       autoOk={true}
                     /> */}
-                    {/* <TimePicker
+                    <TimePicker
                       id="startTime"
                       name="startTime"
                       label="Starts at"
@@ -311,7 +273,7 @@ const ModalWindow = props => {
                       }}
                       error={errors.hasOwnProperty("startTime")}
                       helperText={errors.startTime && errors.startTime.message}
-                    /> */}
+                    />
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -338,11 +300,9 @@ const ModalWindow = props => {
                         minLength: 3,
                         maxLength: 20,
                       })}
-                      error={!!errorFullname}
-                      helperText={errorFullname}
                     />
                     {/* {errors.fullname && "fullname is required"} */}
-                    {/* {errors.fullname &&
+                    {errors.fullname &&
                       errors.fullname.type === "required" &&
                       "this is required"}
                     {errors.fullname &&
@@ -350,7 +310,7 @@ const ModalWindow = props => {
                       "Enter a correct name"}
                     {errors.fullname &&
                       errors.fullname.type === "maxLength" &&
-                      "Enter a correct name"} */}
+                      "Enter a correct name"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -376,15 +336,13 @@ const ModalWindow = props => {
                         required: true,
                         pattern: /^[0-9\-\+]{9,15}$/,
                       })}
-                      error={!!errorPhone}
-                      helperText={errorPhone}
                     />
-                    {/* {errors.phone &&
+                    {errors.phone &&
                       errors.phone.type === "required" &&
                       "this is required"}
                     {errors.phone &&
                       errors.phone.type === "pattern" &&
-                      "Enter a correct phone number"} */}
+                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
@@ -408,15 +366,13 @@ const ModalWindow = props => {
                         required: true,
                         pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                       })}
-                      error={!!errorEmail}
-                      helperText={errorEmail}
                     />
-                    {/* {errors.email &&
+                    {errors.email &&
                       errors.email.type === "required" &&
                       "this is required"}
                     {errors.email &&
                       errors.email.type === "pattern" &&
-                      "Enter a correct phone number"} */}
+                      "Enter a correct phone number"}
                   </FormControl>
                 </TimelineContent>
               </TimelineItem>
