@@ -141,7 +141,8 @@ const ModalWindow = props => {
         }
       )
       if (response.ok) {
-        navigate("/")
+        // navigate("/")
+        window.location.reload(true)
         let responseJson = await response.json()
         return responseJson
       }
