@@ -136,13 +136,14 @@ const ModalWindow = props => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
           },
           body: JSON.stringify(data),
         }
       )
       if (response.ok) {
-        // navigate("/")
-        window.location.reload(true)
+        navigate("/")
+        // window.location.reload()
         let responseJson = await response.json()
         return responseJson
       }
