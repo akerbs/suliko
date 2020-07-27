@@ -5,12 +5,9 @@ import IconButton from "@material-ui/core/IconButton"
 
 const useStyles = makeStyles(theme => ({
   toTop: {
-    display: "none",
-
-    zIndex: 999,
+    zIndex: 2,
     position: "fixed",
-    bottom: 5,
-    left: 5,
+    bottom: "7vh",
     backgroundColor: "rgba(133,26,29)",
     color: "black",
     "&:hover, &.Mui-focusVisible": {
@@ -19,14 +16,20 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: "rgba(133,26,29)",
     },
     [theme.breakpoints.up("xs")]: {
-      // right: "5%",
+      right: "5%",
       // backgroundColor: "rgb(220,220,220,0.7)",
     },
     [theme.breakpoints.up("lg")]: {
-      // right: "6.5%",
+      right: "6.5%",
     },
   },
 }))
+
+// const handleClick = () => {
+//   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+// }
+
+// <Scroll showBelow={250} />
 
 const Scroll = ({ showBelow }) => {
   const classes = useStyles()
