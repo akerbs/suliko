@@ -10,10 +10,7 @@ import Container from "@material-ui/core/Container"
 import Button from "@material-ui/core/Button"
 import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
-import Scroll from "./scrollToTopBtn"
-// import Audio from "./audio"
 import Fab from "@material-ui/core/Fab"
-import AddIcon from "@material-ui/icons/Add"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import ExpandLessIcon from "@material-ui/icons/ExpandLess"
 
@@ -71,9 +68,9 @@ const useStyles = makeStyles(theme => ({
     bottom: 5,
     left: 5,
     zIndex: 999,
-    color: "black",
+    color: "white",
     "&:hover": {
-      color: "white",
+      // color: "rgba(250,250,250, 0.5)",
     },
   },
 
