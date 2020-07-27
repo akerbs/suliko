@@ -34,7 +34,6 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers"
 import axios from "axios"
 import { useHttp } from "./http.hook"
-import { navigate } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
   modalWrapper: {
@@ -127,27 +126,48 @@ const ModalWindow = props => {
   const errorPhone = errors.hasOwnProperty("phone") && errors["phone"].message
   const errorEmail = errors.hasOwnProperty("email") && errors["email"].message
 
-  async function onSubmit(data) {
-    try {
-      let response = await fetch(
-        "https://suliko-mailer.herokuapp.com/reservation",
-        // "http://localhost:3000/reservation",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      )
-      if (response.ok) {
-        navigate("/")
-        let responseJson = await response.json()
-        return responseJson
-      }
-    } catch (error) {
-      console.error(error)
-    }
+  // const onSubmit = (data, event) => {
+  //   // console.log("DATA: ", data)
+  //   event.preventDefault()
+  //   // const data = { name:this.state.name, email:this.state.email }
+  //   fetch("https://suliko-mailer.herokuapp.com/reservation", {
+  //     method: "POST",
+  //     body: JSON.stringify(data), // data can be `string` or {object}!
+  //     headers: { "Content-Type": "application/json" },
+  //   }).then(res => res.json())
+  //   // .catch(error => console.error("Error:", error))
+  //   // .then(response => console.log("Success:", response))
+  // }
+
+  // const onSubmit = data => {
+  //   console.log(data)
+  //   axios
+  //     .post("https://suliko-mailer.herokuapp.com/reservation", data)
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
+  // const newAxios = axios.create({
+  //   baseURL: "https://suliko-mailer.herokuapp.com/reservation",
+  //   responseType: "json"
+  // });
+
+  // const onSubmit = async values => {
+  //   try {
+  //     const data = await request(
+  //       "https://suliko-mailer.herokuapp.com/reservation",
+  //       "POST",
+  //       values
+  //     )
+  //     console.log(data)
+  //   } catch (e) {}
+  // }
+
+  const onSubmit = data => {
+    console.log(data)
   }
 
   return (
@@ -160,13 +180,12 @@ const ModalWindow = props => {
     >
       <div className={classes.paper}>
         <form
-          // name="myForm"
-          // method="post"
-          // action="http://localhost:3000/reservation"
-          // action="https://suliko-mailer.herokuapp.com/reservation"
+          name="myForm"
+          method="post"
+          action="https://suliko-mailer.herokuapp.com/reservation"
           // onSubmit={handleSubmit(data => alert(JSON.stringify(data)))}
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
+          // onSubmit={handleSubmit(onSubmit)}
+          // noValidate
         >
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Timeline className={classes.timeline}>
@@ -298,8 +317,7 @@ const ModalWindow = props => {
                           style={{ marginTop: 15 }}
                           // inputVariant="outlined"
                           variant="inline"
-                          ampm={false}
-                          // format="hh:mm"
+                          format="hh:mm"
                           error={!!errorTime}
                           helperText={errorTime}
                         />
@@ -348,7 +366,7 @@ const ModalWindow = props => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <FormControl className={classes.formControl}>
-                    <TextField
+                    <input
                       type="text"
                       name="name"
                       id="name"
@@ -356,6 +374,8 @@ const ModalWindow = props => {
                       inputRef={register}
                       error={!!errorName}
                       helperText={errorName}
+                      required
+                      pattern="/^[0-9\-\+]{9,15}$/"
                     />
                     {/* {errors.fullname && "fullname is required"} */}
                     {/* {errors.fullname &&
