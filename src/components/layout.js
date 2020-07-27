@@ -12,6 +12,10 @@ import bgImg1600 from "../images/bgImg1600.gif"
 import ModalWindow from "./modalWindow"
 import Scroll from "./scrollToTopBtn"
 // import Audio from "./audio"
+import Fab from "@material-ui/core/Fab"
+import AddIcon from "@material-ui/icons/Add"
+import scrollTo from "gatsby-plugin-smoothscroll"
+import ExpandLessIcon from "@material-ui/icons/ExpandLess"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -56,14 +60,23 @@ const useStyles = makeStyles(theme => ({
       maxHeight: " 100vh", //100% view height
     },
   },
-  appbarAndDrawer: {},
   reservierenButton: {
     position: "fixed",
     bottom: 5,
     right: 5,
     zIndex: 999,
-    [theme.breakpoints.down("sm")]: {},
   },
+  scrollToTopButton: {
+    position: "fixed",
+    bottom: 5,
+    left: 5,
+    zIndex: 999,
+    color: "black",
+    "&:hover": {
+      color: "white",
+    },
+  },
+
   main: {
     display: "flex",
     flexDirection: "column",
@@ -100,20 +113,18 @@ const Layout = ({ location, children }, props) => {
   const handleClose = () => {
     setOpen(false)
   }
-  const handleClick = () => {
-    window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  }
+
+  // const handleClick = () => {
+  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+  // }
+
   return (
     <Container className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        {/* <Container
-          style={{ position: "relative", margin: 0, padding: 0 }}
-        ></Container> */}
         <Container className={classes.content}>
-          <Scroll showBelow={250} />
-
+          <div id="abc" />
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
           <Container maxWidth="md" className={classes.main}>
             <Button
@@ -124,6 +135,17 @@ const Layout = ({ location, children }, props) => {
             >
               Reservieren
             </Button>
+
+            <Fab
+              size="small"
+              color="primary"
+              aria-label="scrollToTopButton"
+              className={classes.scrollToTopButton}
+              onClick={() => scrollTo("#abc")}
+            >
+              <ExpandLessIcon />
+            </Fab>
+
             <Container maxWidth="md" className={classes.forChildren}>
               {children}
             </Container>
