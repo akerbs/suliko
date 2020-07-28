@@ -2,7 +2,22 @@ import React from "react"
 import Layout from "../../components/layout-rus"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles(theme => ({
+  darkred: {
+    background: "rgba(49, 10, 10, 0.75)",
+    padding: "50px 40px",
+    marginTop: 50,
+    borderRadius: 10,
+    [theme.breakpoints.down("xs")]: {
+      padding: "30px",
+    },
+  },
+}))
+
 export default () => {
+  const classes = useStyles()
   return (
     <Layout>
       <Container
@@ -14,14 +29,7 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        <Container
-          style={{
-            background: "rgba(49, 10, 10, 0.75)",
-            padding: "50px 40px",
-            marginTop: 50,
-            borderRadius: 10,
-          }}
-        >
+        <Container className={classes.darkred}>
           <Typography
             variant="body1"
             // align="center"

@@ -5,7 +5,15 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
-  pageHeader: {},
+  darkred: {
+    background: "rgba(49, 10, 10, 0.75)",
+    padding: "50px 40px",
+    marginTop: 50,
+    borderRadius: 10,
+    [theme.breakpoints.down("xs")]: {
+      padding: "30px",
+    },
+  },
 }))
 
 export default () => {
@@ -22,29 +30,7 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        {/* <Typography
-          variant="h6"
-          align="center"
-          color="secondary"
-          style={{
-            textShadow: "rgba(133,26,29) 0 0 5px",
-            fontWeight: 700,
-            letterSpacing: 2,
-            // opacity: 0.5,
-          }}
-        >
-          ÜBER UNS
-        </Typography> */}
-
-        <Container
-          style={{
-            background: "rgba(49, 10, 10, 0.75)",
-            paddingTop: 50,
-            padding: 25,
-            marginTop: 50,
-            borderRadius: 10,
-          }}
-        >
+        <Container className={classes.darkred}>
           <Typography
             variant="body1"
             style={{ lineHeight: 1.5 }}

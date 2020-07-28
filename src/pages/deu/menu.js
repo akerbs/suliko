@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import { ThemeProvider } from "@material-ui/core/styles"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
@@ -17,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default props => {
+export default () => {
   const classes = useStyles()
   return (
     <Layout>
