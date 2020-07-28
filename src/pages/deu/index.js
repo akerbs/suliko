@@ -11,7 +11,7 @@ import sloganImg2 from "../../images/slogan_eng2.png"
 export default props => {
   return (
     <Layout>
-      <AudioNoAutoPlay />
+      {/* <AudioNoAutoPlay /> */}
       <Container
         maxWidth="md"
         style={{
