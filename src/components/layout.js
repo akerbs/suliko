@@ -13,6 +13,7 @@ import ModalWindow from "./modalWindow"
 import Fab from "@material-ui/core/Fab"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import ExpandLessIcon from "@material-ui/icons/ExpandLess"
+import handleViewport from "react-in-viewport"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -111,37 +112,24 @@ const Layout = ({ location, children }, props) => {
     setOpen(false)
   }
 
-  const element = document.querySelector("#abc")
+  // const elA = document.getElementById("elA")
+  // const elB = document.getElementById("elB")
 
-  function Visible(target) {
-    const targetPosition = {
-      top: window.pageYOffset + target.getBoundingClientRect().top,
-      bottom: window.pageYOffset + target.getBoundingClientRect().bottom,
-    }
+  // const domRect = elA.getBoundingClientRect()
 
-    const windowPosition = {
-      top: window.pageYOffset,
-      bottom: window.pageYOffset + document.documentElement.clientHeight,
-    }
+  // console.log(elA)
+  // elB.style.color = "tomato"
+  // console.log(elB.style)
+  // // console.log(elB)
+  // console.log(domRect)
 
-    if (
-      targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-      targetPosition.top < windowPosition.bottom
-    ) {
-      // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-      console.log("Вы видите элемент :)")
-    } else {
-      console.log("Вы НЕ видите элемент :)")
-    }
-  }
+  // // domRect.top >= 0 ?
+  // const selector = React.createRef()
 
-  // Запускаем функцию при прокрутке страницы
-  window.addEventListener("scroll", function () {
-    Visible(element)
-  })
-
-  // А также запустим функцию сразу. А то вдруг, элемент изначально видно
-  Visible(element)
+  // React.componentDidMount = () => {
+  //   const rect = selector.current.getBoundingClientRect()
+  //   console.log(rect)
+  // }
 
   return (
     <Container className={classes.root}>
@@ -149,7 +137,7 @@ const Layout = ({ location, children }, props) => {
         <CssBaseline />
 
         <Container className={classes.content}>
-          <div id="abc" />
+          <div id="abc" ref={selector} />
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
           <Container maxWidth="md" className={classes.main}>
             <Button
