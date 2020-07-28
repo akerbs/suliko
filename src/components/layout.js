@@ -137,7 +137,7 @@ const Layout = ({ location, children }, props) => {
         <CssBaseline />
 
         <Container className={classes.content}>
-          <div id="abc" ref={selector} />
+          <div id="abc" />
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
           <Container maxWidth="md" className={classes.main}>
             <Button
