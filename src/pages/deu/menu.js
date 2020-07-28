@@ -2,8 +2,23 @@ import React from "react"
 import Layout from "../../components/layout"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
+import { ThemeProvider } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 
-export default () => {
+const useStyles = makeStyles(theme => ({
+  darkred: {
+    background: "rgba(49, 10, 10, 0.75)",
+    padding: "50px 40px",
+    marginTop: 50,
+    borderRadius: 10,
+    [theme.breakpoints.down("xs")]: {
+      padding: "30px",
+    },
+  },
+}))
+
+export default props => {
+  const classes = useStyles()
   return (
     <Layout>
       <Container
@@ -15,14 +30,7 @@ export default () => {
           // background: "rgba(255,255,255, 0.75)",
         }}
       >
-        <Container
-          style={{
-            background: "rgba(49, 10, 10, 0.75)",
-            padding: "50px 40px",
-            marginTop: 50,
-            borderRadius: 10,
-          }}
-        >
+        <Container className={classes.darkred}>
           <Typography
             variant="body1"
             // align="center"
