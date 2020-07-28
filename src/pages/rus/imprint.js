@@ -2,12 +2,10 @@ import React from "react"
 import Layout from "../../components/layout-rus"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 export default () => {
   return (
     <Layout>
-      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{

@@ -31,13 +31,13 @@ const useStyles = makeStyles(theme => ({
 
 // <Scroll showBelow={250} />
 
-const Scroll = ({ showBelow }) => {
+const Scroll = () => {
   const classes = useStyles()
 
-  const [show, setShow] = useState(showBelow ? false : true)
+  const [show, setShow] = useState(250 ? false : true)
 
   const handleScroll = () => {
-    if (window.pageYOffset > showBelow) {
+    if (window.pageYOffset > 250) {
       if (!show) setShow(true)
     } else {
       if (show) setShow(false)
@@ -49,7 +49,7 @@ const Scroll = ({ showBelow }) => {
   }
 
   useEffect(() => {
-    if (showBelow) {
+    if (250) {
       window.addEventListener(`scroll`, handleScroll)
       return () => window.removeEventListener(`scroll`, handleScroll)
     }

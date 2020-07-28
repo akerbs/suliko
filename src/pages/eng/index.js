@@ -6,13 +6,11 @@ import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
 import { ThemeProvider } from "@material-ui/core/styles"
 import sloganImg2 from "../../images/slogan_eng2.png"
-// import AudioAutoPlay from "../../components/audio-autoplay"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
+
 
 export default () => {
   return (
     <Layout>
-      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{

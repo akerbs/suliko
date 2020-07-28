@@ -7,7 +7,6 @@ import HomeIcon from "@material-ui/icons/Home"
 import PhoneIcon from "@material-ui/icons/Phone"
 import EmailIcon from "@material-ui/icons/Email"
 import ScheduleIcon from "@material-ui/icons/Schedule"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -48,7 +47,6 @@ export default () => {
 
   return (
     <Layout>
-      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{

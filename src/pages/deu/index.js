@@ -4,14 +4,11 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
-
 import sloganImg2 from "../../images/slogan_eng2.png"
 
 export default props => {
   return (
     <Layout>
-      {/* <AudioNoAutoPlay /> */}
       <Container
         maxWidth="md"
         style={{

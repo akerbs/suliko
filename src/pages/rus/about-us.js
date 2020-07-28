@@ -3,7 +3,6 @@ import Layout from "../../components/layout-rus"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 const useStyles = makeStyles(theme => ({
   pageHeader: {},
@@ -14,7 +13,6 @@ export default () => {
 
   return (
     <Layout>
-      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{

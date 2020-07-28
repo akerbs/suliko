@@ -6,13 +6,10 @@ import Button from "@material-ui/core/Button"
 import { Link } from "gatsby"
 import { ThemeProvider } from "@material-ui/core/styles"
 import sloganImg2 from "../../images/slogan_eng2.png"
-// import AudioAutoPlay from "../../components/audio-autoplay"
-import AudioNoAutoPlay from "../../components/audio-no-autoplay"
 
 export default () => {
   return (
     <Layout>
-      <AudioNoAutoPlay />
       <Container
         maxWidth="md"
         style={{
@@ -100,8 +97,9 @@ export default () => {
             <br />
             <b> Unsere Öffnungszeiten: </b>
             <br />
-            Montag bis Donnerstag 12:00 – 15:00 Uhr, 
-             <br />17:00 – 22:00 Uhr
+            Montag bis Donnerstag 12:00 – 15:00 Uhr,
+            <br />
+            17:00 – 22:00 Uhr
             <br />
             Freitag 12:00 – 15:00 Uhr, 17:00 – 00:00 Uhr
             <br />
@@ -110,7 +108,7 @@ export default () => {
             Sonntag 15:00 – 22:00 Uhr
             <br />
             <br />
-             <b> Lieferungen & Abholungen:</b>
+            <b> Lieferungen & Abholungen:</b>
             <br />
             Mo. bis So. von 12.00 bis 18.00 Uhr und nach Vereinbarung.
             <br />

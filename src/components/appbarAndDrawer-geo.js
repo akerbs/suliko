@@ -25,6 +25,7 @@ import bgPatternImg from "../images/bgPatternImg.png"
 import Container from "@material-ui/core/Container"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import AudioNoAutoPlay from "./audio-no-autoplay"
 
 const drawerWidth = "auto"
 
@@ -158,6 +159,7 @@ const AppbarAndDrawer = props => {
           })}
         >
           <Toolbar className={classes.toolbar}>
+            <AudioNoAutoPlay />
             <IconButton
               color="inherit"
               aria-label="open drawer"

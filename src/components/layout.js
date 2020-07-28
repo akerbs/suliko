@@ -111,9 +111,37 @@ const Layout = ({ location, children }, props) => {
     setOpen(false)
   }
 
-  // const handleClick = () => {
-  //   window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-  // }
+  const element = document.querySelector("#abc")
+
+  function Visible(target) {
+    const targetPosition = {
+      top: window.pageYOffset + target.getBoundingClientRect().top,
+      bottom: window.pageYOffset + target.getBoundingClientRect().bottom,
+    }
+
+    const windowPosition = {
+      top: window.pageYOffset,
+      bottom: window.pageYOffset + document.documentElement.clientHeight,
+    }
+
+    if (
+      targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+      targetPosition.top < windowPosition.bottom
+    ) {
+      // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+      console.log("Вы видите элемент :)")
+    } else {
+      console.log("Вы НЕ видите элемент :)")
+    }
+  }
+
+  // Запускаем функцию при прокрутке страницы
+  window.addEventListener("scroll", function () {
+    Visible(element)
+  })
+
+  // А также запустим функцию сразу. А то вдруг, элемент изначально видно
+  Visible(element)
 
   return (
     <Container className={classes.root}>
@@ -125,6 +153,7 @@ const Layout = ({ location, children }, props) => {
           <AppbarAndDrawer className={classes.appbarAndDrawer} />
           <Container maxWidth="md" className={classes.main}>
             <Button
+              // size="small"
               className={classes.reservierenButton}
               variant="contained"
               color="primary"
